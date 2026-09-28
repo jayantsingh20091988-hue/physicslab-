@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Simple Machines | Physics Lab</title>
+
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/simulation.css">
+    <link rel="stylesheet" href="../../css/chapters/ch1css/simple-machines.css">
+</head>
+
+<body>
+
+<canvas id="spark-background"></canvas>
+
+<header class="chapter-hero">
+    <div class="hero-orbit orbit-one"></div>
+    <div class="hero-orbit orbit-two"></div>
+
+    <div class="hero-content">
+        <span class="chapter-number">TOPIC 03</span>
+
+        <h1>Simple Machines</h1>
+
+        <p>
+            Discover how machines make difficult tasks easier by changing
+            the relationship between force, distance and direction.
+        </p>
+
+        <div class="hero-formula">
+            <span>MA = Load / Effort</span>
+            <span>η = MA / VR × 100%</span>
+        </div>
+    </div>
+</header>
+
+
+<main class="chapter-container">
+
+    <!-- LEARNING MAP -->
+    <section class="learning-map">
+        <div class="section-heading">
+            <span>01</span>
+            <h2>What We Will Discover</h2>
+        </div>
+
+        <div class="map-grid">
+
+            <div class="map-card">
+                <b>⚙️</b>
+                <span>Machines</span>
+            </div>
+
+            <div class="map-card">
+                <b>💪</b>
+                <span>Force & Load</span>
+            </div>
+
+            <div class="map-card">
+                <b>📐</b>
+                <span>Mechanical Advantage</span>
+            </div>
+
+            <div class="map-card">
+                <b>↔️</b>
+                <span>Velocity Ratio</span>
+            </div>
+
+            <div class="map-card">
+                <b>⚡</b>
+                <span>Efficiency</span>
+            </div>
+
+            <div class="map-card">
+                <b>🔧</b>
+                <span>Levers & Pulleys</span>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- WHAT IS A MACHINE -->
+    <section class="concept-section">
+
+        <div class="section-heading">
+            <span>02</span>
+            <h2>What Is a Machine?</h2>
+        </div>
+
+        <div class="concept-card">
+
+            <div class="concept-main">
+                <h3>A machine is a device that helps us perform a task more conveniently.</h3>
+
+                <p>
+                    A machine does not magically remove the need for energy.
+                    Instead, it can change the amount of force required,
+                    the direction of force, or the distance through which
+                    the force acts.
+                </p>
+
+                <div class="why-box">
+                    <strong>💡 WHY?</strong>
+
+                    <p>
+                        Imagine lifting a very heavy object directly upward.
+                        You may need a large force. A machine can allow you
+                        to use a smaller force by making you move through
+                        a greater distance.
+                    </p>
+
+                    <p>
+                        So the important idea is:
+                        <b>machines trade force and distance.</b>
+                    </p>
+                </div>
+            </div>
+
+            <div class="machine-symbol">
+                <div class="gear gear-large">⚙️</div>
+                <div class="gear gear-small">⚙️</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PARTS OF MACHINE -->
+    <section class="parts-section">
+
+        <div class="section-heading">
+            <span>03</span>
+            <h2>Load, Effort & Fulcrum</h2>
+        </div>
+
+        <div class="parts-grid">
+
+            <article class="info-card effort-card">
+                <div class="card-icon">💪</div>
+                <h3>Effort</h3>
+                <p>
+                    The force applied by us to operate the machine.
+                </p>
+
+                <div class="why-mini">
+                    <b>Why?</b>
+                    We supply energy to the machine through the effort.
+                </div>
+            </article>
+
+            <article class="info-card load-card">
+                <div class="card-icon">📦</div>
+                <h3>Load</h3>
+                <p>
+                    The resistance or useful object that the machine
+                    has to move.
+                </p>
+
+                <div class="why-mini">
+                    <b>Why?</b>
+                    The machine is useful only if it can act on the load.
+                </div>
+            </article>
+
+            <article class="info-card fulcrum-card">
+                <div class="card-icon">🔺</div>
+                <h3>Fulcrum</h3>
+                <p>
+                    The fixed point around which a lever rotates.
+                </p>
+
+                <div class="why-mini">
+                    <b>Why?</b>
+                    The fulcrum provides the turning point for rotation.
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- MECHANICAL ADVANTAGE -->
+    <section class="formula-section">
+
+        <div class="section-heading">
+            <span>04</span>
+            <h2>Mechanical Advantage</h2>
+        </div>
+
+        <div class="formula-card">
+
+            <div class="formula-display">
+                <span>MA</span>
+                <span>=</span>
+                <span class="fraction">
+                    <span>Load</span>
+                    <span class="line"></span>
+                    <span>Effort</span>
+                </span>
+            </div>
+
+            <p>
+                Mechanical Advantage tells us how many times the machine
+                increases the force compared with the effort we apply.
+            </p>
+
+            <div class="why-box">
+                <strong>💡 WHY DO WE NEED MA?</strong>
+
+                <p>
+                    Suppose a load requires 300 N of force but you can
+                    provide only 100 N. A machine that gives MA = 3 can
+                    ideally produce the required force using that smaller
+                    effort.
+                </p>
+
+                <p>
+                    But this does <b>not</b> mean the machine creates energy.
+                    Something else must change — usually the distance through
+                    which the effort moves.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MA CALCULATOR -->
+    <section class="experiment-section">
+
+        <div class="section-heading">
+            <span>05</span>
+            <h2>Interactive Mechanical Advantage Experiment</h2>
+        </div>
+
+        <div class="experiment-card">
+
+            <div class="control-panel">
+
+                <label>
+                    Load Force
+                    <output id="load-value">300 N</output>
+                </label>
+
+                <input
+                    type="range"
+                    id="load-force"
+                    min="10"
+                    max="1000"
+                    value="300"
+                >
+
+                <label>
+                    Effort Force
+                    <output id="effort-value">100 N</output>
+                </label>
+
+                <input
+                    type="range"
+                    id="effort-force"
+                    min="10"
+                    max="500"
+                    value="100"
+                >
+
+                <div class="result-box">
+                    <span>Mechanical Advantage</span>
+                    <strong id="ma-result">3.00</strong>
+                </div>
+
+                <p id="ma-why" class="live-why">
+                    The machine produces 3 times as much force as the
+                    applied effort.
+                </p>
+
+            </div>
+
+            <div class="machine-visual">
+                <div class="force-arrow effort-arrow">
+                    <span id="effort-arrow-label">100 N</span>
+                    <div></div>
+                </div>
+
+                <div class="machine-block">
+                    <div class="machine-ring"></div>
+                    <span>⚙️</span>
+                </div>
+
+                <div class="force-arrow load-arrow">
+                    <span id="load-arrow-label">300 N</span>
+                    <div></div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VELOCITY RATIO -->
+    <section class="formula-section">
+
+        <div class="section-heading">
+            <span>06</span>
+            <h2>Velocity Ratio</h2>
+        </div>
+
+        <div class="formula-card">
+
+            <div class="formula-display">
+                <span>VR</span>
+                <span>=</span>
+
+                <span class="fraction">
+                    <span>Distance moved by effort</span>
+                    <span class="line"></span>
+                    <span>Distance moved by load</span>
+                </span>
+            </div>
+
+            <div class="why-box">
+
+                <strong>💡 WHY DISTANCE?</strong>
+
+                <p>
+                    If a machine allows us to use less force, the effort
+                    usually has to move through a larger distance.
+                </p>
+
+                <p>
+                    This is the trade-off that prevents a machine from
+                    giving us unlimited force for free.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EFFICIENCY -->
+    <section class="formula-section">
+
+        <div class="section-heading">
+            <span>07</span>
+            <h2>Efficiency</h2>
+        </div>
+
+        <div class="formula-card efficiency-card">
+
+            <div class="formula-display">
+                <span>η</span>
+                <span>=</span>
+
+                <span class="fraction">
+                    <span>MA</span>
+                    <span class="line"></span>
+                    <span>VR</span>
+                </span>
+
+                <span>× 100%</span>
+            </div>
+
+            <p>
+                Efficiency tells us how effectively the input work is
+                converted into useful output work.
+            </p>
+
+            <div class="efficiency-meter">
+                <div id="efficiency-fill"></div>
+            </div>
+
+            <strong id="efficiency-result">75%</strong>
+
+            <div class="why-box">
+
+                <strong>💡 WHY IS EFFICIENCY NOT 100% IN REAL MACHINES?</strong>
+
+                <p>
+                    Real machines have friction, deformation, air resistance
+                    and other energy losses.
+                </p>
+
+                <p>
+                    Some input energy becomes thermal energy, sound or other
+                    forms instead of useful output.
+                </p>
+
+                <p>
+                    Therefore practical machines normally have efficiency
+                    below 100%.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LEVER -->
+    <section class="lever-section">
+
+        <div class="section-heading">
+            <span>08</span>
+            <h2>Lever — The First Great Machine</h2>
+        </div>
+
+        <div class="lever-card">
+
+            <div class="lever-explanation">
+
+                <h3>Why does a lever work?</h3>
+
+                <p>
+                    A lever rotates around a fulcrum. The turning effect
+                    depends not only on force but also on the distance
+                    from the fulcrum.
+                </p>
+
+                <div class="equation-box">
+                    Effort × Effort Arm
+                    =
+                    Load × Load Arm
+                </div>
+
+                <p>
+                    This is the idea of <b>moment of force</b>.
+                    A smaller force can balance a larger force if it acts
+                    farther from the fulcrum.
+                </p>
+
+            </div>
+
+            <div class="lever-simulator">
+
+                <canvas id="lever-canvas"></canvas>
+
+                <div class="lever-controls">
+
+                    <label>
+                        Effort
+                        <output id="lever-effort-value">100 N</output>
+                    </label>
+
+                    <input
+                        type="range"
+                        id="lever-effort"
+                        min="10"
+                        max="500"
+                        value="100"
+                    >
+
+                    <label>
+                        Load
+                        <output id="lever-load-value">200 N</output>
+                    </label>
+
+                    <input
+                        type="range"
+                        id="lever-load"
+                        min="10"
+                        max="500"
+                        value="200"
+                    >
+
+                    <label>
+                        Effort Arm
+                        <output id="effort-arm-value">3 m</output>
+                    </label>
+
+                    <input
+                        type="range"
+                        id="effort-arm"
+                        min="1"
+                        max="5"
+                        step="0.1"
+                        value="3"
+                    >
+
+                    <label>
+                        Load Arm
+                        <output id="load-arm-value">1.5 m</output>
+                    </label>
+
+                    <input
+                        type="range"
+                        id="load-arm"
+                        min="0.5"
+                        max="4"
+                        step="0.1"
+                        value="1.5"
+                    >
+
+                </div>
+
+                <div class="lever-result">
+                    <span>Effort Moment</span>
+                    <strong id="effort-moment">300 Nm</strong>
+
+                    <span>Load Moment</span>
+                    <strong id="load-moment">300 Nm</strong>
+
+                    <span id="lever-status">⚖️ Balanced</span>
+                </div>
+
+                <p id="lever-why" class="live-why">
+                    Both turning effects are equal, so the lever is balanced.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LEVER CLASSES -->
+    <section class="lever-types">
+
+        <div class="section-heading">
+            <span>09</span>
+            <h2>Three Classes of Lever</h2>
+        </div>
+
+        <div class="lever-type-grid">
+
+            <article class="lever-type class-one">
+                <div class="type-number">CLASS 1</div>
+
+                <div class="mini-lever">
+                    <span>LOAD</span>
+                    <i>🔺</i>
+                    <span>EFFORT</span>
+                </div>
+
+                <h3>Fulcrum in the middle</h3>
+
+                <p>
+                    Example: seesaw, scissors, crowbar.
+                </p>
+            </article>
+
+
+            <article class="lever-type class-two">
+                <div class="type-number">CLASS 2</div>
+
+                <div class="mini-lever">
+                    <span>FULCRUM</span>
+                    <b>📦</b>
+                    <span>EFFORT</span>
+                </div>
+
+                <h3>Load in the middle</h3>
+
+                <p>
+                    Example: wheelbarrow, nutcracker.
+                </p>
+            </article>
+
+
+            <article class="lever-type class-three">
+                <div class="type-number">CLASS 3</div>
+
+                <div class="mini-lever">
+                    <span>FULCRUM</span>
+                    <b>💪</b>
+                    <span>LOAD</span>
+                </div>
+
+                <h3>Effort in the middle</h3>
+
+                <p>
+                    Example: tweezers, human forearm.
+                </p>
+
+                <div class="why-mini">
+                    <b>Important:</b>
+                    A class-3 lever can have MA less than 1.
+                    It sacrifices force advantage for greater movement
+                    or speed.
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- PULLEY -->
+    <section class="pulley-section">
+
+        <div class="section-heading">
+            <span>10</span>
+            <h2>Pulley Experiment</h2>
+        </div>
+
+        <div class="pulley-card">
+
+            <div class="pulley-visual">
+
+                <canvas id="pulley-canvas"></canvas>
+
+            </div>
+
+            <div class="pulley-controls">
+
+                <label>
+                    Pulley Type
+                </label>
+
+                <select id="pulley-type">
+
+                    <option value="fixed">
+                        Fixed Pulley
+                    </option>
+
+                    <option value="movable">
+                        Movable Pulley
+                    </option>
+
+                    <option value="two">
+                        Two Supporting Segments
+                    </option>
+
+                    <option value="three">
+                        Three Supporting Segments
+                    </option>
+
+                </select>
+
+                <label>
+                    Load
+                    <output id="pulley-load-value">200 N</output>
+                </label>
+
+                <input
+                    type="range"
+                    id="pulley-load"
+                    min="20"
+                    max="600"
+                    value="200"
+                >
+
+                <div class="result-box">
+
+                    <span>Ideal Mechanical Advantage</span>
+
+                    <strong id="pulley-ma">1</strong>
+
+                </div>
+
+                <div class="result-box">
+
+                    <span>Ideal Effort</span>
+
+                    <strong id="pulley-effort">200 N</strong>
+
+                </div>
+
+                <p id="pulley-why" class="live-why">
+                    A fixed pulley mainly changes the direction of force.
+                    Ideally its mechanical advantage is 1.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INCLINED PLANE -->
+    <section class="inclined-section">
+
+        <div class="section-heading">
+            <span>11</span>
+            <h2>Inclined Plane</h2>
+        </div>
+
+        <div class="inclined-card">
+
+            <div class="inclined-text">
+
+                <h3>Why does a ramp make lifting easier?</h3>
+
+                <p>
+                    Instead of lifting an object vertically, we can move it
+                    along a longer sloping path.
+                </p>
+
+                <p>
+                    The required force can decrease because the same change
+                    in height occurs over a greater distance.
+                </p>
+
+                <div class="equation-box">
+                    Ideal MA = Length / Height
+                </div>
+
+                <div class="why-box">
+                    <strong>💡 The trade-off</strong>
+
+                    <p>
+                        Less force is needed, but the object travels a
+                        greater distance.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="ramp-visual">
+
+                <div class="ramp"></div>
+                <div class="ramp-object">📦</div>
+                <div class="ramp-arrow">↗</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OTHER MACHINES -->
+    <section class="other-machines">
+
+        <div class="section-heading">
+            <span>12</span>
+            <h2>Other Simple Machines</h2>
+        </div>
+
+        <div class="machine-grid">
+
+            <article>
+                <span>⚙️</span>
+                <h3>Wheel & Axle</h3>
+                <p>
+                    A large wheel rotates around a smaller axle,
+                    allowing force and distance to be traded.
+                </p>
+            </article>
+
+            <article>
+                <span>🔩</span>
+                <h3>Screw</h3>
+                <p>
+                    A screw converts rotational motion into useful
+                    linear motion.
+                </p>
+            </article>
+
+            <article>
+                <span>🔺</span>
+                <h3>Wedge</h3>
+                <p>
+                    A wedge converts applied force into forces that
+                    separate or cut material.
+                </p>
+            </article>
+
+            <article>
+                <span>🛝</span>
+                <h3>Inclined Plane</h3>
+                <p>
+                    A sloping surface reduces the force needed to
+                    raise an object.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ENERGY -->
+    <section class="energy-section">
+
+        <div class="section-heading">
+            <span>13</span>
+            <h2>Machines Do NOT Create Energy</h2>
+        </div>
+
+        <div class="energy-card">
+
+            <div class="energy-flow">
+
+                <div>
+                    <span>INPUT</span>
+                    <b>Energy</b>
+                </div>
+
+                <strong>→</strong>
+
+                <div class="machine-core">
+                    ⚙️
+                    <small>MACHINE</small>
+                </div>
+
+                <strong>→</strong>
+
+                <div>
+                    <span>OUTPUT</span>
+                    <b>Useful Energy</b>
+                </div>
+
+            </div>
+
+            <div class="why-box">
+
+                <strong>💡 WHY CAN'T A MACHINE CREATE ENERGY?</strong>
+
+                <p>
+                    Energy cannot simply appear from nowhere.
+                    A machine can redistribute the input energy between
+                    force, distance, speed and direction.
+                </p>
+
+                <p>
+                    In real machines, some energy is also transformed into
+                    heat, sound and other forms because of friction and
+                    deformation.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- REAL WORLD -->
+    <section class="applications-section">
+
+        <div class="section-heading">
+            <span>14</span>
+            <h2>Simple Machines Around You</h2>
+        </div>
+
+        <div class="application-grid">
+
+            <div>
+                <span>🚲</span>
+                <h3>Bicycle</h3>
+                <p>
+                    Wheel and axle, gears and levers work together.
+                </p>
+            </div>
+
+            <div>
+                <span>🚪</span>
+                <h3>Door Handle</h3>
+                <p>
+                    A handle uses the principle of a wheel and axle.
+                </p>
+            </div>
+
+            <div>
+                <span>🛒</span>
+                <h3>Wheelbarrow</h3>
+                <p>
+                    A second-class lever helps move heavy loads.
+                </p>
+            </div>
+
+            <div>
+                <span>✂️</span>
+                <h3>Scissors</h3>
+                <p>
+                    Two first-class levers work around a common pivot.
+                </p>
+            </div>
+
+            <div>
+                <span>🧗</span>
+                <h3>Ramp</h3>
+                <p>
+                    An inclined plane allows heavy objects to be moved
+                    upward with less force.
+                </p>
+            </div>
+
+            <div>
+                <span>🔧</span>
+                <h3>Wrench</h3>
+                <p>
+                    A longer handle increases turning effect for the
+                    same applied force.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MISCONCEPTIONS -->
+    <section class="misconceptions-section">
+
+        <div class="section-heading">
+            <span>15</span>
+            <h2>Common Misconceptions</h2>
+        </div>
+
+        <div class="misconception-grid">
+
+            <article>
+                <span>❌</span>
+
+                <h3>
+                    "A machine creates energy."
+                </h3>
+
+                <p>
+                    <b>Correct:</b>
+                    A machine transfers and transforms energy.
+                </p>
+            </article>
+
+            <article>
+                <span>❌</span>
+
+                <h3>
+                    "Every machine multiplies force."
+                </h3>
+
+                <p>
+                    <b>Correct:</b>
+                    Some machines trade force advantage for speed,
+                    distance or movement.
+                </p>
+            </article>
+
+            <article>
+                <span>❌</span>
+
+                <h3>
+                    "MA is always greater than 1."
+                </h3>
+
+                <p>
+                    <b>Correct:</b>
+                    MA can be less than 1, equal to 1 or greater than 1.
+                </p>
+            </article>
+
+            <article>
+                <span>❌</span>
+
+                <h3>
+                    "Real machines are 100% efficient."
+                </h3>
+
+                <p>
+                    <b>Correct:</b>
+                    Real machines lose some energy through friction,
+                    deformation and other effects.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRACTICE -->
+    <section class="practice-section">
+
+        <div class="section-heading">
+            <span>16</span>
+            <h2>Challenge Yourself</h2>
+        </div>
+
+        <div class="practice-card">
+
+            <h3>
+                A machine lifts a 400 N load using an effort of 100 N.
+                What is its mechanical advantage?
+            </h3>
+
+            <div class="practice-options">
+
+                <button data-answer="wrong">2</button>
+                <button data-answer="correct">4</button>
+                <button data-answer="wrong">5</button>
+                <button data-answer="wrong">10</button>
+
+            </div>
+
+            <p id="practice-result"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SUMMARY -->
+    <section class="summary-section">
+
+        <div class="section-heading">
+            <span>17</span>
+            <h2>Chapter Summary</h2>
+        </div>
+
+        <div class="summary-card">
+
+            <ul>
+                <li>
+                    A machine makes a task more convenient by changing
+                    force, distance or direction.
+                </li>
+
+                <li>
+                    Effort is the force supplied to a machine.
+                </li>
+
+                <li>
+                    Load is the resistance or useful object being moved.
+                </li>
+
+                <li>
+                    <b>MA = Load / Effort</b>
+                </li>
+
+                <li>
+                    <b>VR = Distance moved by effort /
+                    Distance moved by load</b>
+                </li>
+
+                <li>
+                    <b>Efficiency = MA / VR × 100%</b>
+                </li>
+
+                <li>
+                    Levers rotate around a fulcrum.
+                </li>
+
+                <li>
+                    Machines do not create energy.
+                </li>
+
+                <li>
+                    Real machines lose some input energy through
+                    friction and other effects.
+                </li>
+            </ul>
+
+            <div class="final-message">
+                <strong>⚙️ The Big Idea</strong>
+
+                <p>
+                    A machine does not give us something for nothing.
+                    It gives us a useful trade-off between
+                    <b>force, distance, speed and direction.</b>
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+<!--ENTER NEXT TOPIC-->
+<div><a href="../class 10/circular-motion.html">⚡ENTER NEXT TOPIC</a></div>
+
+<script src="../../js/core/animation.js"></script>
+<script src="../../js/core/canvas.js"></script>
+<script src="../../js/core/equation.js"></script>
+<script src="../../js/core/graph.js"></script>
+<script src="../../js/core/simulation.js"></script>
+
+<script src="../../js/physics/ch1js/simple-machines.js"></script>
+
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

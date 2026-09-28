@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Work, Energy & Power | Physics Lab</title>
+
+    <link
+        rel="stylesheet"
+        href="../../css/main.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/simulation.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/chapters/ch1css/work-energy.css"
+    >
+</head>
+
+<body>
+
+<!-- =====================================================
+     AMBIENT BACKGROUND
+===================================================== -->
+
+<div class="lab-background" aria-hidden="true">
+
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+    <div class="orb orb-three"></div>
+
+    <div class="spark-field">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+    </div>
+</div>
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="physics-lab-page">
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="chapter-hero">
+
+    <div class="hero-badge">
+        ⚡ CLASS 10 • PHYSICS LAB
+    </div>
+
+    <h1>
+        Work, Energy
+        <span>&</span>
+        Power
+    </h1>
+
+    <p class="hero-subtitle">
+        Don't just memorize formulas.
+        Discover why physics needs them.
+    </p>
+
+    <div class="hero-question">
+        <span>🧠</span>
+
+        <div>
+            <strong>Big Question</strong>
+
+            <p>
+                How can we describe the effect of a force,
+                the ability to cause change, and how quickly
+                that change happens?
+            </p>
+        </div>
+    </div>
+
+    <div class="hero-path">
+
+        <span>Observe</span>
+        <b>→</b>
+
+        <span>Ask</span>
+        <b>→</b>
+
+        <span>Experiment</span>
+        <b>→</b>
+
+        <span>Discover</span>
+        <b>→</b>
+
+        <span>Mathematics</span>
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     1. WHY THIS CHAPTER?
+===================================================== -->
+
+<section class="lab-section">
+
+    <div class="section-heading">
+
+        <span class="section-number">01</span>
+
+        <div>
+            <p class="section-kicker">START WITH A PROBLEM</p>
+
+            <h2>
+                Why did we need these ideas?
+            </h2>
+        </div>
+
+    </div>
+
+
+    <div class="concept-grid">
+
+        <article class="concept-card concept-cyan">
+
+            <div class="concept-icon">🧱</div>
+
+            <h3>
+                A force can change motion
+            </h3>
+
+            <p>
+                Push a box and it may start moving.
+                Push harder and its motion can change more quickly.
+            </p>
+
+            <div class="question-chip">
+                But how do we measure the effect?
+            </div>
+
+        </article>
+
+
+        <article class="concept-card concept-purple">
+
+            <div class="concept-icon">⚡</div>
+
+            <h3>
+                Something is being transferred
+            </h3>
+
+            <p>
+                When a force moves an object, something
+                useful has happened. Physics needed a way
+                to describe this transfer.
+            </p>
+
+            <div class="question-chip">
+                This leads us toward Work and Energy.
+            </div>
+
+        </article>
+
+
+        <article class="concept-card concept-orange">
+
+            <div class="concept-icon">⏱️</div>
+
+            <h3>
+                Time also matters
+            </h3>
+
+            <p>
+                Two machines may perform the same amount
+                of work, but one may do it much faster.
+            </p>
+
+            <div class="question-chip">
+                This leads us toward Power.
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <div class="thinking-box">
+
+        <div class="thinking-icon">💭</div>
+
+        <div>
+
+            <h3>
+                Think before learning the formula
+            </h3>
+
+            <p>
+                Suppose two people move the same box through
+                the same distance. If both exert the same force,
+                should physics describe their work as different?
+            </p>
+
+            <p class="answer-hint">
+                Probably not — and this gives us a clue about
+                what a useful definition of work should contain.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     2. WORK
+===================================================== -->
+
+<section class="lab-section">
+
+    <div class="section-heading">
+
+        <span class="section-number">02</span>
+
+        <div>
+            <p class="section-kicker">THE FIRST IDEA</p>
+
+            <h2>Work</h2>
+        </div>
+
+    </div>
+
+
+    <div class="explanation-card">
+
+        <span class="mini-label">IN SIMPLE WORDS</span>
+
+        <h3>
+            Work happens when a force causes displacement.
+        </h3>
+
+        <p>
+            If you push an object but it does not move,
+            the situation is different from pushing it and
+            actually moving it through a distance.
+        </p>
+
+        <div class="logic-flow">
+
+            <span>Force</span>
+            <b>+</b>
+            <span>Displacement</span>
+            <b>→</b>
+            <strong>Work</strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="formula-reveal">
+
+        <div class="formula-story">
+
+            <span class="mini-label">
+                HOW DID THE IDEA DEVELOP?
+            </span>
+
+            <h3>
+                Start with the simplest case
+            </h3>
+
+            <p>
+                If force and displacement are in the same
+                direction, a natural measure is:
+            </p>
+
+        </div>
+
+        <div class="big-equation">
+            W = F × s
+        </div>
+
+        <div class="formula-meaning">
+
+            <div>
+                <b>W</b>
+                <span>Work</span>
+            </div>
+
+            <div>
+                <b>F</b>
+                <span>Force</span>
+            </div>
+
+            <div>
+                <b>s</b>
+                <span>Displacement</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="angle-story">
+
+        <div class="angle-text">
+
+            <span class="mini-label">
+                BUT REAL LIFE IS NOT ALWAYS STRAIGHT
+            </span>
+
+            <h3>
+                What if the force is at an angle?
+            </h3>
+
+            <p>
+                Only the part of the force acting along the
+                direction of displacement contributes to the work.
+            </p>
+
+            <p>
+                That is why the angle θ becomes important.
+            </p>
+
+        </div>
+
+        <div class="big-equation">
+            W = F × s × cosθ
+        </div>
+
+    </div>
+
+
+    <div class="work-types">
+
+        <article class="work-type positive">
+
+            <span class="type-icon">↗</span>
+
+            <h3>Positive Work</h3>
+
+            <p>
+                Force has a component in the direction of motion.
+            </p>
+
+            <strong>W &gt; 0</strong>
+
+        </article>
+
+
+        <article class="work-type zero">
+
+            <span class="type-icon">↔</span>
+
+            <h3>Zero Work</h3>
+
+            <p>
+                No displacement, or force is perpendicular
+                to displacement.
+            </p>
+
+            <strong>W = 0</strong>
+
+        </article>
+
+
+        <article class="work-type negative">
+
+            <span class="type-icon">↙</span>
+
+            <h3>Negative Work</h3>
+
+            <p>
+                Force has a component opposite to the motion.
+            </p>
+
+            <strong>W &lt; 0</strong>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     3. WORK EXPERIMENT
+===================================================== -->
+
+<section class="lab-section">
+
+    <div class="section-heading">
+
+        <span class="section-number">03</span>
+
+        <div>
+
+            <p class="section-kicker">
+                INTERACTIVE EXPERIMENT
+            </p>
+
+            <h2>
+                Discover Work
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="experiment-layout">
+
+        <div class="experiment-panel">
+
+            <div class="panel-top">
+
+                <div>
+                    <span class="mini-label">
+                        LIVE EXPERIMENT
+                    </span>
+
+                    <h3>
+                        Push the object
+                    </h3>
+                </div>
+
+                <div class="live-pill">
+                    ● LIVE
+                </div>
+
+            </div>
+
+
+            <div class="control-group">
+
+                <label for="work-force">
+                    Force
+
+                    <output id="work-force-value">
+                        50 N
+                    </output>
+                </label>
+
+                <input
+                    type="range"
+                    id="work-force"
+                    min="0"
+                    max="100"
+                    value="50"
+                >
+
+            </div>
+
+
+            <div class="control-group">
+
+                <label for="work-displacement">
+                    Displacement
+
+                    <output id="work-displacement-value">
+                        5 m
+                    </output>
+                </label>
+
+                <input
+                    type="range"
+                    id="work-displacement"
+                    min="0"
+                    max="10"
+                    step="0.1"
+                    value="5"
+                >
+
+            </div>
+
+
+            <div class="control-group">
+
+                <label for="work-angle">
+                    Angle
+
+                    <output id="work-angle-value">
+                        0°
+                    </output>
+                </label>
+
+                <input
+                    type="range"
+                    id="work-angle"
+                    min="0"
+                    max="180"
+                    value="0"
+                >
+
+            </div>
+
+
+            <div class="live-result">
+
+                <span>WORK DONE</span>
+
+                <strong id="work-result">
+                    250 J
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="canvas-panel">
+
+            <div class="canvas-label">
+                <span>VISUAL EXPERIMENT</span>
+
+                <span id="work-direction-label">
+                    Force → Motion
+                </span>
+            </div>
+
+            <canvas id="work-canvas"></canvas>
+
+            <div class="legend">
+
+                <span>
+                    <i class="legend-object"></i>
+                    Object
+                </span>
+
+                <span>
+                    <i class="legend-force"></i>
+                    Force
+                </span>
+
+                <span>
+                    <i class="legend-displacement"></i>
+                    Displacement
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="observation-card">
+
+        <span class="mini-label">
+            OBSERVATION
+        </span>
+
+        <h3 id="work-observation">
+            Increasing force increases the work done
+            when displacement remains the same.
+        </h3>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     4. ENERGY
+===================================================== -->
+
+<section class="lab-section">
+
+    <div class="section-heading">
+
+        <span class="section-number">04</span>
+
+        <div>
+
+            <p class="section-kicker">
+                THE BIGGER IDEA
+            </p>
+
+            <h2>
+                Energy
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="energy-intro">
+
+        <h3>
+            Why invent another quantity after Work?
+        </h3>
+
+        <p>
+            Work describes an interaction and transfer.
+            But physics also needed a quantity that describes
+            the ability of a system to produce change.
+        </p>
+
+        <div class="energy-definition">
+            Energy = ability to cause change / do work
+        </div>
+
+    </div>
+
+
+    <div class="energy-forms">
+
+        <article>
+            <span>🏃</span>
+            <h3>Kinetic</h3>
+            <p>Energy associated with motion.</p>
+        </article>
+
+        <article>
+            <span>🏔️</span>
+            <h3>Potential</h3>
+            <p>Energy associated with position or configuration.</p>
+        </article>
+
+        <article>
+            <span>🔥</span>
+            <h3>Thermal</h3>
+            <p>Energy associated with microscopic motion.</p>
+        </article>
+
+        <article>
+            <span>⚡</span>
+            <h3>Electrical</h3>
+            <p>Energy transferred through electrical systems.</p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     5. KINETIC ENERGY
+===================================================== -->
+
+<section class="lab-section">
+
+    <div class="section-heading">
+
+        <span class="section-number">05</span>
+
+        <div>
+
+            <p class="section-kicker">
+                DISCOVER THE FORMULA
+            </p>
+
+            <h2>
+                Kinetic Energy
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="reasoning-card">
+
+        <span class="mini-label">
+            ASK A SIMPLE QUESTION
+        </span>
+
+        <h3>
+            What should determine the energy of a moving object?
+        </h3>
+
+        <div class="reasoning-options">
+
+            <div>
+                <span>Mass</span>
+                <p>
+                    A heavier object generally requires more
+                    work to change its motion.
+                </p>
+            </div>
+
+            <div>
+                <span>Velocity</span>
+                <p>
+                    A faster object can produce a much larger
+                    effect when stopped.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="derivation-card">
+
+        <div class="derivation-header">
+
+            <span class="mini-label">
+                STEP-BY-STEP DERIVATION
+            </span>
+
+            <h3>
+                How do we reach ½mv²?
+            </h3>
+
+        </div>
+
+
+        <div class="derivation-steps">
+
+            <div class="derivation-step">
+
+                <span>01</span>
+
+                <div>
+                    <h4>Start with Work</h4>
+                    <div class="equation-line">
+                        W = F × s
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="derivation-step">
+
+                <span>02</span>
+
+                <div>
+                    <h4>Use Newton's second law</h4>
+                    <div class="equation-line">
+                        F = ma
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="derivation-step">
+
+                <span>03</span>
+
+                <div>
+                    <h4>Use the motion relation</h4>
+                    <div class="equation-line">
+                        v² − u² = 2as
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="derivation-step">
+
+                <span>04</span>
+
+                <div>
+                    <h4>For an object starting from rest</h4>
+                    <div class="equation-line">
+                        u = 0
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="derivation-step final-step">
+
+                <span>05</span>
+
+                <div>
+                    <h4>Therefore</h4>
+
+                    <div class="equation-line big">
+                        KE = ½mv²
+                    </div>
+
+                    <p>
+                        The ½ is not arbitrary.
+                        It emerges from the mathematics connecting
+                        force, acceleration and displacement.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="ke-simulator">
+
+        <div class="simulator-controls">
+
+            <span class="mini-label">
+                INTERACTIVE KE LAB
+            </span>
+
+            <label>
+                Mass
+
+                <output id="ke-mass-value">
+                    5 kg
+                </output>
+
+            </label>
+
+            <input
+                type="range"
+                id="ke-mass"
+                min="1"
+                max="20"
+                value="5"
+            >
+
+
+            <label>
+                Velocity
+
+                <output id="ke-velocity-value">
+                    10 m/s
+                </output>
+
+            </label>
+
+            <input
+                type="range"
+                id="ke-velocity"
+                min="0"
+                max="50"
+                value="10"
+            >
+
+
+            <div class="live-result">
+
+                <span>KINETIC ENERGY</span>
+
+                <strong id="ke-result">
+                    250 J
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="graph-panel">
+
+            <canvas id="ke-graph"></canvas>
+
+            <div class="graph-caption">
+                Velocity increases → kinetic energy rises rapidly
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="think-box">
+
+        <span>🤔</span>
+
+        <div>
+
+            <h3>
+                Think!
+            </h3>
+
+            <p>
+                If velocity becomes 2 times larger,
+                does kinetic energy become 2 times larger?
+            </p>
+
+            <strong>
+                Hint: Look carefully at v².
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     6. POTENTIAL ENERGY
+===================================================== -->
+
+<section class="lab-section">
+
+    <div class="section-heading">
+
+        <span class="section-number">06</span>
+
+        <div>
+
+            <p class="section-kicker">
+                ENERGY STORED BY POSITION
+            </p>
+
+            <h2>
+                Gravitational Potential Energy
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="story-card">
+
+        <div class="story-icon">
+            🏀
+        </div>
+
+        <div>
+
+            <h3>
+                Where did the energy go?
+            </h3>
+
+            <p>
+                Imagine lifting a ball upward.
+                You apply a force and move it through a height.
+            </p>
+
+            <p>
+                You have done work against gravity.
+                The system now has the ability to release that
+                energy as the ball moves downward.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="pe-logic">
+
+        <div class="logic-item">
+            <span>Force against gravity</span>
+            <b>mg</b>
+        </div>
+
+        <div class="logic-arrow">×</div>
+
+        <div class="logic-item">
+            <span>Height</span>
+            <b>h</b>
+        </div>
+
+        <div class="logic-arrow">=</div>
+
+        <div class="logic-item final">
+            <span>Potential Energy</span>
+            <b>mgh</b>
+        </div>
+
+    </div>
+
+
+    <div class="pe-simulator">
+
+        <div class="simulator-controls">
+
+            <span class="mini-label">
+                GRAVITY LAB
+            </span>
+
+            <label>
+                Mass
+
+                <output id="pe-mass-value">
+                    5 kg
+                </output>
+            </label>
+
+            <input
+                type="range"
+                id="pe-mass"
+                min="1"
+                max="20"
+                value="5"
+            >
+
+
+            <label>
+                Height
+
+                <output id="pe-height-value">
+                    10 m
+                </output>
+            </label>
+
+            <input
+                type="range"
+                id="pe-height"
+                min="0"
+                max="100"
+                value="10"
+            >
+
+
+            <div class="live-result">
+
+                <span>POTENTIAL ENERGY</span>
+
+                <strong id="pe-result">
+                    490 J
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="canvas-panel">
+
+            <canvas id="pe-canvas"></canvas>
+
+        </div>
+
+    </div>
+
+
+    <div class="question-grid">
+
+        <article>
+            <span>Q1</span>
+            <h3>
+                Why does greater height mean greater PE?
+            </h3>
+            <p>
+                Because lifting the object through a larger
+                distance requires more work against gravity.
+            </p>
+        </article>
+
+        <article>
+            <span>Q2</span>
+            <h3>
+                Where is zero potential energy?
+            </h3>
+            <p>
+                The zero level is a chosen reference.
+                What matters is the difference in energy.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     7. WORK ENERGY THEOREM
+===================================================== -->
+
+<section class="lab-section">
+
+    <div class="section-heading">
+
+        <span class="section-number">07</span>
+
+        <div>
+
+            <p class="section-kicker">
+                CONNECT THE IDEAS
+            </p>
+
+            <h2>
+                Work–Energy Theorem
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="theorem-intro">
+
+        <h3>
+            Work changes kinetic energy.
+        </h3>
+
+        <div class="big-equation">
+            W<sub>net</sub> = ΔKE
+        </div>
+
+        <p>
+            This gives us a powerful bridge:
+            force and displacement can be connected directly
+            to the change in motion.
+        </p>
+
+    </div>
+
+
+    <div class="theorem-lab">
+
+        <div class="simulator-controls">
+
+            <label>
+                Mass
+
+                <output id="theorem-mass-value">
+                    5 kg
+                </output>
+            </label>
+
+            <input
+                type="range"
+                id="theorem-mass"
+                min="1"
+                max="20"
+                value="5"
+            >
+
+
+            <label>
+                Initial velocity
+
+                <output id="theorem-initial-value">
+                    5 m/s
+                </output>
+            </label>
+
+            <input
+                type="range"
+                id="theorem-initial"
+                min="0"
+                max="30"
+                value="5"
+            >
+
+
+            <label>
+                Final velocity
+
+                <output id="theorem-final-value">
+                    15 m/s
+                </output>
+            </label>
+
+            <input
+                type="range"
+                id="theorem-final"
+                min="0"
+                max="30"
+                value="15"
+            >
+
+        </div>
+
+
+        <div class="theorem-results">
+
+            <div>
+                <span>Initial KE</span>
+                <strong id="initial-ke-result">
+                    62.5 J
+                </strong>
+            </div>
+
+            <div>
+                <span>Final KE</span>
+                <strong id="final-ke-result">
+                    562.5 J
+                </strong>
+            </div>
+
+            <div>
+                <span>ΔKE</span>
+                <strong id="delta-ke-result">
+                    500 J
+                </strong>
+            </div>
+
+            <div class="theorem-final">
+                <span>Net Work</span>
+                <strong id="theorem-work-result">
+                    500 J
+                </strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     8. CONSERVATION OF ENERGY
+===================================================== -->
+
+<section class="lab-section">
+
+    <div class="section-heading">
+
+        <span class="section-number">08</span>
+
+        <div>
+
+            <p class="section-kicker">
+                ENERGY DOES NOT JUST VANISH
+            </p>
+
+            <h2>
+                Conservation of Energy
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="conservation-story">
+
+        <h3>
+            What happens when potential energy decreases?
+        </h3>
+
+        <p>
+            In a simple gravitational system, potential energy
+            can decrease while kinetic energy increases.
+        </p>
+
+        <p>
+            The energy is being transferred between forms.
+        </p>
+
+        <div class="energy-transfer">
+            <span>Potential Energy</span>
+            <b>⇄</b>
+            <span>Kinetic Energy</span>
+        </div>
+
+    </div>
+
+
+    <div class="conservation-lab">
+
+        <canvas id="energy-conservation-canvas"></canvas>
+
+        <div class="energy-total-display">
+
+            <span>
+                TOTAL ENERGY
+            </span>
+
+            <strong id="total-energy">
+                980 J
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     9. MECHANICAL ENERGY
+===================================================== -->
+
+<section class="lab-section">
+
+    <div class="section-heading">
+
+        <span class="section-number">09</span>
+
+        <div>
+
+            <p class="section-kicker">
+                PUT THEM TOGETHER
+            </p>
+
+            <h2>
+                Mechanical Energy
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="mechanical-equation">
+
+        <span>Mechanical Energy</span>
+
+        <b>=</b>
+
+        <span>KE</span>
+
+        <b>+</b>
+
+        <span>PE</span>
+
+    </div>
+
+
+    <div class="energy-dashboard">
+
+        <div class="energy-row">
+
+            <div class="energy-label">
+                <span class="energy-dot pe-dot"></span>
+                Potential Energy
+            </div>
+
+            <strong id="mechanical-pe">
+                500 J
+            </strong>
+
+            <div class="energy-track">
+                <div
+                    id="mechanical-pe-bar"
+                    class="energy-fill pe-fill"
+                ></div>
+            </div>
+
+        </div>
+
+
+        <div class="energy-row">
+
+            <div class="energy-label">
+                <span class="energy-dot ke-dot"></span>
+                Kinetic Energy
+            </div>
+
+            <strong id="mechanical-ke">
+                480 J
+            </strong>
+
+            <div class="energy-track">
+                <div
+                    id="mechanical-ke-bar"
+                    class="energy-fill ke-fill"
+                ></div>
+            </div>
+
+        </div>
+
+
+        <div class="energy-row total">
+
+            <div class="energy-label">
+                <span class="energy-dot total-dot"></span>
+                Total Energy
+            </div>
+
+            <strong id="mechanical-total">
+                980 J
+            </strong>
+
+            <div class="energy-track">
+                <div
+                    id="mechanical-total-bar"
+                    class="energy-fill total-fill"
+                ></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     10. POWER
+===================================================== -->
+
+<section class="lab-section">
+
+    <div class="section-heading">
+
+        <span class="section-number">10</span>
+
+        <div>
+
+            <p class="section-kicker">
+                HOW FAST?
+            </p>
+
+            <h2>
+                Power
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="power-story">
+
+        <h3>
+            Why isn't Work enough?
+        </h3>
+
+        <p>
+            Imagine two machines both doing 1000 J of work.
+        </p>
+
+        <div class="comparison-machines">
+
+            <div>
+                <span>Machine A</span>
+                <strong>1000 J / 10 s</strong>
+            </div>
+
+            <div>
+                <span>Machine B</span>
+                <strong>1000 J / 100 s</strong>
+            </div>
+
+        </div>
+
+        <p>
+            Same work. Different time.
+            We therefore need another quantity.
+        </p>
+
+    </div>
+
+
+    <div class="power-formula">
+
+        <div class="big-equation">
+            P = W / t
+        </div>
+
+        <p>
+            Power tells us how quickly work is done.
+        </p>
+
+    </div>
+
+
+    <div class="power-lab">
+
+        <div class="simulator-controls">
+
+            <label>
+                Work
+
+                <output id="power-work-value">
+                    1000 J
+                </output>
+            </label>
+
+            <input
+                type="range"
+                id="power-work"
+                min="100"
+                max="5000"
+                step="100"
+                value="1000"
+            >
+
+
+            <label>
+                Time
+
+                <output id="power-time-value">
+                    10 s
+                </output>
+            </label>
+
+            <input
+                type="range"
+                id="power-time"
+                min="1"
+                max="100"
+                value="10"
+            >
+
+
+            <div class="live-result power-result-box">
+
+                <span>POWER</span>
+
+                <strong id="power-result">
+                    100 W
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="horsepower-card">
+
+        <span class="concept-icon">🐎</span>
+
+        <div>
+
+            <h3>
+                Why do we hear about horsepower?
+            </h3>
+
+            <p>
+                Before modern electrical power units became
+                common, comparing machine output with familiar
+                working animals was useful in industry.
+            </p>
+
+            <p>
+                Today the SI unit of power is the watt.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     11. REAL WORLD
+===================================================== -->
+
+<section class="lab-section">
+
+    <div class="section-heading">
+
+        <span class="section-number">11</span>
+
+        <div>
+
+            <p class="section-kicker">
+                PHYSICS OUTSIDE THE TEXTBOOK
+            </p>
+
+            <h2>
+                Where do we use these ideas?
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="application-grid">
+
+        <article>
+            <span>🚗</span>
+            <h3>Vehicles</h3>
+            <p>
+                Engine power, acceleration and braking involve
+                work, energy and power.
+            </p>
+        </article>
+
+        <article>
+            <span>🏗️</span>
+            <h3>Cranes & Lifts</h3>
+            <p>
+                Lifting an object changes its gravitational
+                potential energy.
+            </p>
+        </article>
+
+        <article>
+            <span>💧</span>
+            <h3>Hydroelectricity</h3>
+            <p>
+                Gravitational energy of water can be converted
+                into electrical energy.
+            </p>
+        </article>
+
+        <article>
+            <span>🎢</span>
+            <h3>Roller Coasters</h3>
+            <p>
+                Potential and kinetic energy continually
+                transform into one another.
+            </p>
+        </article>
+
+        <article>
+            <span>🏃</span>
+            <h3>Sports</h3>
+            <p>
+                Athletes transfer energy while running,
+                jumping and throwing.
+            </p>
+        </article>
+
+        <article>
+            <span>⚙️</span>
+            <h3>Machines</h3>
+            <p>
+                Engineers use work and power to describe
+                machine performance.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     12. THINK LIKE A PHYSICIST
+===================================================== -->
+
+<section class="lab-section">
+
+    <div class="section-heading">
+
+        <span class="section-number">12</span>
+
+        <div>
+
+            <p class="section-kicker">
+                LOGICAL THINKING
+            </p>
+
+            <h2>
+                Think Like a Physicist
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="challenge-grid">
+
+        <article class="challenge-card">
+
+            <span>01</span>
+
+            <h3>
+                A person pushes a wall.
+                Is work done on the wall?
+            </h3>
+
+            <p>
+                Think about displacement before answering.
+            </p>
+
+        </article>
+
+
+        <article class="challenge-card">
+
+            <span>02</span>
+
+            <h3>
+                If velocity doubles, what happens to KE?
+            </h3>
+
+            <p>
+                Don't guess. Look at the formula.
+            </p>
+
+        </article>
+
+
+        <article class="challenge-card">
+
+            <span>03</span>
+
+            <h3>
+                Can an object have energy while stationary?
+            </h3>
+
+            <p>
+                Think about gravitational potential energy.
+            </p>
+
+        </article>
+
+
+        <article class="challenge-card">
+
+            <span>04</span>
+
+            <h3>
+                Can zero work happen while an object moves?
+            </h3>
+
+            <p>
+                Think about the angle between force and motion.
+            </p>
+
+        </article>
+
+
+        <article class="challenge-card">
+
+            <span>05</span>
+
+            <h3>
+                Two machines do the same work.
+                Can their power be different?
+            </h3>
+
+            <p>
+                Remember that power includes time.
+            </p>
+
+        </article>
+
+
+        <article class="challenge-card">
+
+            <span>06</span>
+
+            <h3>
+                Does energy really disappear because of friction?
+            </h3>
+
+            <p>
+                Think about energy transformation.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     13. COMMON MISCONCEPTIONS
+===================================================== -->
+
+<section class="lab-section">
+
+    <div class="section-heading">
+
+        <span class="section-number">13</span>
+
+        <div>
+
+            <p class="section-kicker">
+                CLEAR THE CONFUSION
+            </p>
+
+            <h2>
+                Common Misconceptions
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="misconception-grid">
+
+        <article>
+
+            <div class="wrong">✕</div>
+
+            <h3>
+                "If I use force, work must happen."
+            </h3>
+
+            <p>
+                Not necessarily. Displacement is also required.
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <div class="wrong">✕</div>
+
+            <h3>
+                "Zero work means nothing happened."
+            </h3>
+
+            <p>
+                Zero work only refers to the net work
+                associated with that force and displacement.
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <div class="wrong">✕</div>
+
+            <h3>
+                "Energy gets destroyed."
+            </h3>
+
+            <p>
+                Energy can be transferred or transformed.
+            </p>
+
+        </article>
+
+
+        <article>
+
+            <div class="wrong">✕</div>
+
+            <h3>
+                "More work always means more power."
+            </h3>
+
+            <p>
+                Power also depends on how much time the work takes.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     14. CHAPTER SUMMARY
+===================================================== -->
+
+<section class="chapter-summary">
+
+    <div class="summary-icon">
+        ⚡
+    </div>
+
+    <div>
+
+        <p class="section-kicker">
+            YOU BUILT THE LOGIC
+        </p>
+
+        <h2>
+            Work → Energy → Power
+        </h2>
+
+        <p>
+            Force acting through displacement gives us a way
+            to describe work. Work is connected to changes in
+            energy. Energy tells us about the ability of a system
+            to produce change. Power tells us how quickly work
+            is done.
+        </p>
+
+        <div class="summary-formulas">
+
+            <span>W = F s cosθ</span>
+            <span>KE = ½mv²</span>
+            <span>PE = mgh</span>
+            <span>W<sub>net</sub> = ΔKE</span>
+            <span>ME = KE + PE</span>
+            <span>P = W/t</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+<!--ENTER NEXT TOPIC-->
+<div><a href="../class 10/forces-equilibrium.html">⚡ENTER NEXT TOPIC</a></div>
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="../../js/core/animation.js"></script>
+<script src="../../js/core/canvas.js"></script>
+<script src="../../js/core/equation.js"></script>
+<script src="../../js/core/graph.js"></script>
+<script src="../../js/core/simulation.js"></script>
+
+<script src="../../js/physics/ch1js/work-energy.js"></script>
+
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

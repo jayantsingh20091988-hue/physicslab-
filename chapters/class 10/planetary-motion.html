@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Planetary Motion | Physics Lab</title>
+
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/simulation.css">
+    <link rel="stylesheet" href="../../css/chapters/ch1css/planetary-motion.css">
+</head>
+
+<body>
+
+    <!-- Animated background -->
+    <canvas id="spark-background"></canvas>
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <header class="planet-hero">
+
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+        <div class="hero-orbit orbit-three"></div>
+
+        <div class="hero-content">
+
+            <span class="chapter-number">TOPIC 05</span>
+
+            <h1>
+                Planetary
+                <span>Motion</span>
+            </h1>
+
+            <p class="hero-question">
+                Why do planets orbit the Sun instead of flying away
+                or falling directly into it?
+            </p>
+
+            <div class="hero-formula">
+                <span>Kepler</span>
+                <span>→</span>
+                <span>Newton</span>
+                <span>→</span>
+                <span>Gravity</span>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="chapter-container">
+
+        <!-- =================================================
+             LEARNING MAP
+        ================================================== -->
+
+        <section class="learning-map glass-card">
+
+            <div class="section-heading">
+                <span class="section-tag">LEARNING MAP</span>
+                <h2>Discover planetary motion</h2>
+                <p>
+                    We will first observe the pattern, then understand
+                    why the pattern exists.
+                </p>
+            </div>
+
+            <div class="learning-flow">
+
+                <div class="flow-item">
+                    <strong>01</strong>
+                    <span>Observe</span>
+                </div>
+
+                <div class="flow-arrow">→</div>
+
+                <div class="flow-item">
+                    <strong>02</strong>
+                    <span>Question</span>
+                </div>
+
+                <div class="flow-arrow">→</div>
+
+                <div class="flow-item">
+                    <strong>03</strong>
+                    <span>Kepler</span>
+                </div>
+
+                <div class="flow-arrow">→</div>
+
+                <div class="flow-item">
+                    <strong>04</strong>
+                    <span>WHY</span>
+                </div>
+
+                <div class="flow-arrow">→</div>
+
+                <div class="flow-item">
+                    <strong>05</strong>
+                    <span>Newton</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             REAL WORLD MYSTERY
+        ================================================== -->
+
+        <section class="concept-section">
+
+            <div class="section-heading">
+                <span class="section-tag">START WITH A MYSTERY</span>
+
+                <h2>
+                    Why doesn't Earth fall into the Sun?
+                </h2>
+
+                <p>
+                    This is the question that makes planetary motion
+                    interesting instead of just another formula.
+                </p>
+            </div>
+
+
+            <div class="mystery-grid">
+
+                <article class="concept-card mystery-card">
+
+                    <div class="concept-icon">☀️</div>
+
+                    <h3>The Sun pulls Earth</h3>
+
+                    <p>
+                        The Sun has enormous mass, so it produces a strong
+                        gravitational attraction on Earth.
+                    </p>
+
+                    <div class="why-box">
+                        <strong>WHY?</strong>
+
+                        <p>
+                            Gravity always acts between masses. Since the
+                            Sun is extremely massive, its gravitational
+                            pull strongly affects Earth's motion.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="concept-card mystery-card">
+
+                    <div class="concept-icon">🌍</div>
+
+                    <h3>Earth is also moving sideways</h3>
+
+                    <p>
+                        Earth already has a large tangential velocity.
+                        It is not simply sitting still near the Sun.
+                    </p>
+
+                    <div class="why-box">
+                        <strong>WHY?</strong>
+
+                        <p>
+                            Without an inward force, an object moving
+                            sideways would continue approximately along
+                            a straight-line path because of inertia.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article class="concept-card mystery-card">
+
+                    <div class="concept-icon">🌀</div>
+
+                    <h3>Gravity bends the path</h3>
+
+                    <p>
+                        Earth's forward motion tries to carry it onward,
+                        while gravity continuously changes its direction
+                        toward the Sun.
+                    </p>
+
+                    <div class="why-box highlight-why">
+                        <strong>THE KEY IDEA</strong>
+
+                        <p>
+                            Gravity does not need to completely stop Earth.
+                            It continuously changes the direction of its
+                            velocity, producing an orbit.
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <div class="logic-chain">
+
+                <div>Forward motion</div>
+                <span>+</span>
+                <div>Gravitational pull</div>
+                <span>→</span>
+                <div class="logic-result">Curved orbital path</div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             WHAT IS PLANETARY MOTION
+        ================================================== -->
+
+        <section class="concept-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">CONCEPT</span>
+
+                <h2>What is planetary motion?</h2>
+
+                <p>
+                    Planetary motion is the motion of planets around a
+                    central star due to gravitational interaction.
+                </p>
+
+            </div>
+
+
+            <div class="explanation-grid">
+
+                <div class="explanation-card">
+
+                    <h3>What?</h3>
+
+                    <p>
+                        A planet travels around the Sun along an orbital
+                        path.
+                    </p>
+
+                </div>
+
+
+                <div class="explanation-card">
+
+                    <h3>How?</h3>
+
+                    <p>
+                        The planet has velocity while gravity continuously
+                        changes the direction of that velocity.
+                    </p>
+
+                </div>
+
+
+                <div class="explanation-card">
+
+                    <h3>Why?</h3>
+
+                    <p>
+                        The combination of the planet's motion and the
+                        Sun's gravitational attraction produces a bound
+                        orbital motion.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ORBIT
+        ================================================== -->
+
+        <section class="concept-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">UNDERSTAND THE ORBIT</span>
+
+                <h2>Orbit: not just a circular track</h2>
+
+                <p>
+                    Many textbook diagrams show circles because they are
+                    easy to draw. Real planetary orbits are generally
+                    elliptical.
+                </p>
+
+            </div>
+
+
+            <div class="ellipse-explanation glass-card">
+
+                <div class="ellipse-visual">
+
+                    <div class="ellipse-orbit">
+
+                        <div class="sun-focus">
+                            ☀
+                        </div>
+
+                        <div class="orbit-planet">
+                            🌍
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="ellipse-text">
+
+                    <h3>What is an ellipse?</h3>
+
+                    <p>
+                        An ellipse is like a stretched circle. It has two
+                        special points called <strong>foci</strong>.
+                    </p>
+
+                    <p>
+                        In the simplified planetary model, the Sun lies at
+                        one focus of the ellipse.
+                    </p>
+
+                    <div class="why-box">
+
+                        <strong>WHY DOES THIS MATTER?</strong>
+
+                        <p>
+                            The distance between a planet and the Sun can
+                            change during the orbit. That helps explain
+                            why orbital speed is not always identical.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             KEPLER INTRO
+        ================================================== -->
+
+        <section class="kepler-intro">
+
+            <div class="kepler-badge">
+                KEPLER'S DISCOVERY
+            </div>
+
+            <h2>
+                Before the laws came the observations.
+            </h2>
+
+            <p>
+                Johannes Kepler studied detailed observations of planetary
+                positions. Instead of forcing the planets to fit a perfect
+                circle, he looked for mathematical patterns that actually
+                matched the observations.
+            </p>
+
+            <div class="discovery-chain">
+
+                <span>Observations</span>
+                <b>→</b>
+                <span>Patterns</span>
+                <b>→</b>
+                <span>Mathematical Laws</span>
+                <b>→</b>
+                <span>Later explained by Newton</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             KEPLER 1
+        ================================================== -->
+
+        <section class="law-section">
+
+            <div class="law-number">01</div>
+
+            <div class="section-heading">
+
+                <span class="section-tag">KEPLER'S FIRST LAW</span>
+
+                <h2>The Law of Orbits</h2>
+
+                <p class="law-statement">
+                    Planets move in elliptical orbits with the Sun at one
+                    focus of the ellipse.
+                </p>
+
+            </div>
+
+
+            <div class="law-grid">
+
+                <div class="law-content">
+
+                    <h3>What did Kepler discover?</h3>
+
+                    <p>
+                        Planetary paths are not generally perfect circles.
+                        They are better represented by ellipses.
+                    </p>
+
+                    <h3>WHY?</h3>
+
+                    <p>
+                        Kepler was trying to match mathematical models
+                        with actual astronomical observations. A perfect
+                        circle could not explain the observed positions
+                        accurately enough.
+                    </p>
+
+                    <div class="thinking-box">
+
+                        <strong>Think about it</strong>
+
+                        <p>
+                            If planets were always exactly the same distance
+                            from the Sun, a circular model would be enough.
+                            But the observed Sun-planet distance changes.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="law-visual">
+
+                    <div class="large-ellipse">
+
+                        <div class="focus-sun">
+                            ☀
+                            <small>Sun</small>
+                        </div>
+
+                        <div class="focus-second"></div>
+
+                        <div class="moving-earth" id="kepler1-earth">
+                            🌍
+                        </div>
+
+                    </div>
+
+                    <p class="visual-caption">
+                        The Sun is at one focus of the ellipse.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             KEPLER 2
+        ================================================== -->
+
+        <section class="law-section">
+
+            <div class="law-number">02</div>
+
+            <div class="section-heading">
+
+                <span class="section-tag">KEPLER'S SECOND LAW</span>
+
+                <h2>The Law of Areas</h2>
+
+                <p class="law-statement">
+                    A line joining a planet and the Sun sweeps out equal
+                    areas in equal intervals of time.
+                </p>
+
+            </div>
+
+
+            <div class="speed-logic">
+
+                <div class="speed-card near">
+
+                    <span class="speed-icon">⚡</span>
+
+                    <h3>Near the Sun</h3>
+
+                    <p>
+                        The planet moves faster.
+                    </p>
+
+                    <strong>Higher orbital speed</strong>
+
+                </div>
+
+
+                <div class="speed-arrow">
+                    ↔
+                </div>
+
+
+                <div class="speed-card far">
+
+                    <span class="speed-icon">🐢</span>
+
+                    <h3>Far from the Sun</h3>
+
+                    <p>
+                        The planet moves more slowly.
+                    </p>
+
+                    <strong>Lower orbital speed</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="why-wide">
+
+                <strong>WHY DOES THE SPEED CHANGE?</strong>
+
+                <p>
+                    As the planet moves through its elliptical orbit, its
+                    distance and direction relative to the Sun change.
+                    The Sun's gravity continuously changes the planet's
+                    velocity. Kepler's observations revealed the precise
+                    equal-area pattern.
+                </p>
+
+                <p>
+                    The important point is that the planet does not travel
+                    equal distances in equal times. Instead, it sweeps
+                    equal <strong>areas</strong>.
+                </p>
+
+            </div>
+
+
+            <!-- Area simulator -->
+
+            <div class="experiment-card">
+
+                <div class="experiment-header">
+
+                    <div>
+                        <span class="experiment-tag">
+                            INTERACTIVE EXPERIMENT
+                        </span>
+
+                        <h3>Equal Areas in Equal Times</h3>
+                    </div>
+
+                    <button id="area-start" class="sim-button">
+                        Start Experiment
+                    </button>
+
+                </div>
+
+
+                <div class="area-sim-layout">
+
+                    <canvas id="kepler-area-canvas"></canvas>
+
+
+                    <div class="experiment-data">
+
+                        <div class="data-box">
+
+                            <span>Time interval A</span>
+                            <strong id="area-time-a">0.00 s</strong>
+
+                        </div>
+
+                        <div class="data-box">
+
+                            <span>Time interval B</span>
+                            <strong id="area-time-b">0.00 s</strong>
+
+                        </div>
+
+                        <div class="data-box">
+
+                            <span>Area A</span>
+                            <strong id="area-value-a">0.00</strong>
+
+                        </div>
+
+                        <div class="data-box">
+
+                            <span>Area B</span>
+                            <strong id="area-value-b">0.00</strong>
+
+                        </div>
+
+                        <div class="area-verdict" id="area-verdict">
+                            Press Start Experiment
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             KEPLER 3
+        ================================================== -->
+
+        <section class="law-section">
+
+            <div class="law-number">03</div>
+
+            <div class="section-heading">
+
+                <span class="section-tag">KEPLER'S THIRD LAW</span>
+
+                <h2>The Law of Periods</h2>
+
+                <p class="law-statement">
+                    For planets orbiting the same central star,
+                    T² is proportional to a³.
+                </p>
+
+            </div>
+
+
+            <div class="formula-hero">
+
+                <div class="formula-main">
+                    T² ∝ a³
+                </div>
+
+                <div class="formula-meaning">
+
+                    <span>
+                        T = orbital period
+                    </span>
+
+                    <span>
+                        a = semi-major axis
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="third-law-logic">
+
+                <div class="logic-step">
+
+                    <span>01</span>
+
+                    <h3>Orbit gets larger</h3>
+
+                    <p>
+                        The planet has a greater distance to travel around
+                        its orbit.
+                    </p>
+
+                </div>
+
+
+                <div class="logic-connector">→</div>
+
+
+                <div class="logic-step">
+
+                    <span>02</span>
+
+                    <h3>Orbital speed is lower</h3>
+
+                    <p>
+                        In the circular-orbit approximation,
+                        v = √(GM/r), so larger r means lower orbital speed.
+                    </p>
+
+                </div>
+
+
+                <div class="logic-connector">→</div>
+
+
+                <div class="logic-step">
+
+                    <span>03</span>
+
+                    <h3>Period becomes longer</h3>
+
+                    <p>
+                        More distance plus lower orbital speed means the
+                        planet needs more time to complete one orbit.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Third law simulator -->
+
+            <div class="experiment-card third-law-experiment">
+
+                <div class="experiment-header">
+
+                    <div>
+
+                        <span class="experiment-tag">
+                            INTERACTIVE EXPERIMENT
+                        </span>
+
+                        <h3>Distance vs Orbital Period</h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="third-law-layout">
+
+                    <div class="third-controls">
+
+                        <label for="orbit-distance">
+                            Relative orbital size
+                        </label>
+
+                        <input
+                            type="range"
+                            id="orbit-distance"
+                            min="1"
+                            max="10"
+                            value="1"
+                            step="0.1"
+                        >
+
+                        <div class="slider-value">
+                            <span id="orbit-distance-value">1.0</span>
+                            <span>AU</span>
+                        </div>
+
+
+                        <div class="planet-stats">
+
+                            <div>
+                                <span>Orbital period</span>
+                                <strong id="period-value">
+                                    1.00 years
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>T²</span>
+                                <strong id="period-square">
+                                    1.00
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>a³</span>
+                                <strong id="distance-cube">
+                                    1.00
+                                </strong>
+                            </div>
+
+                            <div>
+                                <span>T² / a³</span>
+                                <strong id="kepler-ratio">
+                                    1.00
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="third-visual">
+
+                        <canvas id="third-law-canvas"></canvas>
+
+                        <div class="orbit-label">
+                            Larger orbit → longer period
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="experiment-explanation" id="third-law-why">
+
+                    When orbital size increases, the orbital period increases
+                    strongly because Kepler's law gives
+                    T ∝ a<sup>3/2</sup>.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             KEPLER VS NEWTON
+        ================================================== -->
+
+        <section class="connection-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">FROM KEPLER TO NEWTON</span>
+
+                <h2>Kepler described it. Newton explained it.</h2>
+
+                <p>
+                    This is one of the most beautiful connections in
+                    classical physics.
+                </p>
+
+            </div>
+
+
+            <div class="kepler-newton-grid">
+
+                <div class="scientist-card kepler-card">
+
+                    <div class="scientist-symbol">K</div>
+
+                    <h3>Kepler</h3>
+
+                    <p>
+                        Used astronomical observations to discover
+                        mathematical patterns in planetary motion.
+                    </p>
+
+                    <div class="scientist-role">
+                        WHAT HAPPENS?
+                    </div>
+
+                </div>
+
+
+                <div class="connection-symbol">
+                    →
+                </div>
+
+
+                <div class="scientist-card newton-card">
+
+                    <div class="scientist-symbol">N</div>
+
+                    <h3>Newton</h3>
+
+                    <p>
+                        Developed the law of universal gravitation and
+                        showed how gravity can explain orbital motion.
+                    </p>
+
+                    <div class="scientist-role">
+                        WHY IT HAPPENS
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="gravity-formula-card">
+
+                <span>Newton's gravitational law</span>
+
+                <strong>
+                    F = GMm / r²
+                </strong>
+
+                <p>
+                    The gravitational force becomes weaker as the distance
+                    between the two masses increases.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CIRCULAR ORBIT MATHEMATICS
+        ================================================== -->
+
+        <section class="math-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">EXPLORE DEEPER</span>
+
+                <h2>Where does orbital speed come from?</h2>
+
+                <p>
+                    For a simplified circular orbit, gravity supplies the
+                    inward force required to continuously bend the motion.
+                </p>
+
+            </div>
+
+
+            <div class="derivation-card">
+
+                <div class="derivation-step">
+
+                    <span>1</span>
+
+                    <p>
+                        Gravitational force
+                    </p>
+
+                    <strong>
+                        F = GMm/r²
+                    </strong>
+
+                </div>
+
+
+                <div class="derivation-arrow">↓</div>
+
+
+                <div class="derivation-step">
+
+                    <span>2</span>
+
+                    <p>
+                        Required centripetal force
+                    </p>
+
+                    <strong>
+                        F = mv²/r
+                    </strong>
+
+                </div>
+
+
+                <div class="derivation-arrow">↓</div>
+
+
+                <div class="derivation-step">
+
+                    <span>3</span>
+
+                    <p>
+                        Equate the forces for a circular orbit
+                    </p>
+
+                    <strong>
+                        GMm/r² = mv²/r
+                    </strong>
+
+                </div>
+
+
+                <div class="derivation-arrow">↓</div>
+
+
+                <div class="derivation-final">
+
+                    <span>Therefore</span>
+
+                    <strong>
+                        v = √(GM/r)
+                    </strong>
+
+                    <p>
+                        Larger orbital radius → lower circular orbital speed.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="math-note">
+
+                ⚠️ This derivation is for an idealized circular orbit.
+                Real planetary orbits are generally elliptical, so the
+                orbital speed changes along the orbit.
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SOLAR SYSTEM SIMULATOR
+        ================================================== -->
+
+        <section class="simulator-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">VIRTUAL LAB</span>
+
+                <h2>Explore the Solar System</h2>
+
+                <p>
+                    Select a planet and observe how distance, orbital speed
+                    and orbital period are connected.
+                </p>
+
+            </div>
+
+
+            <div class="solar-lab glass-card">
+
+                <div class="solar-controls">
+
+                    <label for="planet-select">
+                        Select planet
+                    </label>
+
+                    <select id="planet-select">
+
+                        <option value="mercury">Mercury</option>
+                        <option value="venus">Venus</option>
+                        <option value="earth" selected>Earth</option>
+                        <option value="mars">Mars</option>
+                        <option value="jupiter">Jupiter</option>
+                        <option value="saturn">Saturn</option>
+
+                    </select>
+
+
+                    <label for="time-speed">
+                        Simulation speed
+                    </label>
+
+                    <input
+                        type="range"
+                        id="time-speed"
+                        min="0.2"
+                        max="8"
+                        value="1"
+                        step="0.1"
+                    >
+
+                    <span id="time-speed-value">
+                        1×
+                    </span>
+
+
+                    <div class="toggle-row">
+
+                        <button
+                            id="solar-pause"
+                            class="sim-button"
+                        >
+                            Pause
+                        </button>
+
+                        <button
+                            id="solar-reset"
+                            class="sim-button secondary"
+                        >
+                            Reset
+                        </button>
+
+                        <button
+                            id="trail-toggle"
+                            class="sim-button secondary"
+                        >
+                            Trails: ON
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="solar-canvas-wrap">
+
+                    <canvas id="solar-system-canvas"></canvas>
+
+                </div>
+
+
+                <div class="solar-data">
+
+                    <div class="solar-data-box">
+
+                        <span>Distance from Sun</span>
+
+                        <strong id="solar-distance">
+                            1.00 AU
+                        </strong>
+
+                    </div>
+
+
+                    <div class="solar-data-box">
+
+                        <span>Relative orbital speed</span>
+
+                        <strong id="solar-speed">
+                            1.00
+                        </strong>
+
+                    </div>
+
+
+                    <div class="solar-data-box">
+
+                        <span>Orbital period</span>
+
+                        <strong id="solar-period">
+                            1.00 years
+                        </strong>
+
+                    </div>
+
+
+                    <div class="solar-data-box">
+
+                        <span>Kepler ratio</span>
+
+                        <strong id="solar-ratio">
+                            1.00
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="solar-why" id="solar-why">
+
+                    Earth is our reference planet.
+                    Its orbital distance is 1 AU and its orbital period
+                    is approximately 1 year.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MOON + SATELLITES
+        ================================================== -->
+
+        <section class="applications-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">REAL WORLD</span>
+
+                <h2>Where do we use these ideas?</h2>
+
+            </div>
+
+
+            <div class="application-grid">
+
+                <article class="application-card">
+
+                    <span>🌍</span>
+
+                    <h3>Earth</h3>
+
+                    <p>
+                        Earth's orbit around the Sun gives us a natural
+                        example of orbital motion and Kepler's laws.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <span>🌙</span>
+
+                    <h3>Moon</h3>
+
+                    <p>
+                        The Moon's orbital motion around Earth is another
+                        gravitational orbital system.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <span>🛰️</span>
+
+                    <h3>Artificial satellites</h3>
+
+                    <p>
+                        Engineers use orbital mechanics to determine
+                        satellite orbits, periods and velocities.
+                    </p>
+
+                </article>
+
+
+                <article class="application-card">
+
+                    <span>🚀</span>
+
+                    <h3>Space missions</h3>
+
+                    <p>
+                        Spacecraft trajectories are designed using
+                        gravitational physics and orbital mechanics.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             RELATIONSHIP TABLE
+        ================================================== -->
+
+        <section class="relationship-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">SEE THE PATTERN</span>
+
+                <h2>What changes when one quantity changes?</h2>
+
+            </div>
+
+
+            <div class="relationship-table-wrap">
+
+                <table class="relationship-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>If...</th>
+                            <th>Then...</th>
+                            <th>Why?</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Orbital size ↑</td>
+                            <td>Period ↑</td>
+                            <td>
+                                T² ∝ a³
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Orbital radius ↑</td>
+                            <td>Circular orbital speed ↓</td>
+                            <td>
+                                v = √(GM/r)
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Planet near Sun</td>
+                            <td>Speed ↑</td>
+                            <td>
+                                Kepler's equal-area law
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Planet far from Sun</td>
+                            <td>Speed ↓</td>
+                            <td>
+                                Equal areas in equal times
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             MISCONCEPTIONS
+        ================================================== -->
+
+        <section class="misconceptions-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">DON'T MEMORIZE THE WRONG IDEA</span>
+
+                <h2>Common misconceptions</h2>
+
+            </div>
+
+
+            <div class="misconception-grid">
+
+                <article>
+
+                    <span>✕</span>
+
+                    <h3>“Planetary orbits are perfect circles.”</h3>
+
+                    <p>
+                        Real planetary orbits are generally elliptical,
+                        although some can be close to circular.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span>✕</span>
+
+                    <h3>“Inertia is a force pushing Earth outward.”</h3>
+
+                    <p>
+                        Inertia is not a separate outward force. It describes
+                        the tendency of motion to continue without a net force.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span>✕</span>
+
+                    <h3>“Gravity stops acting once orbit begins.”</h3>
+
+                    <p>
+                        Gravity is continuously acting and continuously
+                        influencing the trajectory.
+                    </p>
+
+                </article>
+
+
+                <article>
+
+                    <span>✕</span>
+
+                    <h3>“Farther planet means faster orbit.”</h3>
+
+                    <p>
+                        For circular orbits around the same central mass,
+                        greater orbital radius means lower orbital speed.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CHALLENGE
+        ================================================== -->
+
+        <section class="challenge-section">
+
+            <div class="challenge-card">
+
+                <span class="challenge-label">
+                    🧠 PHYSICS CHALLENGE
+                </span>
+
+                <h2>
+                    If a planet's orbital size becomes 4 times larger,
+                    what happens to its period?
+                </h2>
+
+                <p>
+                    Use Kepler's Third Law:
+                </p>
+
+                <div class="challenge-formula">
+                    T² ∝ a³
+                </div>
+
+
+                <div class="challenge-options">
+
+                    <button data-answer="2">
+                        2×
+                    </button>
+
+                    <button data-answer="4">
+                        4×
+                    </button>
+
+                    <button data-answer="8">
+                        8×
+                    </button>
+
+                    <button data-answer="16">
+                        16×
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="challenge-result"
+                    class="challenge-result"
+                >
+                    Choose an answer.
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SUMMARY
+        ================================================== -->
+
+        <section class="summary-section">
+
+            <div class="section-heading">
+
+                <span class="section-tag">CHAPTER SUMMARY</span>
+
+                <h2>Remember the logic, not just the formulas.</h2>
+
+            </div>
+
+
+            <div class="summary-grid">
+
+                <div class="summary-card">
+
+                    <span>01</span>
+
+                    <h3>Kepler 1</h3>
+
+                    <p>
+                        Planetary orbits are elliptical with the Sun at
+                        one focus.
+                    </p>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span>02</span>
+
+                    <h3>Kepler 2</h3>
+
+                    <p>
+                        Equal areas are swept in equal times, so orbital
+                        speed varies along an elliptical orbit.
+                    </p>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span>03</span>
+
+                    <h3>Kepler 3</h3>
+
+                    <p>
+                        For planets around the same star,
+                        T² ∝ a³.
+                    </p>
+
+                </div>
+
+
+                <div class="summary-card">
+
+                    <span>04</span>
+
+                    <h3>Newton</h3>
+
+                    <p>
+                        Gravity provides the physical explanation for
+                        orbital motion.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="final-logic">
+
+                <span>Observe</span>
+                <b>→</b>
+                <span>Question</span>
+                <b>→</b>
+                <span>Find pattern</span>
+                <b>→</b>
+                <span>Build law</span>
+                <b>→</b>
+                <span>Explain with physics</span>
+
+            </div>
+
+        </section>
+
+    </main>
+<!--ENTER NEXT TOPIC-->
+<div><a href="../class 10/gravitation.html">⚡ENTER NEXT TOPIC</a></div>
+
+    <!-- Scripts -->
+
+    <script src="../../js/core/animation.js"></script>
+    <script src="../../js/core/canvas.js"></script>
+    <script src="../../js/core/equation.js"></script>
+    <script src="../../js/core/graph.js"></script>
+    <script src="../../js/core/simulation.js"></script>
+
+    <script src="../../js/physics/ch1js/planetary-motion.js"></script>
+
+    <script src="../../js/main.js"></script>
+
+</body>
+</html>

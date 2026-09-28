@@ -1,0 +1,1412 @@
+/* =========================================================
+   GRAVITATION — CHAPTER 06
+   ========================================================= */
+
+:root {
+    --grav-cyan: #22d3ee;
+    --grav-blue: #38bdf8;
+    --grav-purple: #a855f7;
+    --grav-pink: #ec4899;
+    --grav-orange: #fb923c;
+    --grav-yellow: #facc15;
+    --grav-green: #34d399;
+    --grav-red: #fb7185;
+
+    --grav-bg: #070b1d;
+    --grav-card: rgba(15, 23, 55, 0.78);
+    --grav-border: rgba(148, 163, 184, 0.18);
+    --grav-text: #f8fafc;
+    --grav-muted: #a8b4cc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--grav-text);
+    background:
+        radial-gradient(circle at 10% 10%, rgba(34, 211, 238, 0.08), transparent 28%),
+        radial-gradient(circle at 90% 20%, rgba(168, 85, 247, 0.10), transparent 30%),
+        radial-gradient(circle at 50% 90%, rgba(236, 72, 153, 0.07), transparent 30%),
+        var(--grav-bg);
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   SPARK BACKGROUND
+   ========================================================= */
+
+#spark-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.75;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.chapter-hero {
+    position: relative;
+    min-height: 760px;
+    padding: 120px 7vw 90px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 50px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.chapter-hero::before {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 650px;
+    right: -220px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(34, 211, 238, 0.18),
+            rgba(59, 130, 246, 0.07) 40%,
+            transparent 70%
+        );
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.chapter-number {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid rgba(34, 211, 238, 0.35);
+    border-radius: 999px;
+    color: var(--grav-cyan);
+    background: rgba(34, 211, 238, 0.07);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+}
+
+.hero-content h1 {
+    margin: 20px 0 12px;
+    font-size: clamp(4rem, 10vw, 8.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.07em;
+    background: linear-gradient(
+        110deg,
+        #ffffff,
+        #67e8f9,
+        #60a5fa,
+        #c084fc
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-subtitle {
+    max-width: 760px;
+    font-size: clamp(1.35rem, 2.7vw, 2rem);
+    line-height: 1.35;
+    font-weight: 700;
+}
+
+.hero-description {
+    max-width: 700px;
+    color: var(--grav-muted);
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.hero-button,
+.sim-button,
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 14px;
+    padding: 13px 20px;
+    color: #06101d;
+    background: linear-gradient(
+        135deg,
+        var(--grav-cyan),
+        var(--grav-blue)
+    );
+    font-weight: 900;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+.hero-button {
+    margin-top: 25px;
+}
+
+.hero-button:hover,
+.sim-button:hover,
+.secondary-button:hover {
+    transform: translateY(-3px);
+    filter: brightness(1.08);
+    box-shadow: 0 15px 40px rgba(34, 211, 238, 0.2);
+}
+
+.secondary-button {
+    background: rgba(148, 163, 184, 0.13);
+    color: white;
+    border: 1px solid var(--grav-border);
+}
+
+/* =========================================================
+   HERO GRAVITY VISUAL
+   ========================================================= */
+
+.hero-gravity-visual {
+    position: relative;
+    width: min(470px, 80vw);
+    aspect-ratio: 1;
+    margin: auto;
+}
+
+.gravity-earth {
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #7dd3fc 0 8%,
+            transparent 9%
+        ),
+        radial-gradient(
+            circle at 65% 55%,
+            #34d399 0 13%,
+            transparent 14%
+        ),
+        radial-gradient(
+            circle at 30% 70%,
+            #22c55e 0 10%,
+            transparent 11%
+        ),
+        linear-gradient(140deg, #2563eb, #0ea5e9 55%, #164e63);
+    box-shadow:
+        0 0 40px rgba(34, 211, 238, 0.4),
+        0 0 120px rgba(37, 99, 235, 0.18);
+    animation: earthFloat 4s ease-in-out infinite;
+}
+
+.gravity-earth::after {
+    content: "";
+    position: absolute;
+    inset: -20px;
+    border: 1px solid rgba(34, 211, 238, 0.18);
+    border-radius: 50%;
+    box-shadow: 0 0 30px rgba(34, 211, 238, 0.08);
+}
+
+.falling-object {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    color: var(--grav-orange);
+    font-size: 3.2rem;
+    filter: drop-shadow(0 0 15px rgba(251, 146, 60, 0.7));
+    animation: fallingObject 2.8s ease-in-out infinite;
+}
+
+.gravity-arrow {
+    position: absolute;
+    left: 50%;
+    top: 115px;
+    transform: translateX(-50%);
+    color: var(--grav-yellow);
+    font-size: 3rem;
+    animation: arrowPulse 1.2s ease-in-out infinite;
+}
+
+.hero-orbit {
+    position: absolute;
+    border: 1px solid rgba(34, 211, 238, 0.15);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.orbit-one {
+    width: 440px;
+    height: 260px;
+    right: 2%;
+    top: 20%;
+    transform: rotate(-18deg);
+    animation: orbitRotate 12s linear infinite;
+}
+
+.orbit-two {
+    width: 580px;
+    height: 350px;
+    right: -10%;
+    top: 13%;
+    transform: rotate(22deg);
+    animation: orbitRotateReverse 18s linear infinite;
+}
+
+/* =========================================================
+   GENERAL SECTIONS
+   ========================================================= */
+
+.section {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 95px 0;
+}
+
+.section-heading {
+    max-width: 800px;
+    margin-bottom: 45px;
+}
+
+.section-tag {
+    color: var(--grav-cyan);
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    font-weight: 900;
+}
+
+.section-heading h2,
+.question-card h2,
+.story-card h2,
+.challenge-card h2 {
+    margin: 12px 0 15px;
+    font-size: clamp(2.1rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.section-heading p {
+    color: var(--grav-muted);
+    line-height: 1.75;
+}
+
+/* =========================================================
+   LEARNING MAP
+   ========================================================= */
+
+.learning-map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.map-node {
+    min-width: 145px;
+    padding: 20px;
+    border: 1px solid var(--grav-border);
+    border-radius: 18px;
+    background: var(--grav-card);
+    backdrop-filter: blur(14px);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.map-node:hover {
+    transform: translateY(-7px);
+    border-color: rgba(34, 211, 238, 0.4);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.map-node strong {
+    display: block;
+    color: var(--grav-cyan);
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+}
+
+.map-node span {
+    color: #dbeafe;
+    font-size: 0.85rem;
+}
+
+.map-line {
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        var(--grav-cyan),
+        var(--grav-purple)
+    );
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.question-card,
+.story-card,
+.info-card,
+.gravity-simulator,
+.g-explanation,
+.derivation-box,
+.weight-simulator,
+.altitude-simulator,
+.depth-card,
+.orbit-visual,
+.challenge-card {
+    border: 1px solid var(--grav-border);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 30, 68, 0.82),
+            rgba(9, 15, 38, 0.86)
+        );
+    border-radius: 28px;
+    backdrop-filter: blur(18px);
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+}
+
+.question-card,
+.story-card,
+.challenge-card {
+    padding: clamp(25px, 5vw, 55px);
+}
+
+.observation-grid,
+.concept-grid,
+.law-grid,
+.application-grid,
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.observation-box,
+.info-card,
+.law-card,
+.application-grid article,
+.summary-card {
+    padding: 28px;
+    border: 1px solid var(--grav-border);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.035);
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease;
+}
+
+.observation-box:hover,
+.info-card:hover,
+.law-card:hover,
+.application-grid article:hover,
+.summary-card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(34, 211, 238, 0.35);
+    background: rgba(34, 211, 238, 0.055);
+}
+
+.big-icon,
+.card-icon,
+.application-icon,
+.compare-icon {
+    font-size: 2.4rem;
+    margin-bottom: 18px;
+}
+
+.observation-box h3,
+.info-card h3,
+.law-card h3,
+.application-grid h3,
+.summary-card strong {
+    margin-top: 0;
+}
+
+.observation-box p,
+.info-card p,
+.law-card p,
+.application-grid p,
+.summary-card p {
+    color: var(--grav-muted);
+    line-height: 1.7;
+}
+
+/* =========================================================
+   WHY BOX
+   ========================================================= */
+
+.why-box,
+.highlight-box {
+    margin-top: 30px;
+    padding: 25px;
+    border-left: 4px solid var(--grav-cyan);
+    border-radius: 0 18px 18px 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(34, 211, 238, 0.09),
+            rgba(34, 211, 238, 0.025)
+        );
+}
+
+.why-box h3,
+.highlight-box strong {
+    color: #a5f3fc;
+}
+
+.why-box p,
+.highlight-box p {
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   EQUATIONS
+   ========================================================= */
+
+.equation-large {
+    margin: 20px 0;
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(0, 0, 0, 0.25);
+    color: var(--grav-yellow);
+    font-family: "Times New Roman", serif;
+    font-size: clamp(1.5rem, 4vw, 2.4rem);
+    text-align: center;
+}
+
+.equation-row,
+.logic-chain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.logic-chain > div {
+    padding: 15px 20px;
+    border-radius: 14px;
+    background: rgba(34, 211, 238, 0.08);
+    border: 1px solid rgba(34, 211, 238, 0.18);
+}
+
+.logic-chain span {
+    color: var(--grav-orange);
+    font-size: 1.5rem;
+}
+
+.equation-row span {
+    padding: 14px 20px;
+    color: var(--grav-yellow);
+    border: 1px solid rgba(250, 204, 21, 0.2);
+    background: rgba(250, 204, 21, 0.05);
+    border-radius: 14px;
+    font-family: "Times New Roman", serif;
+    font-size: 1.3rem;
+}
+
+/* =========================================================
+   STORY
+   ========================================================= */
+
+.apple-moon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    margin: 45px 0;
+}
+
+.story-object {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 4rem;
+}
+
+.story-object span {
+    font-size: 0.9rem;
+    color: var(--grav-muted);
+}
+
+.story-arrow {
+    font-size: 2rem;
+    color: var(--grav-cyan);
+}
+
+/* =========================================================
+   LAW
+   ========================================================= */
+
+.formula-main {
+    padding: 50px;
+    margin-bottom: 30px;
+    border-radius: 28px;
+    text-align: center;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(168, 85, 247, 0.15),
+            rgba(34, 211, 238, 0.04) 45%,
+            transparent 70%
+        );
+    border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.formula {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    font-family: "Times New Roman", serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    color: var(--grav-yellow);
+}
+
+.fraction {
+    display: inline-flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 1.05;
+}
+
+.fraction span:first-child {
+    border-bottom: 2px solid currentColor;
+    padding: 0 15px 8px;
+}
+
+.fraction span:last-child {
+    padding-top: 8px;
+}
+
+.formula-main p {
+    max-width: 700px;
+    margin: 25px auto 0;
+    color: var(--grav-muted);
+    line-height: 1.7;
+}
+
+.law-symbol {
+    margin-top: 18px;
+    color: var(--grav-yellow);
+    font-family: "Times New Roman", serif;
+    font-size: 1.5rem;
+}
+
+/* =========================================================
+   GRAVITY SIMULATOR
+   ========================================================= */
+
+.gravity-simulator {
+    padding: 28px;
+}
+
+.sim-controls {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.control-group label,
+.altitude-controls label,
+.depth-controls label,
+.freefall-controls label,
+.weight-simulator > label {
+    display: block;
+    color: #dbeafe;
+    margin-bottom: 10px;
+}
+
+.control-group strong,
+.altitude-controls strong,
+.depth-controls strong,
+.freefall-controls strong,
+.weight-simulator > label strong {
+    color: var(--grav-cyan);
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--grav-cyan);
+    cursor: pointer;
+}
+
+.sim-results,
+.altitude-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.result-card,
+.altitude-results > div,
+.weight-result {
+    padding: 20px;
+    border-radius: 18px;
+    border: 1px solid var(--grav-border);
+    background: rgba(0, 0, 0, 0.18);
+}
+
+.result-card span,
+.altitude-results span {
+    display: block;
+    color: var(--grav-muted);
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+
+.result-card strong,
+.altitude-results strong,
+.weight-result strong {
+    color: var(--grav-yellow);
+    font-size: 1.35rem;
+}
+
+.gravity-canvas-wrap,
+.freefall-canvas-wrap,
+.orbit-visual {
+    min-height: 420px;
+    overflow: hidden;
+    border-radius: 22px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(37, 99, 235, 0.09),
+            rgba(2, 6, 23, 0.8)
+        );
+    border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+#gravity-canvas,
+#freefall-canvas,
+#moon-orbit-canvas {
+    display: block;
+    width: 100%;
+    height: 420px;
+}
+
+.dynamic-why {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 16px;
+    color: #cffafe;
+    background: rgba(34, 211, 238, 0.06);
+    border: 1px solid rgba(34, 211, 238, 0.12);
+    line-height: 1.7;
+}
+
+/* =========================================================
+   G DERIVATION
+   ========================================================= */
+
+.g-explanation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 25px;
+}
+
+.equation-card {
+    padding: 30px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.035);
+}
+
+.equation-card h3 {
+    margin-top: 0;
+}
+
+.equation-card p {
+    color: var(--grav-muted);
+    line-height: 1.7;
+}
+
+.derivation-box {
+    margin-top: 25px;
+    padding: 35px;
+}
+
+.derivation-box h3 {
+    margin-top: 0;
+    color: #c4b5fd;
+}
+
+.derivation-step {
+    display: flex;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.derivation-step span {
+    color: var(--grav-muted);
+}
+
+.derivation-step strong {
+    color: var(--grav-yellow);
+    font-family: "Times New Roman", serif;
+    font-size: 1.3rem;
+}
+
+.final-step {
+    border-bottom: 0;
+    border-top: 2px solid rgba(34, 211, 238, 0.3);
+}
+
+.derivation-note {
+    color: #cbd5e1;
+    line-height: 1.8;
+}
+
+/* =========================================================
+   FREE FALL
+   ========================================================= */
+
+.freefall-layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+}
+
+.freefall-controls {
+    padding: 25px;
+    border-radius: 22px;
+    border: 1px solid var(--grav-border);
+    background: var(--grav-card);
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.freefall-controls .sim-button,
+.freefall-controls .secondary-button {
+    width: 100%;
+}
+
+/* =========================================================
+   MASS WEIGHT
+   ========================================================= */
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.compare-card {
+    padding: 35px;
+    border-radius: 25px;
+    border: 1px solid var(--grav-border);
+    background: var(--grav-card);
+}
+
+.mass-card {
+    border-color: rgba(34, 211, 238, 0.25);
+}
+
+.weight-card {
+    border-color: rgba(251, 146, 60, 0.25);
+}
+
+.compare-card p {
+    color: var(--grav-muted);
+    line-height: 1.75;
+}
+
+.formula-small {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    color: var(--grav-yellow);
+    border-radius: 10px;
+    background: rgba(250, 204, 21, 0.07);
+    font-family: "Times New Roman", serif;
+    font-size: 1.3rem;
+}
+
+.weight-simulator {
+    margin-top: 25px;
+    padding: 30px;
+}
+
+.planet-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.planet-btn {
+    padding: 11px 17px;
+    border-radius: 12px;
+    border: 1px solid var(--grav-border);
+    color: #cbd5e1;
+    background: rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.planet-btn:hover,
+.planet-btn.active {
+    color: #06101d;
+    background: var(--grav-cyan);
+    border-color: var(--grav-cyan);
+}
+
+.weight-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.weight-result span {
+    color: #cbd5e1;
+}
+
+/* =========================================================
+   ALTITUDE
+   ========================================================= */
+
+.altitude-simulator {
+    padding: 30px;
+}
+
+.altitude-controls {
+    margin-bottom: 30px;
+}
+
+/* =========================================================
+   DEPTH
+   ========================================================= */
+
+.depth-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    padding: 35px;
+    align-items: center;
+}
+
+.earth-depth-visual {
+    display: grid;
+    place-items: center;
+}
+
+.depth-earth {
+    position: relative;
+    width: min(350px, 80vw);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+        radial-gradient(
+            circle at center,
+            #f97316 0 10%,
+            #ef4444 11% 20%,
+            #c2410c 21% 40%,
+            #2563eb 41% 72%,
+            #0f172a 73%
+        );
+    box-shadow:
+        0 0 50px rgba(59, 130, 246, 0.22),
+        inset 0 0 50px rgba(0, 0, 0, 0.35);
+}
+
+.depth-core {
+    position: absolute;
+    width: 20%;
+    aspect-ratio: 1;
+    left: 40%;
+    top: 40%;
+    border-radius: 50%;
+    background: #facc15;
+    box-shadow: 0 0 30px rgba(250, 204, 21, 0.5);
+}
+
+#depth-marker {
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 20px white;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+    transition: 0.2s ease;
+}
+
+.depth-controls {
+    padding: 20px;
+}
+
+.depth-result {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 17px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.depth-result span {
+    display: block;
+    color: var(--grav-muted);
+    margin-bottom: 8px;
+}
+
+.depth-result strong {
+    color: var(--grav-yellow);
+    font-size: 1.4rem;
+}
+
+/* =========================================================
+   ORBIT
+   ========================================================= */
+
+.orbit-explanation {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.orbit-step {
+    padding: 27px;
+    border-radius: 20px;
+    border: 1px solid var(--grav-border);
+    background: var(--grav-card);
+}
+
+.orbit-step > span {
+    display: inline-grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(34, 211, 238, 0.1);
+    color: var(--grav-cyan);
+    font-weight: 900;
+}
+
+.orbit-step h3 {
+    margin-bottom: 10px;
+}
+
+.orbit-step p {
+    color: var(--grav-muted);
+    line-height: 1.7;
+}
+
+.orbit-visual {
+    position: relative;
+    margin-top: 25px;
+}
+
+.orbit-caption {
+    position: absolute;
+    left: 20px;
+    bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    color: #cffafe;
+    background: rgba(2, 6, 23, 0.7);
+    border: 1px solid rgba(34, 211, 238, 0.12);
+}
+
+/* =========================================================
+   APPLICATIONS
+   ========================================================= */
+
+.application-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.application-grid article {
+    min-height: 250px;
+}
+
+/* =========================================================
+   MISCONCEPTIONS
+   ========================================================= */
+
+.misconception-list {
+    display: grid;
+    gap: 15px;
+}
+
+.misconception {
+    display: grid;
+    grid-template-columns: 55px 1fr;
+    gap: 18px;
+    align-items: start;
+    padding: 23px;
+    border: 1px solid var(--grav-border);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.025);
+}
+
+.wrong {
+    display: grid;
+    place-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: white;
+    background: rgba(251, 113, 133, 0.14);
+    border: 1px solid rgba(251, 113, 133, 0.3);
+}
+
+.misconception h3 {
+    margin: 0 0 7px;
+}
+
+.misconception p {
+    margin: 0;
+    color: var(--grav-muted);
+    line-height: 1.7;
+}
+
+/* =========================================================
+   CHALLENGE
+   ========================================================= */
+
+.challenge-card {
+    text-align: center;
+}
+
+.challenge-formula {
+    margin: 30px auto;
+    max-width: 400px;
+    padding: 22px;
+    border-radius: 18px;
+    color: var(--grav-yellow);
+    background: rgba(250, 204, 21, 0.06);
+    font-family: "Times New Roman", serif;
+    font-size: 2rem;
+}
+
+.challenge-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 700px;
+    margin: 30px auto 0;
+}
+
+.challenge-options button {
+    padding: 15px;
+    border-radius: 14px;
+    border: 1px solid var(--grav-border);
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.04);
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.challenge-options button:hover {
+    transform: translateY(-3px);
+    border-color: rgba(34, 211, 238, 0.4);
+}
+
+#challenge-feedback {
+    min-height: 30px;
+    margin-top: 20px;
+    font-weight: 800;
+}
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.summary-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.summary-card strong {
+    color: var(--grav-cyan);
+    font-size: 1.6rem;
+}
+
+.formula-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.formula-summary > div {
+    padding: 22px;
+    border-radius: 17px;
+    background: rgba(250, 204, 21, 0.045);
+    border: 1px solid rgba(250, 204, 21, 0.13);
+}
+
+.formula-summary span {
+    display: block;
+    color: var(--grav-muted);
+    font-size: 0.82rem;
+    margin-bottom: 10px;
+}
+
+.formula-summary strong {
+    color: var(--grav-yellow);
+    font-family: "Times New Roman", serif;
+    font-size: 1.3rem;
+}
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes earthFloat {
+    0%, 100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-12px);
+    }
+}
+
+@keyframes fallingObject {
+    0%, 100% {
+        top: 0;
+    }
+
+    50% {
+        top: 85px;
+    }
+}
+
+@keyframes arrowPulse {
+    0%, 100% {
+        opacity: 0.35;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(10px);
+    }
+}
+
+@keyframes orbitRotate {
+    from {
+        transform: rotate(-18deg) rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-18deg) rotate(360deg);
+    }
+}
+
+@keyframes orbitRotateReverse {
+    from {
+        transform: rotate(22deg) rotate(360deg);
+    }
+
+    to {
+        transform: rotate(22deg) rotate(0deg);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .chapter-hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        min-height: auto;
+    }
+
+    .hero-description,
+    .hero-subtitle {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-gravity-visual {
+        margin-top: 20px;
+    }
+
+    .observation-grid,
+    .concept-grid,
+    .law-grid,
+    .summary-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .application-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .sim-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .depth-card,
+    .freefall-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .orbit-explanation {
+        grid-template-columns: 1fr;
+    }
+
+    .formula-summary {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .chapter-hero {
+        padding: 90px 5vw 60px;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .observation-grid,
+    .concept-grid,
+    .law-grid,
+    .comparison-grid,
+    .application-grid,
+    .summary-grid,
+    .sim-results,
+    .altitude-results,
+    .g-explanation,
+    .formula-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .map-line {
+        display: none;
+    }
+
+    .learning-map {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .map-node {
+        min-width: 0;
+    }
+
+    .formula-main {
+        padding: 30px 15px;
+    }
+
+    .formula {
+        font-size: 3rem;
+    }
+
+    .gravity-canvas-wrap,
+    .freefall-canvas-wrap,
+    .orbit-visual {
+        min-height: 340px;
+    }
+
+    #gravity-canvas,
+    #freefall-canvas,
+    #moon-orbit-canvas {
+        height: 340px;
+    }
+
+    .apple-moon {
+        gap: 20px;
+    }
+
+    .story-object {
+        font-size: 3rem;
+    }
+
+    .challenge-options {
+        grid-template-columns: 1fr;
+    }
+
+    .depth-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 430px) {
+
+    .chapter-hero {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .section {
+        width: 91%;
+    }
+
+    .hero-gravity-visual {
+        width: 300px;
+    }
+
+    .gravity-earth {
+        width: 170px;
+        height: 170px;
+    }
+
+    .falling-object {
+        font-size: 2.5rem;
+    }
+
+    .gravity-arrow {
+        top: 85px;
+    }
+
+    .question-card,
+    .story-card,
+    .challenge-card {
+        padding: 23px;
+    }
+
+    .learning-map {
+        grid-template-columns: 1fr;
+    }
+
+    .weight-result {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .orbit-caption {
+        font-size: 0.75rem;
+    }
+}

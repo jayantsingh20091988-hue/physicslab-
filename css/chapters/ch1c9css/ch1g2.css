@@ -1,0 +1,432 @@
+/* =========================================================
+   MOTION & REFERENCE FRAME
+   Physics Lab — Kinematics Module 01
+   ========================================================= */
+
+:root {
+    --motion-accent: #38bdf8;
+    --motion-accent-2: #818cf8;
+    --motion-bg: #07111f;
+    --motion-card: rgba(255, 255, 255, 0.055);
+    --motion-border: rgba(255, 255, 255, 0.11);
+    --motion-text: #e5edf7;
+    --motion-muted: #9fb0c3;
+}
+
+body {
+    background:
+        radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.10), transparent 30%),
+        radial-gradient(circle at 85% 20%, rgba(129, 140, 248, 0.10), transparent 30%),
+        var(--motion-bg);
+    color: var(--motion-text);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.chapter-header {
+    padding: 90px 20px 70px;
+    border-bottom: 1px solid var(--motion-border);
+}
+
+.header-content {
+    width: min(1100px, 92%);
+    margin: auto;
+}
+
+.eyebrow {
+    color: var(--motion-accent);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    margin-bottom: 16px;
+}
+
+.chapter-header h1 {
+    font-size: clamp(2.4rem, 6vw, 5rem);
+    line-height: 1;
+    margin: 0 0 25px;
+}
+
+.chapter-intro {
+    max-width: 850px;
+    color: var(--motion-muted);
+    font-size: 1.12rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.chapter-container {
+    width: min(1100px, 92%);
+    margin: auto;
+}
+
+.lesson-section {
+    position: relative;
+    padding: 85px 0;
+    border-bottom: 1px solid var(--motion-border);
+}
+
+.section-number {
+    display: inline-block;
+    color: var(--motion-accent);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+}
+
+.lesson-section h2 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    margin: 0 0 20px;
+}
+
+.lesson-section p {
+    color: var(--motion-muted);
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.thinking-card,
+.interactive-card,
+.real-world-card,
+.question-card {
+    margin-top: 30px;
+    padding: 28px;
+    border: 1px solid var(--motion-border);
+    border-radius: 20px;
+    background: var(--motion-card);
+    backdrop-filter: blur(10px);
+}
+
+.thinking-card {
+    border-left: 4px solid var(--motion-accent);
+}
+
+.thinking-card h3,
+.interactive-card h3,
+.real-world-card h3 {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   GRIDS
+   ========================================================= */
+
+.comparison-grid,
+.example-grid,
+.motion-type-grid,
+.trap-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.comparison-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.example-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.motion-type-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.trap-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.concept-card,
+.small-card,
+.motion-type-grid article,
+.trap-grid > div {
+    padding: 25px;
+    border-radius: 18px;
+    background: var(--motion-card);
+    border: 1px solid var(--motion-border);
+}
+
+.concept-card h3,
+.small-card h3,
+.motion-type-grid h3,
+.trap-grid h3 {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   EXAMPLES
+   ========================================================= */
+
+.example-box,
+.observation-box {
+    margin-top: 20px;
+    padding: 15px 18px;
+    border-radius: 12px;
+    background: rgba(56, 189, 248, 0.08);
+    border: 1px solid rgba(56, 189, 248, 0.18);
+}
+
+.example-text {
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   FORMULA
+   ========================================================= */
+
+.formula-box {
+    margin: 30px 0;
+    padding: 30px;
+    border-radius: 20px;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(56, 189, 248, 0.10),
+            rgba(129, 140, 248, 0.08)
+        );
+    border: 1px solid var(--motion-border);
+    text-align: center;
+}
+
+.formula-label {
+    display: block;
+    color: var(--motion-accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 15px;
+}
+
+.formula {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: 700;
+}
+
+.mini-equation {
+    margin: 18px 0;
+    padding: 14px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CONTROLS
+   ========================================================= */
+
+.control-row,
+.experiment-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 25px 0;
+}
+
+label {
+    color: var(--motion-muted);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+select,
+button {
+    font: inherit;
+}
+
+select {
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--motion-border);
+    background: #101c2c;
+    color: white;
+}
+
+input[type="range"] {
+    width: 220px;
+    accent-color: var(--motion-accent);
+}
+
+
+/* =========================================================
+   CANVAS
+   ========================================================= */
+
+canvas {
+    display: block;
+    width: 100%;
+    height: 320px;
+    margin-top: 25px;
+    border-radius: 16px;
+    border: 1px solid var(--motion-border);
+    background: rgba(0, 0, 0, 0.20);
+}
+
+
+/* =========================================================
+   CLASSIFIER
+   ========================================================= */
+
+.classifier {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.classifier button,
+.question-card button {
+    cursor: pointer;
+}
+
+#check-motion {
+    width: fit-content;
+    padding: 11px 20px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--motion-accent);
+    color: #04101b;
+    font-weight: 800;
+}
+
+.answer-box {
+    padding: 16px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--motion-muted);
+}
+
+
+/* =========================================================
+   QUESTIONS
+   ========================================================= */
+
+.challenge-section {
+    border-bottom: 0;
+}
+
+.question-card {
+    margin-bottom: 25px;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.options button {
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid var(--motion-border);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--motion-text);
+    text-align: left;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.options button:hover {
+    transform: translateY(-2px);
+    border-color: var(--motion-accent);
+}
+
+.hint {
+    min-height: 24px;
+    margin-top: 18px;
+    color: var(--motion-accent) !important;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   SUMMARY
+   ========================================================= */
+
+.summary-section {
+    padding-bottom: 110px;
+}
+
+.summary-list {
+    display: grid;
+    gap: 14px;
+    margin-top: 25px;
+    padding-left: 20px;
+}
+
+.summary-list li {
+    color: var(--motion-muted);
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .comparison-grid,
+    .example-grid,
+    .motion-type-grid,
+    .trap-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .options {
+        grid-template-columns: 1fr;
+    }
+
+    .chapter-header {
+        padding: 65px 20px 50px;
+    }
+
+    .lesson-section {
+        padding: 60px 0;
+    }
+}
+
+
+@media (max-width: 520px) {
+
+    .chapter-container {
+        width: 90%;
+    }
+
+    .thinking-card,
+    .interactive-card,
+    .real-world-card,
+    .question-card {
+        padding: 20px;
+    }
+
+    canvas {
+        height: 250px;
+    }
+
+    input[type="range"] {
+        width: 100%;
+    }
+
+    .experiment-controls {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Interactive Physics Lab chapter on Forces and Equilibrium. Learn force, Newton's laws, free body diagrams, net force and equilibrium through explanations and simulations.">
+
+    <title>Forces & Equilibrium | Physics Lab</title>
+
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/simulation.css">
+    <link rel="stylesheet" href="../../css/chapters/ch1css/forces-equilibrium.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         BACKGROUND EFFECT
+    ========================================================== -->
+
+    <canvas id="spark-background"></canvas>
+
+    <div class="page-glow glow-one"></div>
+    <div class="page-glow glow-two"></div>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header class="fe-header">
+
+        <div class="fe-header-inner">
+
+            <a href="../../index.html" class="fe-logo">
+                <span class="logo-orbit">⚛</span>
+                <span>Physics Lab</span>
+            </a>
+
+            <a href="../../index.html" class="back-home">
+                ← Physics Lab
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <main class="fe-page">
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <section class="fe-hero">
+
+            <div class="hero-content">
+
+                <div class="chapter-label">
+                    TOPIC 02 • MECHANICS
+                </div>
+
+                <h1>
+                    Forces
+                    <span>&</span>
+                    Equilibrium
+                </h1>
+
+                <p class="hero-subtitle">
+                    Why do objects move, stop, accelerate, slow down,
+                    or remain perfectly balanced?
+                </p>
+
+                <p class="hero-description">
+                    Force is one of the most important ideas in physics.
+                    Instead of simply memorising formulas, we will discover
+                    what a force actually does, why Newton's laws work,
+                    how forces combine, and why an object can have forces
+                    acting on it without accelerating.
+                </p>
+
+                <div class="hero-pills">
+
+                    <span>⚡ Force</span>
+                    <span>🧠 Newton's Laws</span>
+                    <span>🎯 Net Force</span>
+                    <span>⚖️ Equilibrium</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="force-orb">
+
+                    <div class="orb-ring ring-one"></div>
+                    <div class="orb-ring ring-two"></div>
+
+                    <div class="orb-core">
+                        <span>F</span>
+                    </div>
+
+                    <div class="force-arrow arrow-right">
+                        → F
+                    </div>
+
+                    <div class="force-arrow arrow-left">
+                        F ←
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             LEARNING MAP
+        ====================================================== -->
+
+        <section class="learning-map">
+
+            <div class="section-heading">
+                <span>YOUR JOURNEY</span>
+                <h2>From a Push to Equilibrium</h2>
+            </div>
+
+            <div class="map-grid">
+
+                <div class="map-card">
+                    <b>01</b>
+                    <span>What?</span>
+                    <p>Understand force.</p>
+                </div>
+
+                <div class="map-card">
+                    <b>02</b>
+                    <span>Why?</span>
+                    <p>Understand what force changes.</p>
+                </div>
+
+                <div class="map-card">
+                    <b>03</b>
+                    <span>How?</span>
+                    <p>Connect force with acceleration.</p>
+                </div>
+
+                <div class="map-card">
+                    <b>04</b>
+                    <span>Experiment</span>
+                    <p>Apply forces interactively.</p>
+                </div>
+
+                <div class="map-card">
+                    <b>05</b>
+                    <span>Balance</span>
+                    <p>Discover equilibrium.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             01 FORCE
+        ====================================================== -->
+
+        <section class="concept-section">
+
+            <div class="concept-number">01</div>
+
+            <div class="concept-content">
+
+                <div class="section-heading">
+                    <span>THE BASIC IDEA</span>
+                    <h2>What Is Force?</h2>
+                </div>
+
+                <div class="explanation-grid">
+
+                    <article class="info-card what-card">
+
+                        <div class="card-icon">🔵</div>
+
+                        <h3>What?</h3>
+
+                        <p>
+                            A force is a push or pull that can change
+                            the motion or shape of an object.
+                        </p>
+
+                    </article>
+
+
+                    <article class="info-card why-card">
+
+                        <div class="card-icon">💡</div>
+
+                        <h3>Why do we need force?</h3>
+
+                        <p>
+                            An object does not automatically change its
+                            motion. To accelerate, slow down, stop,
+                            start or change direction, an unbalanced
+                            force is required.
+                        </p>
+
+                    </article>
+
+
+                    <article class="info-card how-card">
+
+                        <div class="card-icon">⚙️</div>
+
+                        <h3>How does it work?</h3>
+
+                        <p>
+                            A force interacts with an object's mass.
+                            The result of this interaction is a change
+                            in velocity, which we call acceleration.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <div class="logic-box">
+
+                    <div class="logic-title">
+                        🧠 Think About It
+                    </div>
+
+                    <p>
+                        Imagine a football lying on the ground.
+                    </p>
+
+                    <div class="logic-flow">
+
+                        <span>Ball at rest</span>
+                        <b>→</b>
+                        <span>Kick it</span>
+                        <b>→</b>
+                        <span>Force acts</span>
+                        <b>→</b>
+                        <span>Velocity changes</span>
+
+                    </div>
+
+                    <p class="why-line">
+                        <strong>WHY?</strong>
+                        Because the kick provides an external force
+                        that changes the ball's motion.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FORCE TYPES
+        ====================================================== -->
+
+        <section class="force-types-section">
+
+            <div class="section-heading center-heading">
+
+                <span>FORCES AROUND YOU</span>
+
+                <h2>Different Forces</h2>
+
+                <p>
+                    Forces may look different, but they can all be
+                    represented as pushes or pulls.
+                </p>
+
+            </div>
+
+
+            <div class="force-type-grid">
+
+                <article class="force-type-card">
+                    <div class="force-type-icon">🫸</div>
+                    <h3>Applied Force</h3>
+                    <p>
+                        A force directly applied by a person or object.
+                    </p>
+                    <small>
+                        Example: pushing a box.
+                    </small>
+                </article>
+
+
+                <article class="force-type-card">
+                    <div class="force-type-icon">🌍</div>
+                    <h3>Gravity</h3>
+                    <p>
+                        The attractive force between masses.
+                    </p>
+                    <small>
+                        Example: Earth pulling objects downward.
+                    </small>
+                </article>
+
+
+                <article class="force-type-card">
+                    <div class="force-type-icon">🧤</div>
+                    <h3>Friction</h3>
+                    <p>
+                        A force that opposes relative motion between
+                        surfaces.
+                    </p>
+                    <small>
+                        Example: brakes slowing a bicycle.
+                    </small>
+                </article>
+
+
+                <article class="force-type-card">
+                    <div class="force-type-icon">🪢</div>
+                    <h3>Tension</h3>
+                    <p>
+                        A pulling force transmitted through a stretched
+                        string, rope or cable.
+                    </p>
+                    <small>
+                        Example: a hanging lamp supported by a cable.
+                    </small>
+                </article>
+
+
+                <article class="force-type-card">
+                    <div class="force-type-icon">⬆️</div>
+                    <h3>Normal Force</h3>
+                    <p>
+                        A support force exerted by a surface on an object.
+                    </p>
+                    <small>
+                        Example: a table supporting a book.
+                    </small>
+                </article>
+
+
+                <article class="force-type-card">
+                    <div class="force-type-icon">🧲</div>
+                    <h3>Magnetic Force</h3>
+                    <p>
+                        A non-contact force produced by magnetic fields.
+                    </p>
+                    <small>
+                        Example: a magnet attracting iron.
+                    </small>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             NEWTON FIRST LAW
+        ====================================================== -->
+
+        <section class="law-section">
+
+            <div class="law-badge">
+                NEWTON'S FIRST LAW
+            </div>
+
+            <div class="law-layout">
+
+                <div class="law-explanation">
+
+                    <h2>Why doesn't an object simply change its motion?</h2>
+
+                    <p>
+                        Newton's First Law describes <strong>inertia</strong>.
+                    </p>
+
+                    <div class="big-statement">
+                        An object resists a change in its state of motion.
+                    </div>
+
+                    <h3>But why?</h3>
+
+                    <p>
+                        If the net external force is zero, there is no
+                        unbalanced interaction capable of changing the
+                        object's velocity.
+                    </p>
+
+                    <div class="equation-card">
+
+                        <span>Newton's First Law condition</span>
+
+                        <strong>ΣF = 0</strong>
+
+                        <small>
+                            No net force → no acceleration
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="law-example">
+
+                    <div class="example-label">
+                        REAL-WORLD EXAMPLE
+                    </div>
+
+                    <div class="car-scene">
+
+                        <div class="road"></div>
+
+                        <div class="car">
+                            🚗
+                        </div>
+
+                        <div class="motion-lines">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+
+                    </div>
+
+                    <p>
+                        A moving car tends to keep moving unless an
+                        external unbalanced force changes its motion.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             NEWTON SECOND LAW
+        ====================================================== -->
+
+        <section class="second-law-section">
+
+            <div class="section-heading">
+
+                <span>THE MATHEMATICAL CONNECTION</span>
+
+                <h2>Newton's Second Law</h2>
+
+            </div>
+
+
+            <div class="why-formula">
+
+                <div class="formula-question">
+                    ❓ Why does
+                    <strong>F = ma</strong>
+                    exist?
+                </div>
+
+                <p>
+                    Newton's second law tells us how the motion of an
+                    object responds to an unbalanced force.
+                </p>
+
+                <div class="derivation">
+
+                    <div>
+                        <span>Force depends on change in momentum</span>
+                        <strong>F ∝ Δp / Δt</strong>
+                    </div>
+
+                    <div class="derivation-arrow">↓</div>
+
+                    <div>
+                        <span>Momentum</span>
+                        <strong>p = mv</strong>
+                    </div>
+
+                    <div class="derivation-arrow">↓</div>
+
+                    <div>
+                        <span>For constant mass</span>
+                        <strong>F = m × Δv / Δt</strong>
+                    </div>
+
+                    <div class="derivation-arrow">↓</div>
+
+                    <div class="final-equation">
+                        <span>Acceleration</span>
+                        <strong>F = ma</strong>
+                    </div>
+
+                </div>
+
+                <p class="why-line">
+                    <strong>WHY?</strong>
+                    The larger the force, the greater the change in
+                    velocity per second. The larger the mass, the harder
+                    it is to produce the same acceleration.
+                </p>
+
+            </div>
+
+
+            <!-- FORCE SIMULATOR -->
+
+            <div class="simulator-card">
+
+                <div class="sim-header">
+
+                    <div>
+                        <span class="sim-label">
+                            INTERACTIVE EXPERIMENT
+                        </span>
+
+                        <h3>Force → Mass → Acceleration</h3>
+                    </div>
+
+                    <div class="sim-status" id="force-status">
+                        Balanced
+                    </div>
+
+                </div>
+
+
+                <div class="sim-body">
+
+                    <div class="control-panel">
+
+                        <label>
+                            Applied Force
+                            <output id="applied-force-value">20 N</output>
+                        </label>
+
+                        <input
+                            type="range"
+                            id="applied-force"
+                            min="0"
+                            max="100"
+                            value="20"
+                            step="1"
+                        >
+
+
+                        <label>
+                            Mass
+                            <output id="mass-value">10 kg</output>
+                        </label>
+
+                        <input
+                            type="range"
+                            id="object-mass"
+                            min="1"
+                            max="50"
+                            value="10"
+                            step="1"
+                        >
+
+
+                        <label>
+                            Opposing Force
+                            <output id="opposing-force-value">0 N</output>
+                        </label>
+
+                        <input
+                            type="range"
+                            id="opposing-force"
+                            min="0"
+                            max="100"
+                            value="0"
+                            step="1"
+                        >
+
+
+                        <div class="result-stack">
+
+                            <div>
+                                <span>Net Force</span>
+                                <strong id="net-force-result">20 N</strong>
+                            </div>
+
+                            <div>
+                                <span>Acceleration</span>
+                                <strong id="acceleration-result">
+                                    2.00 m/s²
+                                </strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="simulation-stage">
+
+                        <canvas id="force-simulation"></canvas>
+
+                        <div class="simulation-legend">
+
+                            <span>
+                                <i class="legend-applied"></i>
+                                Applied Force
+                            </span>
+
+                            <span>
+                                <i class="legend-opposing"></i>
+                                Opposing Force
+                            </span>
+
+                            <span>
+                                <i class="legend-object"></i>
+                                Object
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="why-live" id="force-why">
+
+                    <strong>WHY?</strong>
+
+                    The applied force is greater than the opposing
+                    force, so the net force is not zero. Therefore,
+                    the object accelerates.
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FREE BODY DIAGRAM
+        ====================================================== -->
+
+        <section class="fbd-section">
+
+            <div class="section-heading center-heading">
+
+                <span>SEE THE FORCES</span>
+
+                <h2>Free Body Diagram</h2>
+
+                <p>
+                    A free body diagram shows all important forces acting
+                    on an object using arrows.
+                </p>
+
+            </div>
+
+
+            <div class="fbd-layout">
+
+                <div class="fbd-scene">
+
+                    <canvas id="fbd-canvas"></canvas>
+
+                </div>
+
+
+                <div class="fbd-explanation">
+
+                    <div class="fbd-force">
+                        <span class="up">↑</span>
+                        <div>
+                            <strong>Normal Force</strong>
+                            <small>Table pushes upward.</small>
+                        </div>
+                    </div>
+
+                    <div class="fbd-force">
+                        <span class="down">↓</span>
+                        <div>
+                            <strong>Weight</strong>
+                            <small>Earth pulls downward.</small>
+                        </div>
+                    </div>
+
+                    <div class="fbd-force">
+                        <span class="right">→</span>
+                        <div>
+                            <strong>Applied Force</strong>
+                            <small>A push acts toward the right.</small>
+                        </div>
+                    </div>
+
+                    <div class="fbd-force">
+                        <span class="left">←</span>
+                        <div>
+                            <strong>Friction</strong>
+                            <small>Friction opposes motion.</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="why-box">
+
+                <strong>WHY DRAW A FREE BODY DIAGRAM?</strong>
+
+                <p>
+                    Real situations can contain many forces.
+                    A free body diagram removes unnecessary details
+                    and lets us focus only on the forces acting on
+                    the chosen object.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             FORCE BALANCE
+        ====================================================== -->
+
+        <section class="equilibrium-section">
+
+            <div class="section-heading">
+
+                <span>THE BIG IDEA</span>
+
+                <h2>When Forces Balance</h2>
+
+            </div>
+
+
+            <div class="equilibrium-intro">
+
+                <div class="balance-equation">
+
+                    <span>Left side</span>
+
+                    <strong>← 50 N</strong>
+
+                </div>
+
+                <div class="balance-symbol">
+                    =
+                </div>
+
+                <div class="balance-equation">
+
+                    <strong>50 N →</strong>
+
+                    <span>Right side</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="equilibrium-message">
+
+                <div class="balance-icon">
+                    ⚖️
+                </div>
+
+                <h3>Net Force = 0</h3>
+
+                <p>
+                    The forces are present, but they cancel each other.
+                </p>
+
+                <div class="why-line">
+
+                    <strong>WHY DOESN'T IT ACCELERATE?</strong>
+
+                    <br>
+
+                    Because the total effect of all forces is zero.
+
+                </div>
+
+            </div>
+
+
+            <div class="balance-simulator">
+
+                <div class="balance-controls">
+
+                    <label>
+                        Left Force
+                        <output id="left-force-value">50 N</output>
+                    </label>
+
+                    <input
+                        type="range"
+                        id="left-force"
+                        min="0"
+                        max="100"
+                        value="50"
+                    >
+
+
+                    <label>
+                        Right Force
+                        <output id="right-force-value">50 N</output>
+                    </label>
+
+                    <input
+                        type="range"
+                        id="right-force"
+                        min="0"
+                        max="100"
+                        value="50"
+                    >
+
+                </div>
+
+
+                <div class="balance-result">
+
+                    <div class="balance-beam">
+
+                        <span id="left-arrow">←</span>
+
+                        <div class="balance-object">
+                            📦
+                        </div>
+
+                        <span id="right-arrow">→</span>
+
+                    </div>
+
+                    <strong id="balance-status">
+                        EQUILIBRIUM
+                    </strong>
+
+                    <p id="balance-explanation">
+                        Both forces are equal. Net force is zero.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             EQUILIBRIUM TYPES
+        ====================================================== -->
+
+        <section class="equilibrium-types">
+
+            <div class="section-heading center-heading">
+
+                <span>EQUILIBRIUM</span>
+
+                <h2>Static vs Dynamic</h2>
+
+            </div>
+
+
+            <div class="two-column">
+
+                <article class="equilibrium-card">
+
+                    <div class="eq-icon">🧱</div>
+
+                    <h3>Static Equilibrium</h3>
+
+                    <p>
+                        The object is at rest and the net force is zero.
+                    </p>
+
+                    <div class="eq-example">
+                        Book resting on a table.
+                    </div>
+
+                    <strong>v = 0</strong>
+
+                    <strong>ΣF = 0</strong>
+
+                </article>
+
+
+                <article class="equilibrium-card">
+
+                    <div class="eq-icon">🚆</div>
+
+                    <h3>Dynamic Equilibrium</h3>
+
+                    <p>
+                        The object moves with constant velocity while
+                        the net force remains zero.
+                    </p>
+
+                    <div class="eq-example">
+                        Train moving at constant velocity on a straight
+                        track.
+                    </div>
+
+                    <strong>v = constant</strong>
+
+                    <strong>ΣF = 0</strong>
+
+                </article>
+
+            </div>
+
+
+            <div class="important-note">
+
+                <span>⚠️</span>
+
+                <p>
+                    <strong>Important:</strong>
+                    Zero net force does NOT necessarily mean the object
+                    is stationary. It means its acceleration is zero.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             REAL WORLD
+        ====================================================== -->
+
+        <section class="real-world-section">
+
+            <div class="section-heading center-heading">
+
+                <span>PHYSICS IN REAL LIFE</span>
+
+                <h2>Where Do We See Forces?</h2>
+
+            </div>
+
+
+            <div class="real-grid">
+
+                <article>
+                    <span>🚲</span>
+                    <h3>Bicycle</h3>
+                    <p>
+                        Pedalling provides a driving force while friction
+                        and air resistance oppose motion.
+                    </p>
+                </article>
+
+                <article>
+                    <span>🛗</span>
+                    <h3>Elevator</h3>
+                    <p>
+                        Cable tension and gravitational force determine
+                        whether the elevator accelerates.
+                    </p>
+                </article>
+
+                <article>
+                    <span>🚀</span>
+                    <h3>Rocket</h3>
+                    <p>
+                        Engine thrust produces an upward force that can
+                        overcome gravitational effects.
+                    </p>
+                </article>
+
+                <article>
+                    <span>⚽</span>
+                    <h3>Football</h3>
+                    <p>
+                        A kick changes the ball's velocity by applying
+                        an external force.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             WHY QUESTIONS
+        ====================================================== -->
+
+        <section class="why-section">
+
+            <div class="section-heading">
+
+                <span>THINK LIKE A PHYSICIST</span>
+
+                <h2>Why Questions</h2>
+
+            </div>
+
+
+            <div class="why-grid">
+
+                <article>
+                    <h3>Why does a heavier object need more force?</h3>
+                    <p>
+                        For the same acceleration, F = ma. Increasing mass
+                        increases the required force.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Why does an object stop when friction acts?</h3>
+                    <p>
+                        Friction acts opposite to motion. If it produces
+                        a net force opposite to the velocity, the object
+                        slows down.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Why can many forces act without acceleration?</h3>
+                    <p>
+                        Because forces are vectors. Opposite forces can
+                        cancel so that the net force becomes zero.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Why is normal force upward?</h3>
+                    <p>
+                        A surface prevents an object from passing through
+                        it, producing a contact force perpendicular to
+                        the surface.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Why is force a vector?</h3>
+                    <p>
+                        A force has both magnitude and direction.
+                        Two equal forces in different directions can
+                        therefore have completely different effects.
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Why doesn't zero force mean zero velocity?</h3>
+                    <p>
+                        Force controls acceleration, not velocity directly.
+                        If net force is zero, velocity remains constant.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             COMMON MISCONCEPTIONS
+        ====================================================== -->
+
+        <section class="misconception-section">
+
+            <div class="section-heading center-heading">
+
+                <span>DON'T MEMORISE THE WRONG IDEA</span>
+
+                <h2>Common Misconceptions</h2>
+
+            </div>
+
+
+            <div class="misconception-grid">
+
+                <article>
+
+                    <div class="wrong">✕</div>
+
+                    <p>
+                        "If an object is moving, there must be a force
+                        in the direction of motion."
+                    </p>
+
+                    <div class="correct">
+                        ✓ Not necessarily. Constant velocity can occur
+                        when net force is zero.
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <div class="wrong">✕</div>
+
+                    <p>
+                        "If forces are acting, the object must accelerate."
+                    </p>
+
+                    <div class="correct">
+                        ✓ Only an unbalanced net force produces acceleration.
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <div class="wrong">✕</div>
+
+                    <p>
+                        "Action and reaction cancel each other."
+                    </p>
+
+                    <div class="correct">
+                        ✓ They act on different objects, so they do not
+                        cancel on the same free body diagram.
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PRACTICE
+        ====================================================== -->
+
+        <section class="practice-section">
+
+            <div class="section-heading">
+
+                <span>TEST YOUR THINKING</span>
+
+                <h2>Quick Challenge</h2>
+
+            </div>
+
+
+            <div class="question-card">
+
+                <p class="question-number">
+                    QUESTION 01
+                </p>
+
+                <h3>
+                    A box has a 40 N force pushing right and a 40 N
+                    force pushing left. What is its net force?
+                </h3>
+
+
+                <div class="answers">
+
+                    <button data-answer="wrong">
+                        80 N
+                    </button>
+
+                    <button data-answer="correct">
+                        0 N
+                    </button>
+
+                    <button data-answer="wrong">
+                        40 N
+                    </button>
+
+                    <button data-answer="wrong">
+                        20 N
+                    </button>
+
+                </div>
+
+
+                <div id="practice-feedback" class="practice-feedback">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             SUMMARY
+        ====================================================== -->
+
+        <section class="summary-section">
+
+            <div class="summary-card">
+
+                <div class="summary-icon">
+                    ⚡
+                </div>
+
+                <h2>Chapter Summary</h2>
+
+                <div class="summary-list">
+
+                    <p>
+                        <strong>Force</strong>
+                        is a push or pull that can change motion or shape.
+                    </p>
+
+                    <p>
+                        <strong>Net force</strong>
+                        is the vector sum of all forces.
+                    </p>
+
+                    <p>
+                        <strong>Newton's Second Law:</strong>
+                        F = ma
+                    </p>
+
+                    <p>
+                        <strong>Equilibrium:</strong>
+                        ΣF = 0
+                    </p>
+
+                    <p>
+                        Zero net force means
+                        <strong>zero acceleration</strong>,
+                        not necessarily zero velocity.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+<!--ENTER NEXT TOPIC-->
+<div><a href="../class 10/simple-machines.html">⚡ENTER NEXT TOPIC</a></div>
+
+    <!-- =========================================================
+         SCRIPTS
+    ========================================================== -->
+
+    <script src="../../js/core/animation.js"></script>
+    <script src="../../js/core/canvas.js"></script>
+    <script src="../../js/core/equation.js"></script>
+    <script src="../../js/core/graph.js"></script>
+    <script src="../../js/core/simulation.js"></script>
+
+    <script src="../../js/physics/ch1js/forces-equilibrium.js"></script>
+
+    <script src="../../js/main.js"></script>
+
+</body>
+</html>

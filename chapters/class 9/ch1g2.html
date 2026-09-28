@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Motion & Reference Frame | Physics Lab</title>
+
+    <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="stylesheet" href="../../../css/simulation.css">
+    <link rel="stylesheet" href="../../css/chapters/ch1c9css/ch1g2.css">
+</head>
+
+<body>
+
+<header class="chapter-header">
+    <div class="header-content">
+        <p class="eyebrow">KINEMATICS • MODULE 01</p>
+
+        <h1>Motion & Reference Frame</h1>
+
+        <p class="chapter-intro">
+            Motion is not simply about an object moving.
+            Before describing motion, we must first decide
+            <strong>relative to what</strong> the motion is being observed.
+        </p>
+    </div>
+</header>
+
+
+<main class="chapter-container">
+
+    <!-- ================================================= -->
+    <!-- 1. INTRODUCTION -->
+    <!-- ================================================= -->
+
+    <section class="lesson-section">
+
+        <span class="section-number">01</span>
+
+        <h2>What Is Motion?</h2>
+
+        <p>
+            An object is said to be in <strong>motion</strong> if its position
+            changes with time relative to its surroundings or to a chosen
+            reference point.
+        </p>
+
+        <div class="thinking-card">
+            <h3>🤔 Think First</h3>
+
+            <p>
+                Imagine you are sitting inside a moving train.
+                You look at your friend sitting beside you.
+            </p>
+
+            <p>
+                Is your friend moving?
+            </p>
+
+            <p>
+                Now look outside the window at a tree.
+                Is the tree moving?
+            </p>
+
+            <p>
+                Your answer depends on the <strong>reference frame</strong>.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- 2. REST VS MOTION -->
+    <!-- ================================================= -->
+
+    <section class="lesson-section">
+
+        <span class="section-number">02</span>
+
+        <h2>Rest and Motion Are Relative</h2>
+
+        <p>
+            There is no universal meaning of "at rest" or "moving"
+            without specifying the reference frame.
+        </p>
+
+        <div class="comparison-grid">
+
+            <article class="concept-card">
+                <h3>At Rest</h3>
+
+                <p>
+                    Position does not change with time relative to
+                    the chosen reference frame.
+                </p>
+
+                <div class="example-box">
+                    🪑 A passenger sitting inside a train is at rest
+                    relative to the train.
+                </div>
+            </article>
+
+
+            <article class="concept-card">
+                <h3>In Motion</h3>
+
+                <p>
+                    Position changes with time relative to
+                    the chosen reference frame.
+                </p>
+
+                <div class="example-box">
+                    🚆 The same passenger is moving relative to
+                    a person standing on the platform.
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- 3. REFERENCE FRAME -->
+    <!-- ================================================= -->
+
+    <section class="lesson-section">
+
+        <span class="section-number">03</span>
+
+        <h2>Reference Frame</h2>
+
+        <p>
+            A <strong>reference frame</strong> is the system relative to which
+            we describe the position and motion of an object.
+        </p>
+
+        <div class="formula-box">
+            <span class="formula-label">Core idea</span>
+            <div class="formula">
+                Motion = Change of position relative to a reference frame
+            </div>
+        </div>
+
+
+        <div class="interactive-card">
+
+            <div class="card-heading">
+                <h3>🚆 Interactive Reference Frame</h3>
+
+                <p>
+                    Change the observer's frame and see how the same object
+                    can appear to behave differently.
+                </p>
+            </div>
+
+            <div class="control-row">
+
+                <label>
+                    Observer:
+                    <select id="reference-frame">
+                        <option value="ground">Ground Observer</option>
+                        <option value="train">Train Observer</option>
+                    </select>
+                </label>
+
+            </div>
+
+            <canvas id="reference-canvas"></canvas>
+
+            <div class="observation-box">
+                <strong>Observation:</strong>
+                <span id="reference-observation">
+                    The passenger moves relative to the ground.
+                </span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- 4. RELATIVE MOTION -->
+    <!-- ================================================= -->
+
+    <section class="lesson-section">
+
+        <span class="section-number">04</span>
+
+        <h2>Relative Motion</h2>
+
+        <p>
+            The velocity of an object depends on the observer.
+            Therefore, two observers can measure different velocities
+            for the same object.
+        </p>
+
+        <div class="formula-box">
+
+            <span class="formula-label">Relative velocity</span>
+
+            <div class="formula">
+                v<sub>A/B</sub> = v<sub>A</sub> − v<sub>B</sub>
+            </div>
+
+        </div>
+
+        <div class="real-world-card">
+
+            <h3>🚆 Real World Example</h3>
+
+            <p>
+                A train moves at 60 km/h and a passenger walks forward
+                inside the train at 5 km/h relative to the train.
+            </p>
+
+            <p>
+                Relative to the ground, the passenger's velocity becomes:
+            </p>
+
+            <div class="mini-equation">
+                60 + 5 = 65 km/h
+            </div>
+
+            <p>
+                But if the passenger walks backward at 5 km/h:
+            </p>
+
+            <div class="mini-equation">
+                60 − 5 = 55 km/h
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- 5. PARTICLE -->
+    <!-- ================================================= -->
+
+    <section class="lesson-section">
+
+        <span class="section-number">05</span>
+
+        <h2>Particle / Point Object</h2>
+
+        <p>
+            In many physics problems, the size and shape of an object
+            are irrelevant compared with the distance travelled.
+        </p>
+
+        <p>
+            We can then treat the object as a <strong>particle</strong>
+            or point object.
+        </p>
+
+        <div class="example-grid">
+
+            <div class="small-card">
+                <h3>🌍 Earth around Sun</h3>
+                <p>
+                    For studying Earth's orbital motion, its size can
+                    often be ignored.
+                </p>
+            </div>
+
+            <div class="small-card">
+                <h3>🚗 Car on Highway</h3>
+                <p>
+                    For calculating the distance travelled over a long
+                    road, the car can often be treated as a point.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- 6. TYPES OF MOTION -->
+    <!-- ================================================= -->
+
+    <section class="lesson-section">
+
+        <span class="section-number">06</span>
+
+        <h2>Types of Motion</h2>
+
+        <p>
+            Motion can be classified according to the path followed
+            and the way different parts of the object move.
+        </p>
+
+        <div class="motion-type-grid">
+
+            <article>
+                <h3>➡️ Translational Motion</h3>
+                <p>
+                    The body changes its position from one place to another.
+                </p>
+                <p class="example-text">
+                    Example: A car moving on a road.
+                </p>
+            </article>
+
+            <article>
+                <h3>📏 Rectilinear Motion</h3>
+                <p>
+                    Translational motion along a straight line.
+                </p>
+                <p class="example-text">
+                    Example: A train moving on a straight track.
+                </p>
+            </article>
+
+            <article>
+                <h3>〰️ Curvilinear Motion</h3>
+                <p>
+                    Motion along a curved path.
+                </p>
+                <p class="example-text">
+                    Example: A ball hit by a batsman.
+                </p>
+            </article>
+
+            <article>
+                <h3>🔄 Rotational Motion</h3>
+                <p>
+                    A body rotates about an axis.
+                </p>
+                <p class="example-text">
+                    Example: A ceiling fan.
+                </p>
+            </article>
+
+            <article>
+                <h3>⭕ Circular Motion</h3>
+                <p>
+                    Motion along a circular path.
+                </p>
+                <p class="example-text">
+                    Example: A stone tied to a string.
+                </p>
+            </article>
+
+            <article>
+                <h3>↔️ Oscillatory Motion</h3>
+                <p>
+                    Repeated to-and-fro motion about a mean position.
+                </p>
+                <p class="example-text">
+                    Example: Pendulum of a clock.
+                </p>
+            </article>
+
+            <article>
+                <h3>🌫️ Random Motion</h3>
+                <p>
+                    Motion without a definite predictable path.
+                </p>
+                <p class="example-text">
+                    Example: Dust particles in air.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- 7. MOTION CLASSIFIER -->
+    <!-- ================================================= -->
+
+    <section class="lesson-section">
+
+        <span class="section-number">07</span>
+
+        <h2>Can You Identify the Motion?</h2>
+
+        <div class="interactive-card">
+
+            <h3>🔎 Motion Classifier</h3>
+
+            <p>
+                Select an example and predict the type of motion.
+            </p>
+
+            <div class="classifier">
+
+                <select id="motion-example">
+
+                    <option value="train">
+                        Train moving on a straight track
+                    </option>
+
+                    <option value="fan">
+                        Ceiling fan
+                    </option>
+
+                    <option value="pendulum">
+                        Pendulum
+                    </option>
+
+                    <option value="bat">
+                        Ball hit by a batsman
+                    </option>
+
+                    <option value="dust">
+                        Dust particle in air
+                    </option>
+
+                </select>
+
+                <button id="check-motion">
+                    Check
+                </button>
+
+                <div id="motion-answer" class="answer-box">
+                    Choose an example and check your reasoning.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- 8. INTERACTIVE MOTION -->
+    <!-- ================================================= -->
+
+    <section class="lesson-section">
+
+        <span class="section-number">08</span>
+
+        <h2>Interactive Motion Experiment</h2>
+
+        <p>
+            Watch how changing the motion changes the path.
+        </p>
+
+        <div class="interactive-card">
+
+            <div class="experiment-controls">
+
+                <label>
+                    Motion Type
+
+                    <select id="motion-mode">
+
+                        <option value="linear">
+                            Rectilinear
+                        </option>
+
+                        <option value="circular">
+                            Circular
+                        </option>
+
+                        <option value="oscillatory">
+                            Oscillatory
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+                    Speed
+
+                    <input
+                        type="range"
+                        id="motion-speed"
+                        min="1"
+                        max="10"
+                        value="4"
+                    >
+
+                    <span id="motion-speed-value">4</span>
+
+                </label>
+
+            </div>
+
+            <canvas id="motion-canvas"></canvas>
+
+            <div class="observation-box">
+
+                <strong>Observe:</strong>
+
+                <span id="motion-observation">
+                    The object moves along a straight path.
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- 9. CONCEPTUAL THINKING -->
+    <!-- ================================================= -->
+
+    <section class="lesson-section">
+
+        <span class="section-number">09</span>
+
+        <h2>Physics Thinking: What Is Actually Moving?</h2>
+
+        <div class="thinking-card">
+
+            <h3>Scenario</h3>
+
+            <p>
+                You are sitting inside a bus moving at constant speed.
+                Another bus beside you moves in the same direction
+                at almost the same speed.
+            </p>
+
+            <p>
+                For a moment, the other bus appears stationary.
+            </p>
+
+            <h3>Why?</h3>
+
+            <p>
+                Your position relative to the other bus is changing
+                very slowly.
+            </p>
+
+            <p>
+                Therefore, its <strong>relative velocity</strong> with
+                respect to you is close to zero.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- 10. CONCEPTUAL TRAPS -->
+    <!-- ================================================= -->
+
+    <section class="lesson-section">
+
+        <span class="section-number">10</span>
+
+        <h2>Common Conceptual Traps</h2>
+
+        <div class="trap-grid">
+
+            <div>
+                <h3>❌ "Everything has an absolute state of rest."</h3>
+                <p>
+                    Not necessarily. Rest depends on the reference frame.
+                </p>
+            </div>
+
+            <div>
+                <h3>❌ "Circular motion means rotational motion."</h3>
+                <p>
+                    Not always. A particle can move in a circle without
+                    rotating about its own axis.
+                </p>
+            </div>
+
+            <div>
+                <h3>❌ "A moving object must have changing speed."</h3>
+                <p>
+                    No. Uniform motion can have constant speed.
+                </p>
+            </div>
+
+            <div>
+                <h3>❌ "If velocity is zero, the object can never move."</h3>
+                <p>
+                    An object can have zero velocity at an instant and
+                    still begin moving afterward.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- 11. HARD QUESTIONS -->
+    <!-- ================================================= -->
+
+    <section class="lesson-section challenge-section">
+
+        <span class="section-number">11</span>
+
+        <h2>Challenge Zone 🧠</h2>
+
+        <p>
+            These questions are designed to test understanding,
+            not memorisation.
+        </p>
+
+
+        <div class="question-card">
+
+            <h3>Question 1</h3>
+
+            <p>
+                A passenger is sitting inside a train moving east.
+                Another passenger walks west inside the train with
+                the same speed as the train.
+            </p>
+
+            <p>
+                Relative to the ground, what happens to the second
+                passenger?
+            </p>
+
+            <div class="options">
+
+                <button data-question="q1" data-option="a">
+                    A. Moves east
+                </button>
+
+                <button data-question="q1" data-option="b">
+                    B. Remains stationary
+                </button>
+
+                <button data-question="q1" data-option="c">
+                    C. Moves west
+                </button>
+
+                <button data-question="q1" data-option="d">
+                    D. Cannot be determined
+                </button>
+
+            </div>
+
+            <p class="hint" id="q1-hint"></p>
+
+        </div>
+
+
+        <div class="question-card">
+
+            <h3>Question 2 — Advanced</h3>
+
+            <p>
+                Two cars move in the same direction with speeds
+                72 km/h and 54 km/h.
+                A passenger in the faster car observes the slower car.
+                What speed does the slower car appear to have?
+            </p>
+
+            <div class="options">
+
+                <button data-question="q2" data-option="a">
+                    A. 18 km/h
+                </button>
+
+                <button data-question="q2" data-option="b">
+                    B. 126 km/h
+                </button>
+
+                <button data-question="q2" data-option="c">
+                    C. 72 km/h
+                </button>
+
+                <button data-question="q2" data-option="d">
+                    D. 54 km/h
+                </button>
+
+            </div>
+
+            <p class="hint" id="q2-hint"></p>
+
+        </div>
+
+
+        <div class="question-card">
+
+            <h3>Question 3 — IIT-Level Thinking</h3>
+
+            <p>
+                A particle is moving in a circular path with constant
+                speed.
+                Is the particle accelerating?
+            </p>
+
+            <div class="options">
+
+                <button data-question="q3" data-option="a">
+                    A. Yes
+                </button>
+
+                <button data-question="q3" data-option="b">
+                    B. No
+                </button>
+
+                <button data-question="q3" data-option="c">
+                    C. Only if its speed increases
+                </button>
+
+                <button data-question="q3" data-option="d">
+                    D. Acceleration cannot exist in circular motion
+                </button>
+
+            </div>
+
+            <p class="hint" id="q3-hint"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- 12. SUMMARY -->
+    <!-- ================================================= -->
+
+    <section class="lesson-section summary-section">
+
+        <span class="section-number">12</span>
+
+        <h2>Module Summary</h2>
+
+        <ul class="summary-list">
+
+            <li>
+                Motion means change in position with time relative
+                to a reference frame.
+            </li>
+
+            <li>
+                Rest and motion are relative concepts.
+            </li>
+
+            <li>
+                Reference frame decides how motion is described.
+            </li>
+
+            <li>
+                Relative velocity compares the velocities of two objects.
+            </li>
+
+            <li>
+                A sufficiently small or irrelevant-sized object can
+                be treated as a particle.
+            </li>
+
+            <li>
+                Motion can be translational, rotational, circular,
+                oscillatory or random.
+            </li>
+
+            <li>
+                The path of motion provides important information
+                about the type of motion.
+            </li>
+
+        </ul>
+
+    </section>
+
+</main>
+<div><a href="../class 9/ch1g3.html"><h2><span>next--></span></span></h2></a></div>
+
+<script src="../../js/physics/ch1c9js/ch1g2.js"></script>
+
+</body>
+</html>

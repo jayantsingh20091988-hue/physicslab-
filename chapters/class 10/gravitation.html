@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gravitation | Physics Lab</title>
+
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/simulation.css">
+    <link rel="stylesheet" href="../../css/chapters/ch1css/gravitation.css">
+</head>
+
+<body>
+
+<canvas id="spark-background"></canvas>
+
+<header class="chapter-hero">
+    <div class="hero-orbit orbit-one"></div>
+    <div class="hero-orbit orbit-two"></div>
+
+    <div class="hero-content">
+        <span class="chapter-number">TOPIC 06</span>
+
+        <h1>Gravitation</h1>
+
+        <p class="hero-subtitle">
+            Why does everything fall toward Earth — and why does the Moon not simply fall down?
+        </p>
+
+        <p class="hero-description">
+            From a falling stone to the motion of planets and satellites,
+            gravitation is the invisible connection between objects with mass.
+        </p>
+
+        <a href="#learning-map" class="hero-button">
+            Start Exploring ↓
+        </a>
+    </div>
+
+    <div class="hero-gravity-visual">
+        <div class="gravity-earth"></div>
+
+        <div class="falling-object">
+            ●
+        </div>
+
+        <span class="gravity-arrow">↓</span>
+    </div>
+</header>
+
+
+<main>
+
+<!-- ================= LEARNING MAP ================= -->
+
+<section class="section" id="learning-map">
+
+    <div class="section-heading">
+        <span class="section-tag">LEARNING MAP</span>
+        <h2>Build the idea step by step</h2>
+
+        <p>
+            We will start with an everyday observation and gradually reach
+            Newton's universal law of gravitation.
+        </p>
+    </div>
+
+    <div class="learning-map">
+
+        <div class="map-node">
+            <strong>01</strong>
+            <span>Objects Fall</span>
+        </div>
+
+        <div class="map-line"></div>
+
+        <div class="map-node">
+            <strong>02</strong>
+            <span>Earth Pulls Objects</span>
+        </div>
+
+        <div class="map-line"></div>
+
+        <div class="map-node">
+            <strong>03</strong>
+            <span>Moon & Planets</span>
+        </div>
+
+        <div class="map-line"></div>
+
+        <div class="map-node">
+            <strong>04</strong>
+            <span>Universal Gravitation</span>
+        </div>
+
+        <div class="map-line"></div>
+
+        <div class="map-node">
+            <strong>05</strong>
+            <span>g, Weight & Satellites</span>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= THE REAL QUESTION ================= -->
+
+<section class="section question-section">
+
+    <div class="question-card">
+
+        <span class="section-tag">START WITH REAL LIFE</span>
+
+        <h2>Why does a stone fall when you release it?</h2>
+
+        <div class="observation-grid">
+
+            <div class="observation-box">
+                <div class="big-icon">🪨</div>
+                <h3>Observation</h3>
+                <p>
+                    Release a stone and it accelerates toward Earth.
+                </p>
+            </div>
+
+            <div class="observation-box">
+                <div class="big-icon">❓</div>
+                <h3>The question</h3>
+                <p>
+                    Something must be producing a force on the stone.
+                    But where is that force coming from?
+                </p>
+            </div>
+
+            <div class="observation-box">
+                <div class="big-icon">🌍</div>
+                <h3>The idea</h3>
+                <p>
+                    Earth attracts the stone.
+                    This attraction is called gravitational force.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="why-box">
+
+            <h3>💡 WHY does it accelerate?</h3>
+
+            <p>
+                Because a force causes a change in motion.
+                Earth's gravitational pull acts on the stone, so its velocity
+                changes toward Earth.
+            </p>
+
+            <p>
+                This is the same basic connection we learned earlier:
+            </p>
+
+            <div class="equation-large">
+                <span>Force</span>
+                <span>→</span>
+                <span>Acceleration</span>
+                <span>→</span>
+                <span>Change in motion</span>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= WHAT IS GRAVITATION ================= -->
+
+<section class="section">
+
+    <div class="section-heading">
+        <span class="section-tag">CONCEPT</span>
+        <h2>What is Gravitation?</h2>
+    </div>
+
+    <div class="concept-grid">
+
+        <article class="info-card">
+            <div class="card-icon">🌌</div>
+
+            <h3>Simple meaning</h3>
+
+            <p>
+                Gravitation is the attractive force that exists between
+                any two objects having mass.
+            </p>
+        </article>
+
+        <article class="info-card">
+            <div class="card-icon">🌍</div>
+
+            <h3>On Earth</h3>
+
+            <p>
+                Earth attracts objects toward its centre.
+                That is why dropped objects move downward.
+            </p>
+        </article>
+
+        <article class="info-card">
+            <div class="card-icon">🌙</div>
+
+            <h3>In space</h3>
+
+            <p>
+                The same gravitational interaction helps keep the Moon
+                around Earth and planets around the Sun.
+            </p>
+        </article>
+
+    </div>
+
+    <div class="logic-chain">
+
+        <div>Mass</div>
+        <span>→</span>
+        <div>Gravitational attraction</div>
+        <span>→</span>
+        <div>Force</div>
+        <span>→</span>
+        <div>Motion changes</div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NEWTON'S QUESTION ================= -->
+
+<section class="section story-section">
+
+    <div class="story-card">
+
+        <span class="section-tag">THE BIG QUESTION</span>
+
+        <h2>Newton asked a much bigger question</h2>
+
+        <p>
+            A stone falls toward Earth. Fine.
+            But the Moon is also constantly changing its direction around Earth.
+        </p>
+
+        <p>
+            Could the force pulling an apple toward Earth be related
+            to the force controlling the Moon's motion?
+        </p>
+
+        <div class="apple-moon">
+
+            <div class="story-object apple">
+                🍎
+                <span>Object near Earth</span>
+            </div>
+
+            <div class="story-arrow">↔</div>
+
+            <div class="story-object moon">
+                🌙
+                <span>Moon</span>
+            </div>
+
+        </div>
+
+        <div class="highlight-box">
+
+            <strong>The important insight:</strong>
+
+            <p>
+                Gravity is not a special force that exists only near the ground.
+                It acts between masses throughout space.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= UNIVERSAL LAW ================= -->
+
+<section class="section law-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">NEWTON'S LAW</span>
+
+        <h2>Universal Law of Gravitation</h2>
+
+        <p>
+            Newton described how the gravitational force depends on the
+            masses of two objects and the distance between them.
+        </p>
+
+    </div>
+
+    <div class="formula-main">
+
+        <div class="formula">
+            F = G
+            <span class="fraction">
+                <span>m₁m₂</span>
+                <span>r²</span>
+            </span>
+        </div>
+
+        <p>
+            This means gravitational force increases when masses increase,
+            but decreases rapidly when distance increases.
+        </p>
+
+    </div>
+
+    <div class="law-grid">
+
+        <div class="law-card">
+            <h3>Mass ↑</h3>
+            <p>
+                More mass means stronger gravitational attraction.
+            </p>
+            <div class="law-symbol">F ∝ m₁m₂</div>
+        </div>
+
+        <div class="law-card">
+            <h3>Distance ↑</h3>
+            <p>
+                Increasing separation weakens gravitational force.
+            </p>
+            <div class="law-symbol">F ∝ 1/r²</div>
+        </div>
+
+        <div class="law-card">
+            <h3>Distance × 2</h3>
+            <p>
+                If distance doubles, force becomes one-fourth.
+            </p>
+            <div class="law-symbol">F → F/4</div>
+        </div>
+
+    </div>
+
+    <div class="why-box">
+
+        <h3>💡 WHY is distance squared?</h3>
+
+        <p>
+            In the simplest physical picture, the gravitational influence
+            spreads outward through space. As distance increases, the same
+            influence is distributed over a larger spherical surface.
+        </p>
+
+        <p>
+            The surface area of a sphere grows as:
+        </p>
+
+        <div class="equation-large">
+            A = 4πr²
+        </div>
+
+        <p>
+            That geometric spreading is connected to the inverse-square
+            relationship seen in gravity.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= GRAVITY SIMULATOR ================= -->
+
+<section class="section simulator-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">INTERACTIVE EXPERIMENT</span>
+
+        <h2>Explore gravitational force</h2>
+
+        <p>
+            Change the masses and distance and observe how the force changes.
+        </p>
+
+    </div>
+
+    <div class="gravity-simulator">
+
+        <div class="sim-controls">
+
+            <div class="control-group">
+
+                <label>
+                    Mass 1
+                    <strong id="mass1-value">10</strong> kg
+                </label>
+
+                <input
+                    type="range"
+                    id="mass1-slider"
+                    min="1"
+                    max="100"
+                    value="10"
+                >
+
+            </div>
+
+            <div class="control-group">
+
+                <label>
+                    Mass 2
+                    <strong id="mass2-value">10</strong> kg
+                </label>
+
+                <input
+                    type="range"
+                    id="mass2-slider"
+                    min="1"
+                    max="100"
+                    value="10"
+                >
+
+            </div>
+
+            <div class="control-group">
+
+                <label>
+                    Distance
+                    <strong id="distance-value">10</strong> m
+                </label>
+
+                <input
+                    type="range"
+                    id="distance-slider"
+                    min="2"
+                    max="30"
+                    value="10"
+                >
+
+            </div>
+
+            <button id="gravity-reset" class="sim-button">
+                Reset Experiment
+            </button>
+
+        </div>
+
+
+        <div class="sim-results">
+
+            <div class="result-card">
+                <span>Gravitational Force</span>
+                <strong id="gravity-force-result">6.67e-10 N</strong>
+            </div>
+
+            <div class="result-card">
+                <span>Mass Product</span>
+                <strong id="mass-product-result">100 kg²</strong>
+            </div>
+
+            <div class="result-card">
+                <span>Distance²</span>
+                <strong id="distance-square-result">100 m²</strong>
+            </div>
+
+        </div>
+
+        <div class="gravity-canvas-wrap">
+
+            <canvas id="gravity-canvas"></canvas>
+
+        </div>
+
+        <div class="dynamic-why" id="gravity-why">
+
+            Start changing the values.
+            Watch what happens to the force and ask WHY.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= G ================= -->
+
+<section class="section g-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">EARTH'S GRAVITY</span>
+
+        <h2>Why do different objects fall with similar acceleration?</h2>
+
+    </div>
+
+    <div class="g-explanation">
+
+        <div class="equation-card">
+
+            <h3>Gravitational force near Earth</h3>
+
+            <div class="equation-large">
+                F = mg
+            </div>
+
+            <p>
+                Here <strong>g</strong> represents acceleration due to gravity.
+            </p>
+
+        </div>
+
+        <div class="equation-card">
+
+            <h3>Newton's second law</h3>
+
+            <div class="equation-large">
+                F = ma
+            </div>
+
+            <p>
+                If gravity is the main force acting on an object,
+                we can compare these equations.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="derivation-box">
+
+        <h3>Let's see where g comes from</h3>
+
+        <div class="derivation-step">
+            <span>Gravitational force</span>
+            <strong>F = GMm/r²</strong>
+        </div>
+
+        <div class="derivation-step">
+            <span>Newton's second law</span>
+            <strong>F = ma</strong>
+        </div>
+
+        <div class="derivation-step">
+            <span>Equate them</span>
+            <strong>ma = GMm/r²</strong>
+        </div>
+
+        <div class="derivation-step">
+            <span>Cancel m</span>
+            <strong>a = GM/r²</strong>
+        </div>
+
+        <div class="derivation-step final-step">
+            <span>Near Earth's surface</span>
+            <strong>g = GM/R²</strong>
+        </div>
+
+        <p class="derivation-note">
+            Notice something important:
+            the object's own mass m cancels out.
+            That is why, when air resistance is negligible,
+            different objects have the same gravitational acceleration
+            at the same location.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FALLING OBJECT ================= -->
+
+<section class="section free-fall-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">FREE FALL</span>
+
+        <h2>Free Fall — what actually happens?</h2>
+
+        <p>
+            An object is in free fall when gravity is the main force acting on it.
+        </p>
+
+    </div>
+
+    <div class="freefall-layout">
+
+        <div class="freefall-controls">
+
+            <label>
+                Initial height:
+                <strong id="height-value">20</strong> m
+            </label>
+
+            <input
+                type="range"
+                id="height-slider"
+                min="5"
+                max="50"
+                value="20"
+            >
+
+            <label>
+                Time:
+                <strong id="fall-time-value">0.00</strong> s
+            </label>
+
+            <label>
+                Speed:
+                <strong id="fall-speed-value">0.00</strong> m/s
+            </label>
+
+            <label>
+                Distance fallen:
+                <strong id="fall-distance-value">0.00</strong> m
+            </label>
+
+            <button id="fall-start" class="sim-button">
+                Start Free Fall
+            </button>
+
+            <button id="fall-reset" class="secondary-button">
+                Reset
+            </button>
+
+        </div>
+
+        <div class="freefall-canvas-wrap">
+
+            <canvas id="freefall-canvas"></canvas>
+
+        </div>
+
+    </div>
+
+    <div class="why-box">
+
+        <h3>💡 WHY does the object get faster?</h3>
+
+        <p>
+            Gravity continuously accelerates the object downward.
+            During every small interval of time, its velocity changes.
+            Therefore the object covers more distance in each successive second.
+        </p>
+
+        <div class="equation-row">
+
+            <span>v = u + gt</span>
+
+            <span>s = ut + ½gt²</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MASS VS WEIGHT ================= -->
+
+<section class="section mass-weight-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">IMPORTANT DISTINCTION</span>
+
+        <h2>Mass ≠ Weight</h2>
+
+        <p>
+            These two words are often used as if they mean the same thing.
+            They do not.
+        </p>
+
+    </div>
+
+    <div class="comparison-grid">
+
+        <div class="compare-card mass-card">
+
+            <div class="compare-icon">⚖️</div>
+
+            <h3>Mass</h3>
+
+            <p>
+                Mass measures the amount of matter in an object
+                and is related to its inertia.
+            </p>
+
+            <div class="formula-small">
+                Unit: kg
+            </div>
+
+            <p class="example-text">
+                Your mass remains approximately the same on Earth and Moon.
+            </p>
+
+        </div>
+
+        <div class="compare-card weight-card">
+
+            <div class="compare-icon">🌍</div>
+
+            <h3>Weight</h3>
+
+            <p>
+                Weight is the gravitational force acting on an object.
+            </p>
+
+            <div class="formula-small">
+                W = mg
+            </div>
+
+            <p class="example-text">
+                Your weight changes when the local gravitational acceleration changes.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="weight-simulator">
+
+        <h3>Weight on different worlds</h3>
+
+        <label>
+            Mass:
+            <strong id="person-mass-value">50</strong> kg
+        </label>
+
+        <input
+            type="range"
+            id="person-mass-slider"
+            min="1"
+            max="150"
+            value="50"
+        >
+
+        <div class="planet-buttons">
+
+            <button class="planet-btn active" data-g="9.81">
+                Earth
+            </button>
+
+            <button class="planet-btn" data-g="1.62">
+                Moon
+            </button>
+
+            <button class="planet-btn" data-g="3.71">
+                Mars
+            </button>
+
+            <button class="planet-btn" data-g="24.79">
+                Jupiter
+            </button>
+
+        </div>
+
+        <div class="weight-result">
+
+            <span id="selected-world">Earth</span>
+
+            <strong id="weight-result">
+                490.5 N
+            </strong>
+
+        </div>
+
+        <p id="weight-why" class="dynamic-why">
+            Your mass stays the same, but Earth's gravitational acceleration
+            determines your weight.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ALTITUDE ================= -->
+
+<section class="section altitude-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">EXPLORE DEEPER</span>
+
+        <h2>What happens to gravity as we go higher?</h2>
+
+        <p>
+            Gravity becomes weaker as distance from Earth's centre increases.
+        </p>
+
+    </div>
+
+    <div class="altitude-simulator">
+
+        <div class="altitude-controls">
+
+            <label>
+                Height above Earth:
+                <strong id="altitude-value">0</strong> km
+            </label>
+
+            <input
+                type="range"
+                id="altitude-slider"
+                min="0"
+                max="20000"
+                step="100"
+                value="0"
+            >
+
+        </div>
+
+        <div class="altitude-results">
+
+            <div>
+                <span>Distance from Earth's centre</span>
+                <strong id="earth-distance-result">6371 km</strong>
+            </div>
+
+            <div>
+                <span>Approx. g</span>
+                <strong id="altitude-g-result">9.81 m/s²</strong>
+            </div>
+
+            <div>
+                <span>Relative gravity</span>
+                <strong id="relative-gravity-result">100%</strong>
+            </div>
+
+        </div>
+
+        <div class="why-box">
+
+            <h3>💡 WHY does g decrease?</h3>
+
+            <p>
+                Because you are farther from Earth's centre.
+                Since gravitational acceleration follows an inverse-square
+                relationship with distance:
+            </p>
+
+            <div class="equation-large">
+                g = GM/r²
+            </div>
+
+            <p>
+                Increasing r makes g smaller.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DEPTH ================= -->
+
+<section class="section depth-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">ANOTHER REAL-WORLD QUESTION</span>
+
+        <h2>What happens if we go inside Earth?</h2>
+
+        <p>
+            Gravity does not simply keep increasing as you move toward
+            Earth's centre.
+        </p>
+
+    </div>
+
+    <div class="depth-card">
+
+        <div class="earth-depth-visual">
+
+            <div class="depth-earth">
+                <div class="depth-core"></div>
+                <div id="depth-marker"></div>
+            </div>
+
+        </div>
+
+        <div class="depth-controls">
+
+            <label>
+                Depth:
+                <strong id="depth-value">0</strong> km
+            </label>
+
+            <input
+                type="range"
+                id="depth-slider"
+                min="0"
+                max="6371"
+                value="0"
+            >
+
+            <div class="depth-result">
+
+                <span>Educational simplified g model</span>
+
+                <strong id="depth-g-result">
+                    9.81 m/s²
+                </strong>
+
+            </div>
+
+            <p id="depth-why" class="dynamic-why">
+                At Earth's surface, gravitational acceleration is about 9.81 m/s².
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ORBIT CONNECTION ================= -->
+
+<section class="section orbit-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">CONNECT THE CHAPTERS</span>
+
+        <h2>So why doesn't the Moon fall onto Earth?</h2>
+
+    </div>
+
+    <div class="orbit-explanation">
+
+        <div class="orbit-step">
+
+            <span>01</span>
+
+            <h3>The Moon has forward motion</h3>
+
+            <p>
+                The Moon is not stationary.
+                It has tangential velocity.
+            </p>
+
+        </div>
+
+        <div class="orbit-step">
+
+            <span>02</span>
+
+            <h3>Earth pulls inward</h3>
+
+            <p>
+                Earth's gravity continuously changes the Moon's direction.
+            </p>
+
+        </div>
+
+        <div class="orbit-step">
+
+            <span>03</span>
+
+            <h3>The path bends</h3>
+
+            <p>
+                Instead of moving in a straight line, the Moon follows
+                a curved orbital path.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="orbit-visual">
+
+        <canvas id="moon-orbit-canvas"></canvas>
+
+        <div class="orbit-caption">
+            Gravity bends the Moon's trajectory toward Earth.
+        </div>
+
+    </div>
+
+    <div class="highlight-box">
+
+        <strong>Important:</strong>
+
+        <p>
+            Saying “the Moon is falling” is only useful if we explain what
+            it means: gravity is continuously bending its path inward while
+            its forward motion prevents it from simply dropping onto Earth.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REAL WORLD ================= -->
+
+<section class="section applications-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">REAL WORLD</span>
+
+        <h2>Where do we use gravitation?</h2>
+
+    </div>
+
+    <div class="application-grid">
+
+        <article>
+            <div class="application-icon">🛰️</div>
+            <h3>Satellites</h3>
+            <p>
+                Earth's gravity provides the inward acceleration required
+                for orbital motion.
+            </p>
+        </article>
+
+        <article>
+            <div class="application-icon">🌊</div>
+            <h3>Tides</h3>
+            <p>
+                Gravitational interactions involving the Moon and Sun
+                contribute to ocean tides.
+            </p>
+        </article>
+
+        <article>
+            <div class="application-icon">🌎</div>
+            <h3>Atmosphere</h3>
+            <p>
+                Earth's gravity helps keep gases bound around the planet.
+            </p>
+        </article>
+
+        <article>
+            <div class="application-icon">🚀</div>
+            <h3>Space travel</h3>
+            <p>
+                Rockets must change their motion to move between different
+                gravitational environments and orbits.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MISCONCEPTIONS ================= -->
+
+<section class="section misconceptions-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">THINK CAREFULLY</span>
+
+        <h2>Common misconceptions</h2>
+
+    </div>
+
+    <div class="misconception-list">
+
+        <div class="misconception">
+
+            <div class="wrong">✕</div>
+
+            <div>
+                <h3>“Gravity only exists on Earth.”</h3>
+
+                <p>
+                    Gravity acts between masses everywhere.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="misconception">
+
+            <div class="wrong">✕</div>
+
+            <div>
+                <h3>“Heavy objects always fall faster.”</h3>
+
+                <p>
+                    Ignoring air resistance, objects near Earth's surface
+                    have approximately the same gravitational acceleration.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="misconception">
+
+            <div class="wrong">✕</div>
+
+            <div>
+                <h3>“Mass and weight are the same.”</h3>
+
+                <p>
+                    Mass is measured in kg; weight is a gravitational force
+                    measured in newtons.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="misconception">
+
+            <div class="wrong">✕</div>
+
+            <div>
+                <h3>“Gravity becomes stronger when you go higher.”</h3>
+
+                <p>
+                    Increasing distance from Earth's centre decreases
+                    gravitational acceleration.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="misconception">
+
+            <div class="wrong">✕</div>
+
+            <div>
+                <h3>“The Moon has no gravity.”</h3>
+
+                <p>
+                    The Moon has gravity. It is weaker than Earth's because
+                    the Moon has much less mass.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CHALLENGE ================= -->
+
+<section class="section challenge-section">
+
+    <div class="challenge-card">
+
+        <span class="section-tag">CHALLENGE</span>
+
+        <h2>Can you predict the result?</h2>
+
+        <p>
+            Suppose the distance between two masses becomes <strong>3 times</strong>
+            larger while their masses remain unchanged.
+        </p>
+
+        <div class="challenge-formula">
+            F ∝ 1/r²
+        </div>
+
+        <p>
+            What happens to the gravitational force?
+        </p>
+
+        <div class="challenge-options">
+
+            <button data-answer="wrong">3 times larger</button>
+
+            <button data-answer="correct">1/9 of the original</button>
+
+            <button data-answer="wrong">1/3 of the original</button>
+
+            <button data-answer="wrong">It remains unchanged</button>
+
+        </div>
+
+        <div id="challenge-feedback"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SUMMARY ================= -->
+
+<section class="section summary-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">CHAPTER SUMMARY</span>
+
+        <h2>Gravitation — the complete idea</h2>
+
+    </div>
+
+    <div class="summary-grid">
+
+        <div class="summary-card">
+            <strong>01</strong>
+            <p>
+                Every mass attracts other masses gravitationally.
+            </p>
+        </div>
+
+        <div class="summary-card">
+            <strong>02</strong>
+            <p>
+                Larger masses produce stronger gravitational attraction.
+            </p>
+        </div>
+
+        <div class="summary-card">
+            <strong>03</strong>
+            <p>
+                Greater separation weakens gravity according to an
+                inverse-square relationship.
+            </p>
+        </div>
+
+        <div class="summary-card">
+            <strong>04</strong>
+            <p>
+                Near Earth's surface, gravitational acceleration is about
+                9.81 m/s².
+            </p>
+        </div>
+
+        <div class="summary-card">
+            <strong>05</strong>
+            <p>
+                Weight is gravitational force: W = mg.
+            </p>
+        </div>
+
+        <div class="summary-card">
+            <strong>06</strong>
+            <p>
+                Gravity is also responsible for orbital motion,
+                when combined with an object's velocity.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="formula-summary">
+
+        <div>
+            <span>Universal gravitation</span>
+            <strong>F = GMm/r²</strong>
+        </div>
+
+        <div>
+            <span>Near Earth</span>
+            <strong>F = mg</strong>
+        </div>
+
+        <div>
+            <span>Weight</span>
+            <strong>W = mg</strong>
+        </div>
+
+        <div>
+            <span>Acceleration due to gravity</span>
+            <strong>g = GM/R²</strong>
+        </div>
+
+        <div>
+            <span>Free fall velocity</span>
+            <strong>v = u + gt</strong>
+        </div>
+
+        <div>
+            <span>Free fall displacement</span>
+            <strong>s = ut + ½gt²</strong>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+<!--ENTER NEXT TOPIC-->
+<div><a href="../class 10/rockets-satellites.html">⚡ENTER NEXT TOPIC</a></div>
+
+<script src="../../js/core/animation.js"></script>
+<script src="../../js/core/canvas.js"></script>
+<script src="../../js/core/equation.js"></script>
+<script src="../../js/core/graph.js"></script>
+<script src="../../js/core/simulation.js"></script>
+
+<script src="../../js/physics/ch1js/gravitation.js"></script>
+
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Physics Lab — an interactive physics learning platform for Classes 9, 10 and 11. Learn concepts through experiments, simulations, mathematics and visualization."
+    >
+
+    <meta
+        name="keywords"
+        content="Physics Lab, Class 9 Physics, Class 10 Physics, Class 11 Physics, physics simulations, interactive physics, physics experiments"
+    >
+
+    <meta name="theme-color" content="#070a12">
+
+    <title>Physics Lab — Understand Physics. Don't Just Memorize It.</title>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Homepage styles -->
+    <link rel="stylesheet" href="css/home.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         BACKGROUND EFFECTS
+    ====================================================== -->
+
+    <div class="site-background">
+        <div class="background-grid"></div>
+        <div class="background-glow glow-one"></div>
+        <div class="background-glow glow-two"></div>
+        <canvas id="physics-field"></canvas>
+    </div>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="site-header" id="top">
+
+        <div class="nav-container">
+
+            <a href="index.html" class="brand">
+
+                <span class="brand-symbol">
+                    Φ
+                </span>
+
+                <span class="brand-text">
+                    <strong>PHYSICS</strong>
+                    <small>LAB</small>
+                </span>
+
+            </a>
+
+
+            <nav class="main-nav" id="main-nav">
+
+                <a href="#home" class="nav-link active">
+                    Home
+                </a>
+
+                <a href="#classes" class="nav-link">
+                    Classes
+                </a>
+
+                <a href="#experience" class="nav-link">
+                    Experience
+                </a>
+
+                <a href="#feedback" class="nav-link">
+                    Feedback
+                </a>
+
+                <a href="#about" class="nav-link">
+                    About
+                </a>
+
+            </nav>
+
+
+            <a href="#classes" class="nav-cta">
+                Explore Lab
+                <span>↗</span>
+            </a>
+
+
+            <button
+                class="mobile-menu-button"
+                id="mobile-menu-button"
+                aria-label="Open navigation"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <main>
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero" id="home">
+
+            <div class="hero-container">
+
+                <div class="hero-content">
+
+                    <div class="hero-badge">
+                        <span class="status-dot"></span>
+                        INTERACTIVE PHYSICS LAB
+                    </div>
+
+
+                    <p class="hero-kicker">
+                        PHYSICS • EXPERIMENT • SIMULATION
+                    </p>
+
+
+                    <h1>
+                        Understand physics.
+                        <span>Don't just memorize it.</span>
+                    </h1>
+
+
+                    <p class="hero-description">
+                        Physics Lab is an interactive learning space where
+                        concepts become experiments, equations become
+                        visual models, and formulas become something you
+                        can actually understand.
+                    </p>
+
+
+                    <div class="hero-actions">
+
+                        <a
+                            href="#classes"
+                            class="button button-primary"
+                        >
+                            Explore Classes
+                            <span>→</span>
+                        </a>
+
+                        <a
+                            href="#experience"
+                            class="button button-secondary"
+                        >
+                            See How It Works
+                        </a>
+
+                    </div>
+
+
+                    <div class="hero-meta">
+
+                        <div>
+                            <strong>03</strong>
+                            <span>Classes</span>
+                        </div>
+
+                        <div>
+                            <strong>∞</strong>
+                            <span>Experiments</span>
+                        </div>
+
+                        <div>
+                            <strong>01</strong>
+                            <span>Goal — Understand</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HERO VISUAL -->
+
+                <div class="hero-visual">
+
+                    <div class="orbit-system">
+
+                        <div class="orbit orbit-large"></div>
+                        <div class="orbit orbit-medium"></div>
+                        <div class="orbit orbit-small"></div>
+
+                        <div class="physics-core">
+
+                            <span class="core-symbol">
+                                F = ma
+                            </span>
+
+                            <span class="core-label">
+                                PHYSICS
+                            </span>
+
+                        </div>
+
+
+                        <div class="orbit-particle particle-one"></div>
+                        <div class="orbit-particle particle-two"></div>
+                        <div class="orbit-particle particle-three"></div>
+
+                    </div>
+
+
+                    <div class="floating-equation equation-one">
+                        W = F × s
+                    </div>
+
+                    <div class="floating-equation equation-two">
+                        E = mc²
+                    </div>
+
+                    <div class="floating-equation equation-three">
+                        v = u + at
+                    </div>
+
+
+                    <div class="visual-label label-top">
+                        <span></span>
+                        LIVE SIMULATION
+                    </div>
+
+                    <div class="visual-label label-bottom">
+                        <span>01</span>
+                        OBSERVE • CALCULATE • UNDERSTAND
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             INTRODUCTION
+        ================================================== -->
+
+        <section class="section intro-section">
+
+            <div class="section-container">
+
+                <div class="section-heading">
+
+                    <span class="section-index">
+                        01
+                    </span>
+
+                    <div>
+                        <p class="section-label">
+                            THE IDEA
+                        </p>
+
+                        <h2>
+                            Physics should feel
+                            <span>explorable.</span>
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="intro-grid">
+
+                    <div class="intro-main">
+
+                        <p class="large-text">
+                            A formula is not the beginning of physics.
+                            It is the language we use to describe what
+                            happens in the real world.
+                        </p>
+
+                        <p>
+                            Physics Lab is designed around that idea.
+                            Instead of stopping at definitions and
+                            equations, each topic can grow into a complete
+                            learning experience:
+                        </p>
+
+                    </div>
+
+
+                    <div class="concept-flow">
+
+                        <div class="flow-item">
+                            <span>01</span>
+                            <strong>Concept</strong>
+                            <small>What is happening?</small>
+                        </div>
+
+                        <div class="flow-line"></div>
+
+                        <div class="flow-item">
+                            <span>02</span>
+                            <strong>Experiment</strong>
+                            <small>What do we observe?</small>
+                        </div>
+
+                        <div class="flow-line"></div>
+
+                        <div class="flow-item">
+                            <span>03</span>
+                            <strong>Mathematics</strong>
+                            <small>How can we describe it?</small>
+                        </div>
+
+                        <div class="flow-line"></div>
+
+                        <div class="flow-item">
+                            <span>04</span>
+                            <strong>Simulation</strong>
+                            <small>What happens when we change it?</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CLASSES
+        ================================================== -->
+
+        <section
+            class="section classes-section"
+            id="classes"
+        >
+
+            <div class="section-container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-index">
+                        02
+                    </span>
+
+                    <div>
+                        <p class="section-label">
+                            CHOOSE YOUR LEVEL
+                        </p>
+
+                        <h2>
+                            Where do you want to
+                            <span>start?</span>
+                        </h2>
+
+                        <p class="section-subtitle">
+                            Choose your class and explore physics
+                            at the right depth for you.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="class-grid">
+
+                    <!-- CLASS 9 -->
+
+                    <article class="class-card class-nine">
+
+                        <div class="class-card-top">
+
+                            <span class="class-number">
+                                09
+                            </span>
+
+                            <span class="class-status">
+                                FOUNDATION
+                            </span>
+
+                        </div>
+
+
+                        <div class="class-orb">
+                            <span>9</span>
+                        </div>
+
+
+                        <div class="class-content">
+
+                            <p class="class-label">
+                                CLASS
+                            </p>
+
+                            <h3>
+                                Build the foundation.
+                            </h3>
+
+                            <p>
+                                Start understanding motion, force,
+                                gravitation, work, energy, sound and
+                                the fundamental ideas that physics
+                                is built upon.
+                            </p>
+
+
+                            <div class="class-topics">
+
+                                <span>Motion</span>
+                                <span>Force</span>
+                                <span>Gravitation</span>
+                                <span>Sound</span>
+
+                            </div>
+
+
+                            <a href="../physics-lab/chapters/class9.html"
+                                class="class-button"
+                                data-class="9"
+                            >
+                                Explore Class 9
+                                <span>→</span>
+                        </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- CLASS 10 -->
+
+                    <article class="class-card class-ten featured-class">
+
+                        <div class="featured-ribbon">
+                            CURRENTLY BUILDING
+                        </div>
+
+
+                        <div class="class-card-top">
+
+                            <span class="class-number">
+                                10
+                            </span>
+
+                            <span class="class-status">
+                                CORE PHYSICS
+                            </span>
+
+                        </div>
+
+
+                        <div class="class-orb">
+                            <span>10</span>
+                        </div>
+
+
+                        <div class="class-content">
+
+                            <p class="class-label">
+                                CLASS
+                            </p>
+
+                            <h3>
+                                Go beyond the formula.
+                            </h3>
+
+                            <p>
+                                Explore physics through concepts,
+                                mathematics, interactive experiments,
+                                graphs and simulations.
+                            </p>
+
+
+                            <div class="class-topics">
+
+                                <span>Work & Energy</span>
+                                <span>Light</span>
+                                <span>Electricity</span>
+                                <span>Magnetism</span>
+
+                            </div>
+
+
+                            <a
+                                href="../physics-lab/chapters/class10.html"
+                                class="class-button"
+                            >
+                                Explore Current Chapter
+                                <span>→</span>
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- CLASS 11 -->
+
+                    <article class="class-card class-eleven">
+
+                        <div class="class-card-top">
+
+                            <span class="class-number">
+                                11
+                            </span>
+
+                            <span class="class-status">
+                                ADVANCED
+                            </span>
+
+                        </div>
+
+
+                        <div class="class-orb">
+                            <span>11</span>
+                        </div>
+
+
+                        <div class="class-content">
+
+                            <p class="class-label">
+                                CLASS
+                            </p>
+
+                            <h3>
+                                Go deeper into nature.
+                            </h3>
+
+                            <p>
+                                Move toward mathematical physics,
+                                mechanics, thermodynamics, waves and
+                                deeper physical models.
+                            </p>
+
+
+                            <div class="class-topics">
+
+                                <span>Mechanics</span>
+                                <span>Waves</span>
+                                <span>Thermodynamics</span>
+                                <span>Mathematics</span>
+
+                            </div>
+
+
+                            <button
+                                class="class-button coming-soon"
+                                data-class="11"
+                            >
+                                Explore Class 11
+                                <span>→</span>
+                            </button>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+
+                <div class="classes-note">
+
+                    <span>◈</span>
+
+                    <p>
+                        More chapters will be added continuously.
+                        The laboratory is being built step by step.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             EXPERIENCE
+        ================================================== -->
+
+        <section
+            class="section experience-section"
+            id="experience"
+        >
+
+            <div class="section-container">
+
+                <div class="section-heading">
+
+                    <span class="section-index">
+                        03
+                    </span>
+
+                    <div>
+                        <p class="section-label">
+                            THE LAB EXPERIENCE
+                        </p>
+
+                        <h2>
+                            More than
+                            <span>notes.</span>
+                        </h2>
+
+                        <p class="section-subtitle">
+                            Physics Lab is designed to make learning
+                            active instead of passive.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+                    <article class="feature-card large-feature">
+
+                        <div class="feature-number">
+                            01
+                        </div>
+
+                        <div class="feature-icon">
+                            ◉
+                        </div>
+
+                        <h3>
+                            Interactive Experiments
+                        </h3>
+
+                        <p>
+                            Change variables yourself and observe
+                            what happens instead of simply reading
+                            a solved example.
+                        </p>
+
+                        <div class="feature-visual experiment-visual">
+
+                            <div class="experiment-axis"></div>
+
+                            <div class="experiment-object"></div>
+
+                            <div class="experiment-arrow">
+                                →
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-number">
+                            02
+                        </div>
+
+                        <div class="feature-icon">
+                            ∫
+                        </div>
+
+                        <h3>
+                            Live Mathematics
+                        </h3>
+
+                        <p>
+                            See equations and calculated values
+                            respond to the experiment.
+                        </p>
+
+                        <div class="mini-equation">
+                            W = F × s × cos θ
+                        </div>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-number">
+                            03
+                        </div>
+
+                        <div class="feature-icon">
+                            ∿
+                        </div>
+
+                        <h3>
+                            Graphs & Data
+                        </h3>
+
+                        <p>
+                            Understand relationships by seeing
+                            how physical quantities change.
+                        </p>
+
+                        <div class="mini-graph">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-number">
+                            04
+                        </div>
+
+                        <div class="feature-icon">
+                            ◌
+                        </div>
+
+                        <h3>
+                            Visual Simulations
+                        </h3>
+
+                        <p>
+                            Watch physical systems evolve over time
+                            and connect mathematics with motion.
+                        </p>
+
+                        <div class="simulation-dots">
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                            <i></i>
+                        </div>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-number">
+                            05
+                        </div>
+
+                        <div class="feature-icon">
+                            ↗
+                        </div>
+
+                        <h3>
+                            Real-World Connection
+                        </h3>
+
+                        <p>
+                            Connect classroom physics with machines,
+                            vehicles, technology, space and everyday life.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="feature-number">
+                            06
+                        </div>
+
+                        <div class="feature-icon">
+                            ?
+                        </div>
+
+                        <h3>
+                            Learn the Why
+                        </h3>
+
+                        <p>
+                            Understand where formulas come from,
+                            what they mean and when they actually work.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LEARNING METHOD
+        ================================================== -->
+
+        <section class="section method-section">
+
+            <div class="section-container">
+
+                <div class="method-panel">
+
+                    <div class="method-heading">
+
+                        <p class="section-label">
+                            HOW PHYSICS LAB TEACHES
+                        </p>
+
+                        <h2>
+                            From curiosity
+                            <span>to understanding.</span>
+                        </h2>
+
+                    </div>
+
+
+                    <div class="method-steps">
+
+                        <div class="method-step active">
+                            <span>01</span>
+                            <strong>Ask</strong>
+                            <small>What is happening?</small>
+                        </div>
+
+                        <div class="method-connector"></div>
+
+                        <div class="method-step">
+                            <span>02</span>
+                            <strong>Understand</strong>
+                            <small>Build the concept.</small>
+                        </div>
+
+                        <div class="method-connector"></div>
+
+                        <div class="method-step">
+                            <span>03</span>
+                            <strong>Experiment</strong>
+                            <small>Change the variables.</small>
+                        </div>
+
+                        <div class="method-connector"></div>
+
+                        <div class="method-step">
+                            <span>04</span>
+                            <strong>Calculate</strong>
+                            <small>Use mathematics.</small>
+                        </div>
+
+                        <div class="method-connector"></div>
+
+                        <div class="method-step">
+                            <span>05</span>
+                            <strong>Simulate</strong>
+                            <small>See the system evolve.</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             WHY PHYSICS LAB
+        ================================================== -->
+
+        <section class="section why-section">
+
+            <div class="section-container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-index">
+                        04
+                    </span>
+
+                    <div>
+                        <p class="section-label">
+                            OUR APPROACH
+                        </p>
+
+                        <h2>
+                            Built around
+                            <span>understanding.</span>
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="why-grid">
+
+                    <article class="why-card">
+
+                        <span class="why-number">
+                            01
+                        </span>
+
+                        <h3>
+                            Visual first
+                        </h3>
+
+                        <p>
+                            When an invisible physical idea can be
+                            represented visually, it becomes easier
+                            to reason about.
+                        </p>
+
+                    </article>
+
+
+                    <article class="why-card">
+
+                        <span class="why-number">
+                            02
+                        </span>
+
+                        <h3>
+                            Mathematics with meaning
+                        </h3>
+
+                        <p>
+                            Equations are connected to the physical
+                            situation they describe instead of being
+                            treated as isolated formulas.
+                        </p>
+
+                    </article>
+
+
+                    <article class="why-card">
+
+                        <span class="why-number">
+                            03
+                        </span>
+
+                        <h3>
+                            Experiment yourself
+                        </h3>
+
+                        <p>
+                            Change values, make observations and
+                            discover patterns instead of only watching
+                            someone else solve them.
+                        </p>
+
+                    </article>
+
+
+                    <article class="why-card">
+
+                        <span class="why-number">
+                            04
+                        </span>
+
+                        <h3>
+                            Built progressively
+                        </h3>
+
+                        <p>
+                            Physics Lab will grow chapter by chapter,
+                            allowing the laboratory to become richer
+                            over time.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FEEDBACK
+        ================================================== -->
+
+        <section
+            class="section feedback-section"
+            id="feedback"
+        >
+
+            <div class="section-container">
+
+                <div class="feedback-layout">
+
+                    <div class="feedback-intro">
+
+                        <p class="section-label">
+                            HELP BUILD THE LAB
+                        </p>
+
+                        <h2>
+                            What should we
+                            <span>build next?</span>
+                        </h2>
+
+                        <p>
+                            Physics Lab is not finished. It is being
+                            built continuously.
+                        </p>
+
+                        <p>
+                            If there is a chapter you want, a simulation
+                            you want to try, an explanation that could
+                            be clearer, or a feature that would make
+                            learning easier — tell us.
+                        </p>
+
+
+                        <div class="feedback-points">
+
+                            <div>
+                                <span>+</span>
+                                Request a chapter
+                            </div>
+
+                            <div>
+                                <span>+</span>
+                                Suggest a simulation
+                            </div>
+
+                            <div>
+                                <span>+</span>
+                                Report something confusing
+                            </div>
+
+                            <div>
+                                <span>+</span>
+                                Suggest a new feature
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feedback-card">
+
+                        <div class="feedback-card-header">
+
+                            <span class="feedback-status">
+                                FEEDBACK CHANNEL
+                            </span>
+
+                            <span class="feedback-dot"></span>
+
+                        </div>
+
+
+                        <!--
+                            IMPORTANT:
+                            Replace YOUR_FORM_ID with your actual
+                            Formspree form ID when you connect
+                            the feedback system.
+                        -->
+
+                        <form
+                            id="feedback-form"
+                            action="https://formspree.io/f/YOUR_FORM_ID"
+                            method="POST"
+                        >
+
+                            <div class="form-row">
+
+                                <div class="form-field">
+
+                                    <label for="user-class">
+                                        Your class
+                                    </label>
+
+                                    <select
+                                        id="user-class"
+                                        name="class"
+                                        required
+                                    >
+
+                                        <option value="">
+                                            Select class
+                                        </option>
+
+                                        <option value="Class 9">
+                                            Class 9
+                                        </option>
+
+                                        <option value="Class 10">
+                                            Class 10
+                                        </option>
+
+                                        <option value="Class 11">
+                                            Class 11
+                                        </option>
+
+                                        <option value="Other">
+                                            Other
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="form-field">
+
+                                    <label for="chapter-request">
+                                        Chapter needed
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="chapter-request"
+                                        name="chapter"
+                                        placeholder="e.g. Gravitation"
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="addition">
+                                    What should we add?
+                                </label>
+
+                                <select
+                                    id="addition"
+                                    name="requested_feature"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Choose one
+                                    </option>
+
+                                    <option value="New chapter">
+                                        A new chapter
+                                    </option>
+
+                                    <option value="More simulations">
+                                        More simulations
+                                    </option>
+
+                                    <option value="More animations">
+                                        More animations
+                                    </option>
+
+                                    <option value="More graphs">
+                                        More graphs
+                                    </option>
+
+                                    <option value="Practice questions">
+                                        Practice questions
+                                    </option>
+
+                                    <option value="More real-world examples">
+                                        More real-world examples
+                                    </option>
+
+                                    <option value="Other">
+                                        Something else
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="improvement">
+                                    What could be better?
+                                </label>
+
+                                <textarea
+                                    id="improvement"
+                                    name="improvement"
+                                    rows="4"
+                                    placeholder="Tell us what you would improve..."
+                                ></textarea>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="message">
+                                    Your idea
+                                </label>
+
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="5"
+                                    required
+                                    placeholder="Tell us what you want Physics Lab to become..."
+                                ></textarea>
+
+                            </div>
+
+
+                            <button
+                                type="submit"
+                                class="button button-primary form-submit"
+                            >
+                                Send Feedback
+                                <span>→</span>
+                            </button>
+
+
+                            <p class="form-note">
+                                Your feedback helps decide what we build next.
+                            </p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SHARE
+        ================================================== -->
+
+        <section class="section share-section">
+
+            <div class="section-container">
+
+                <div class="share-panel">
+
+                    <div class="share-symbol">
+                        ↗
+                    </div>
+
+
+                    <div class="share-content">
+
+                        <p class="section-label">
+                            HELP THE LAB GROW
+                        </p>
+
+                        <h2>
+                            Physics becomes better
+                            when more people
+                            <span>explore it.</span>
+                        </h2>
+
+                        <p>
+                            If Physics Lab helps you understand something,
+                            share it with another student, teacher,
+                            friend or curious learner.
+                        </p>
+
+                    </div>
+
+
+                    <div class="share-actions">
+
+                        <button
+                            class="button button-primary"
+                            id="share-button"
+                        >
+                            Share Physics Lab
+                            <span>↗</span>
+                        </button>
+
+                        <button
+                            class="button button-secondary"
+                            id="copy-link-button"
+                        >
+                            Copy Link
+                        </button>
+
+                        <span
+                            class="copy-status"
+                            id="copy-status"
+                        ></span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CREATOR
+        ================================================== -->
+
+        <section
+            class="section about-section"
+            id="about"
+        >
+
+            <div class="section-container">
+
+                <div class="creator-card">
+
+                    <div class="creator-mark">
+                        N
+                    </div>
+
+
+                    <div class="creator-content">
+
+                        <p class="section-label">
+                            THE PERSON BEHIND THE PROJECT
+                        </p>
+
+                        <h2>
+                            Built by
+                            <span>Navneet.</span>
+                        </h2>
+
+                        <p class="creator-description">
+                            Physics Lab is an independent student-built
+                            project created with a simple idea:
+                            physics should be something you can explore,
+                            not just something you memorize before an exam.
+                        </p>
+
+                        <p>
+                            The project is being developed step by step,
+                            with interactive experiments, simulations,
+                            mathematical explanations and visual learning
+                            experiences being added over time.
+                        </p>
+
+
+                        <div class="creator-values">
+
+                            <span>
+                                Curiosity
+                            </span>
+
+                            <span>
+                                Understanding
+                            </span>
+
+                            <span>
+                                Experimentation
+                            </span>
+
+                            <span>
+                                Open Learning
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="creator-side">
+
+                        <span class="creator-side-label">
+                            PROJECT VISION
+                        </span>
+
+                        <strong>
+                            Make physics
+                            <br>
+                            <em>explorable.</em>
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FAQ
+        ================================================== -->
+
+        <section class="section faq-section">
+
+            <div class="section-container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-index">
+                        05
+                    </span>
+
+                    <div>
+                        <p class="section-label">
+                            QUESTIONS
+                        </p>
+
+                        <h2>
+                            Frequently asked
+                            <span>questions.</span>
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="faq-list">
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Is Physics Lab free?
+                            <span>+</span>
+                        </summary>
+
+                        <p>
+                            The goal of Physics Lab is to provide
+                            accessible interactive physics learning
+                            without putting core learning experiences
+                            behind a paywall.
+                        </p>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Which classes are supported?
+                            <span>+</span>
+                        </summary>
+
+                        <p>
+                            Physics Lab is being structured around
+                            Classes 9, 10 and 11, with chapters being
+                            developed progressively.
+                        </p>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Is this only for exam preparation?
+                            <span>+</span>
+                        </summary>
+
+                        <p>
+                            No. Exam preparation can benefit from
+                            understanding, but the larger goal is to
+                            connect concepts, mathematics, experiments,
+                            simulations and real-world physics.
+                        </p>
+
+                    </details>
+
+
+                    <details class="faq-item">
+
+                        <summary>
+                            Can I suggest a chapter?
+                            <span>+</span>
+                        </summary>
+
+                        <p>
+                            Yes. Use the feedback section and tell us
+                            which class and chapter you want next.
+                        </p>
+
+                    </details>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-brand">
+
+                <a href="#home" class="brand">
+
+                    <span class="brand-symbol">
+                        Φ
+                    </span>
+
+                    <span class="brand-text">
+                        <strong>PHYSICS</strong>
+                        <small>LAB</small>
+                    </span>
+
+                </a>
+
+                <p>
+                    Understand physics.
+                    Don't just memorize it.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <div>
+                    <span>EXPLORE</span>
+
+                    <a href="#classes">
+                        Classes
+                    </a>
+
+                    <a href="#experience">
+                        Experience
+                    </a>
+
+                    <a href="#feedback">
+                        Feedback
+                    </a>
+                </div>
+
+
+                <div>
+                    <span>PROJECT</span>
+
+                    <a href="#about">
+                        About
+                    </a>
+
+                    <a href="#home">
+                        Home
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
+                © <span id="current-year"></span>
+                Physics Lab. Built with curiosity.
+            </p>
+
+            <p>
+                Learn • Experiment • Understand
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- Global JavaScript -->
+    <script src="js/main.js"></script>
+
+    <!-- Homepage JavaScript -->
+    <script src="js/home.js"></script>
+
+</body>
+</html>

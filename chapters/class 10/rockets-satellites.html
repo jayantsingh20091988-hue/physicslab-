@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rockets & Satellites | Physics Lab</title>
+
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/simulation.css">
+    <link rel="stylesheet" href="../../css/chapters/ch1css/rockets-satellites.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     SPACE BACKGROUND
+========================================================= -->
+
+<canvas id="space-background"></canvas>
+
+<div class="space-glow glow-one"></div>
+<div class="space-glow glow-two"></div>
+<div class="space-glow glow-three"></div>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header class="space-hero">
+
+    <div class="hero-stars"></div>
+
+    <div class="hero-content">
+
+        <div class="chapter-badge">
+            🚀 TOPIC 07 · MECHANICS
+        </div>
+
+        <h1>
+            Rockets
+            <span>&</span>
+            Satellites
+        </h1>
+
+        <p class="hero-subtitle">
+            From falling objects on Earth to machines travelling through space.
+        </p>
+
+        <p class="hero-intro">
+            Learn why satellites orbit Earth, how rockets move without pushing
+            against air, why orbital velocity matters, and what it actually
+            takes to reach space.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#satellite-lab" class="hero-btn primary-btn">
+                🚀 Enter Space Lab
+            </a>
+
+            <a href="#rocket-section" class="hero-btn secondary-btn">
+                Explore Rockets
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- Animated planet system -->
+
+    <div class="hero-space-system">
+
+        <div class="hero-orbit orbit-large"></div>
+        <div class="hero-orbit orbit-small"></div>
+
+        <div class="hero-earth">
+            <span class="earth-glow"></span>
+            🌍
+        </div>
+
+        <div class="hero-satellite">
+            🛰️
+        </div>
+
+        <div class="hero-rocket">
+            🚀
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     LEARNING MAP
+========================================================= -->
+
+<section class="chapter-section learning-section">
+
+    <div class="section-heading">
+        <span class="section-kicker">MISSION MAP</span>
+        <h2>From Gravity → Space</h2>
+        <p>
+            Follow the same logical chain scientists use to understand orbital
+            motion and spaceflight.
+        </p>
+    </div>
+
+
+    <div class="mission-map">
+
+        <div class="mission-node">
+            <span>🌍</span>
+            <strong>Gravity</strong>
+            <small>Earth pulls objects</small>
+        </div>
+
+        <div class="mission-arrow">→</div>
+
+        <div class="mission-node">
+            <span>💨</span>
+            <strong>Velocity</strong>
+            <small>Objects keep moving</small>
+        </div>
+
+        <div class="mission-arrow">→</div>
+
+        <div class="mission-node">
+            <span>🛰️</span>
+            <strong>Orbit</strong>
+            <small>Curved free-fall</small>
+        </div>
+
+        <div class="mission-arrow">→</div>
+
+        <div class="mission-node">
+            <span>🚀</span>
+            <strong>Rocket</strong>
+            <small>Changes velocity</small>
+        </div>
+
+        <div class="mission-arrow">→</div>
+
+        <div class="mission-node">
+            <span>🌌</span>
+            <strong>Space</strong>
+            <small>Explore farther</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     WHY SPACE?
+========================================================= -->
+
+<section class="chapter-section">
+
+    <div class="section-heading">
+        <span class="section-kicker">START WITH WHY</span>
+        <h2>Why Do We Need Rockets?</h2>
+    </div>
+
+
+    <div class="why-grid">
+
+        <article class="info-card why-card">
+
+            <div class="card-icon">🌍</div>
+
+            <h3>Earth Has Gravity</h3>
+
+            <p>
+                Earth continuously pulls objects toward its centre.
+                A spacecraft near Earth therefore needs enough velocity
+                to move along its desired trajectory.
+            </p>
+
+            <div class="why-box">
+                <strong>WHY?</strong>
+                <span>
+                    Gravity keeps trying to bend the spacecraft's path back
+                    toward Earth.
+                </span>
+            </div>
+
+        </article>
+
+
+        <article class="info-card why-card">
+
+            <div class="card-icon">🚀</div>
+
+            <h3>Rockets Change Velocity</h3>
+
+            <p>
+                A rocket produces thrust by accelerating exhaust gases in
+                the opposite direction.
+            </p>
+
+            <div class="why-box">
+                <strong>WHY?</strong>
+                <span>
+                    Momentum must be conserved. Gas gets momentum one way,
+                    so the rocket gains momentum the other way.
+                </span>
+            </div>
+
+        </article>
+
+
+        <article class="info-card why-card">
+
+            <div class="card-icon">🛰️</div>
+
+            <h3>Satellites Need the Right Motion</h3>
+
+            <p>
+                A satellite does not simply "float". It is continuously
+                moving while gravity bends its path.
+            </p>
+
+            <div class="why-box">
+                <strong>WHY?</strong>
+                <span>
+                    Its sideways velocity and Earth's gravity work together
+                    to create an orbit.
+                </span>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SATELLITE CONCEPT
+========================================================= -->
+
+<section class="chapter-section satellite-theory">
+
+    <div class="section-heading">
+        <span class="section-kicker">ORBITAL MECHANICS</span>
+        <h2>Why Doesn't a Satellite Fall to Earth?</h2>
+    </div>
+
+
+    <div class="orbit-explanation">
+
+        <div class="orbit-visual-card">
+
+            <canvas id="fall-orbit-canvas"></canvas>
+
+            <div class="visual-label label-gravity">
+                ↓ Gravity
+            </div>
+
+            <div class="visual-label label-motion">
+                → Forward motion
+            </div>
+
+            <div class="visual-label label-orbit">
+                ↗ Curved path
+            </div>
+
+        </div>
+
+
+        <div class="explanation-content">
+
+            <div class="logic-step">
+                <span>01</span>
+                <div>
+                    <h3>The satellite is moving sideways</h3>
+                    <p>
+                        It already has velocity parallel to Earth's surface.
+                    </p>
+                </div>
+            </div>
+
+            <div class="logic-step">
+                <span>02</span>
+                <div>
+                    <h3>Gravity pulls it inward</h3>
+                    <p>
+                        Earth's gravity constantly changes the direction
+                        of its velocity.
+                    </p>
+                </div>
+            </div>
+
+            <div class="logic-step">
+                <span>03</span>
+                <div>
+                    <h3>The path bends</h3>
+                    <p>
+                        Instead of travelling in a straight line, the
+                        satellite follows a curved trajectory.
+                    </p>
+                </div>
+            </div>
+
+            <div class="logic-step highlight-step">
+                <span>04</span>
+                <div>
+                    <h3>That curved free-fall is an orbit</h3>
+                    <p>
+                        The satellite is falling toward Earth while its
+                        sideways motion continuously carries it forward.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ORBITAL VELOCITY
+========================================================= -->
+
+<section class="chapter-section">
+
+    <div class="section-heading">
+        <span class="section-kicker">MATHEMATICS</span>
+        <h2>Orbital Velocity</h2>
+
+        <p>
+            For a simplified circular orbit around a spherical body:
+        </p>
+    </div>
+
+
+    <div class="formula-feature">
+
+        <div class="formula-main">
+            v = √(GM / r)
+        </div>
+
+        <div class="formula-meaning">
+
+            <div>
+                <strong>G</strong>
+                <span>Universal gravitational constant</span>
+            </div>
+
+            <div>
+                <strong>M</strong>
+                <span>Mass of the central body</span>
+            </div>
+
+            <div>
+                <strong>r</strong>
+                <span>Distance from the centre</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="logic-banner">
+
+        <div class="logic-icon">💡</div>
+
+        <div>
+            <strong>WHY does orbital speed decrease at larger radius?</strong>
+
+            <p>
+                Farther from Earth, gravity is weaker. Therefore a circular
+                orbit at a larger radius requires less orbital speed.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ORBIT LAB
+========================================================= -->
+
+<section class="chapter-section" id="satellite-lab">
+
+    <div class="section-heading">
+        <span class="section-kicker">INTERACTIVE SPACE LAB</span>
+        <h2>Build Your Own Orbit</h2>
+
+        <p>
+            Change the satellite's altitude and watch how orbital speed,
+            period and gravity change.
+        </p>
+    </div>
+
+
+    <div class="lab-layout">
+
+        <div class="simulation-panel orbit-panel">
+
+            <div class="panel-top">
+
+                <div>
+                    <span class="panel-label">LIVE ORBIT</span>
+                    <h3>Satellite Orbit Simulator</h3>
+                </div>
+
+                <button id="orbit-pause" class="control-btn">
+                    ⏸ Pause
+                </button>
+
+            </div>
+
+
+            <canvas id="orbit-canvas"></canvas>
+
+
+            <div class="orbit-status">
+
+                <span id="orbit-type">
+                    LEO
+                </span>
+
+                <span id="orbit-status-text">
+                    Low Earth Orbit
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="control-panel">
+
+            <div class="control-group">
+
+                <label>
+                    Altitude
+                    <strong id="altitude-value">400 km</strong>
+                </label>
+
+                <input
+                    id="satellite-altitude"
+                    type="range"
+                    min="200"
+                    max="36000"
+                    value="400"
+                    step="100"
+                >
+
+                <div class="range-labels">
+                    <span>200 km</span>
+                    <span>36,000 km</span>
+                </div>
+
+            </div>
+
+
+            <div class="live-values">
+
+                <div class="live-value">
+                    <span>Orbital Speed</span>
+                    <strong id="orbital-speed">7.67 km/s</strong>
+                </div>
+
+                <div class="live-value">
+                    <span>Period</span>
+                    <strong id="orbital-period">92 min</strong>
+                </div>
+
+                <div class="live-value">
+                    <span>Gravity</span>
+                    <strong id="orbit-gravity">8.69 m/s²</strong>
+                </div>
+
+                <div class="live-value">
+                    <span>Orbit Radius</span>
+                    <strong id="orbit-radius">6771 km</strong>
+                </div>
+
+            </div>
+
+
+            <div class="why-live" id="orbit-why">
+
+                At 400 km altitude, Earth's gravity is still strong,
+                but the satellite has enough sideways velocity to keep
+                continuously falling around Earth.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ORBIT TYPES
+========================================================= -->
+
+<section class="chapter-section">
+
+    <div class="section-heading">
+        <span class="section-kicker">SATELLITE ORBITS</span>
+        <h2>Different Orbits, Different Jobs</h2>
+    </div>
+
+
+    <div class="orbit-cards">
+
+        <article class="orbit-type-card leo-card">
+
+            <div class="orbit-icon">🛰️</div>
+
+            <span class="orbit-tag">LEO</span>
+
+            <h3>Low Earth Orbit</h3>
+
+            <p>
+                Relatively close to Earth. Common for Earth observation,
+                scientific missions and many modern satellite networks.
+            </p>
+
+            <div class="orbit-height">
+                ~160–2,000 km
+            </div>
+
+        </article>
+
+
+        <article class="orbit-type-card meo-card">
+
+            <div class="orbit-icon">🌎</div>
+
+            <span class="orbit-tag">MEO</span>
+
+            <h3>Medium Earth Orbit</h3>
+
+            <p>
+                Higher than LEO. Navigation satellite systems commonly
+                operate in this region.
+            </p>
+
+            <div class="orbit-height">
+                ~2,000–35,786 km
+            </div>
+
+        </article>
+
+
+        <article class="orbit-type-card geo-card">
+
+            <div class="orbit-icon">📡</div>
+
+            <span class="orbit-tag">GEO</span>
+
+            <h3>Geostationary Orbit</h3>
+
+            <p>
+                A special equatorial orbit where the satellite's orbital
+                period matches Earth's rotation.
+            </p>
+
+            <div class="orbit-height">
+                ~35,786 km
+            </div>
+
+        </article>
+
+
+        <article class="orbit-type-card polar-card">
+
+            <div class="orbit-icon">🌐</div>
+
+            <span class="orbit-tag">POLAR</span>
+
+            <h3>Polar Orbit</h3>
+
+            <p>
+                Passes near Earth's poles and can allow broad coverage
+                as Earth rotates underneath.
+            </p>
+
+            <div class="orbit-height">
+                Near-polar inclination
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GEO WHY
+========================================================= -->
+
+<section class="chapter-section geo-section">
+
+    <div class="section-heading">
+        <span class="section-kicker">SPECIAL ORBIT</span>
+        <h2>Why Is Geostationary Orbit Special?</h2>
+    </div>
+
+
+    <div class="geo-explanation">
+
+        <div class="geo-animation">
+
+            <canvas id="geo-canvas"></canvas>
+
+            <div class="geo-label">
+                📡 Appears almost fixed over one region
+            </div>
+
+        </div>
+
+
+        <div class="geo-text">
+
+            <div class="geo-condition">
+                <span>1</span>
+                <p>Orbit must be above the equator.</p>
+            </div>
+
+            <div class="geo-condition">
+                <span>2</span>
+                <p>Orbit must be circular or nearly circular.</p>
+            </div>
+
+            <div class="geo-condition">
+                <span>3</span>
+                <p>Orbital period must equal Earth's rotation period.</p>
+            </div>
+
+            <div class="geo-condition">
+                <span>4</span>
+                <p>The satellite moves in the same direction as Earth's rotation.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SATELLITE USES
+========================================================= -->
+
+<section class="chapter-section">
+
+    <div class="section-heading">
+        <span class="section-kicker">REAL WORLD</span>
+        <h2>What Do Satellites Actually Do?</h2>
+    </div>
+
+
+    <div class="use-grid">
+
+        <article class="use-card">
+            <div>📡</div>
+            <h3>Communication</h3>
+            <p>
+                Help relay signals for communication systems.
+            </p>
+        </article>
+
+        <article class="use-card">
+            <div>🌦️</div>
+            <h3>Weather</h3>
+            <p>
+                Observe clouds, storms and atmospheric conditions.
+            </p>
+        </article>
+
+        <article class="use-card">
+            <div>🗺️</div>
+            <h3>Navigation</h3>
+            <p>
+                Satellite constellations support positioning and navigation.
+            </p>
+        </article>
+
+        <article class="use-card">
+            <div>🔭</div>
+            <h3>Space Science</h3>
+            <p>
+                Observe distant objects and study the universe.
+            </p>
+        </article>
+
+        <article class="use-card">
+            <div>🌾</div>
+            <h3>Earth Observation</h3>
+            <p>
+                Monitor land, oceans, agriculture and environmental change.
+            </p>
+        </article>
+
+        <article class="use-card">
+            <div>🚨</div>
+            <h3>Disaster Monitoring</h3>
+            <p>
+                Help observe floods, fires, cyclones and other events.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ROCKET SECTION
+========================================================= -->
+
+<section class="chapter-section rocket-section" id="rocket-section">
+
+    <div class="section-heading">
+        <span class="section-kicker">ROCKET SCIENCE</span>
+        <h2>How Does a Rocket Move?</h2>
+
+        <p>
+            The surprising answer: <strong>it does not need to push against air.</strong>
+        </p>
+    </div>
+
+
+    <div class="rocket-logic">
+
+        <div class="rocket-visual-card">
+
+            <canvas id="rocket-exhaust-canvas"></canvas>
+
+            <div class="rocket-model">
+
+                <div class="rocket-nose"></div>
+
+                <div class="rocket-body">
+
+                    <div class="rocket-window"></div>
+
+                    <div class="rocket-fin fin-left"></div>
+                    <div class="rocket-fin fin-right"></div>
+
+                </div>
+
+                <div class="rocket-engine"></div>
+
+            </div>
+
+        </div>
+
+
+        <div class="rocket-explanation">
+
+            <div class="rocket-step">
+                <span>01</span>
+
+                <div>
+                    <h3>Fuel burns</h3>
+                    <p>
+                        Chemical energy is converted into thermal and kinetic
+                        energy of the exhaust.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="rocket-step">
+                <span>02</span>
+
+                <div>
+                    <h3>Exhaust is accelerated backward</h3>
+                    <p>
+                        The engine gives the exhaust gases momentum in the
+                        backward direction.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="rocket-step">
+                <span>03</span>
+
+                <div>
+                    <h3>The rocket gains opposite momentum</h3>
+                    <p>
+                        Conservation of momentum gives the rocket momentum
+                        in the opposite direction.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="rocket-step highlight-step">
+                <span>04</span>
+
+                <div>
+                    <h3>So the rocket accelerates</h3>
+                    <p>
+                        This works even in space because the rocket is not
+                        pushing against the surrounding air.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="newton-banner">
+
+        <div class="newton-number">
+            III
+        </div>
+
+        <div>
+            <strong>Newton's Third Law</strong>
+
+            <p>
+                When the rocket pushes exhaust gases backward,
+                the gases exert an equal and opposite interaction on the rocket.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ROCKET LAB
+========================================================= -->
+
+<section class="chapter-section rocket-lab-section">
+
+    <div class="section-heading">
+        <span class="section-kicker">LAUNCH CONTROL</span>
+        <h2>Rocket Launch Simulator</h2>
+
+        <p>
+            Watch the rocket accelerate as its mass changes and thrust acts.
+        </p>
+    </div>
+
+
+    <div class="rocket-lab-layout">
+
+        <div class="rocket-launch-panel">
+
+            <canvas id="rocket-launch-canvas"></canvas>
+
+            <div class="launch-height">
+                Altitude:
+                <strong id="rocket-height">0 km</strong>
+            </div>
+
+            <div class="launch-speed">
+                Speed:
+                <strong id="rocket-speed">0 m/s</strong>
+            </div>
+
+        </div>
+
+
+        <div class="launch-controls">
+
+            <div class="control-group">
+
+                <label>
+                    Thrust
+                    <strong id="thrust-value">900 kN</strong>
+                </label>
+
+                <input
+                    id="rocket-thrust"
+                    type="range"
+                    min="500"
+                    max="2000"
+                    value="900"
+                    step="50"
+                >
+
+            </div>
+
+
+            <div class="control-group">
+
+                <label>
+                    Initial Mass
+                    <strong id="rocket-mass">120,000 kg</strong>
+                </label>
+
+                <input
+                    id="rocket-mass-slider"
+                    type="range"
+                    min="50000"
+                    max="200000"
+                    value="120000"
+                    step="5000"
+                >
+
+            </div>
+
+
+            <button id="launch-button" class="launch-btn">
+                🚀 LAUNCH
+            </button>
+
+            <button id="launch-reset" class="reset-btn">
+                ↻ Reset
+            </button>
+
+
+            <div class="launch-equation">
+
+                <span>Net Force</span>
+
+                <strong>
+                    F<sub>net</sub> = T − mg
+                </strong>
+
+            </div>
+
+
+            <div class="why-live" id="rocket-why">
+
+                The rocket is ready. When thrust becomes greater than
+                its weight, the net force becomes upward.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STAGING
+========================================================= -->
+
+<section class="chapter-section">
+
+    <div class="section-heading">
+        <span class="section-kicker">ROCKET DESIGN</span>
+        <h2>Why Do Rockets Use Multiple Stages?</h2>
+    </div>
+
+
+    <div class="stage-visual">
+
+        <div class="stage-card active-stage">
+            <span>01</span>
+            <div class="stage-rocket">🚀</div>
+            <h3>Launch Stage</h3>
+            <p>
+                Provides large thrust to lift the heavy rocket from Earth.
+            </p>
+        </div>
+
+        <div class="stage-arrow">→</div>
+
+        <div class="stage-card">
+            <span>02</span>
+            <div class="stage-rocket">🔥</div>
+            <h3>Separation</h3>
+            <p>
+                An empty stage can be discarded instead of carrying its
+                unnecessary mass.
+            </p>
+        </div>
+
+        <div class="stage-arrow">→</div>
+
+        <div class="stage-card">
+            <span>03</span>
+            <div class="stage-rocket">🛰️</div>
+            <h3>Upper Stage</h3>
+            <p>
+                The remaining vehicle uses its available energy to achieve
+                the required trajectory.
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="why-box large-why">
+
+        <strong>WHY is reducing mass so important?</strong>
+
+        <span>
+            If a rocket carries less unnecessary mass, the same amount of
+            propellant can produce a larger change in velocity.
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     ESCAPE VELOCITY
+========================================================= -->
+
+<section class="chapter-section escape-section">
+
+    <div class="section-heading">
+
+        <span class="section-kicker">DEEPER PHYSICS</span>
+
+        <h2>Escape Velocity</h2>
+
+        <p>
+            How fast would an object need to move to escape Earth's gravity
+            without further propulsion?
+        </p>
+
+    </div>
+
+
+    <div class="escape-formula">
+        v<sub>e</sub> = √(2GM/R)
+    </div>
+
+
+    <div class="escape-facts">
+
+        <div>
+            <strong>≈ 11.2 km/s</strong>
+            <span>Earth's surface escape speed</span>
+        </div>
+
+        <div>
+            <strong>≈ 7.9 km/s</strong>
+            <span>Typical circular orbital speed near Earth's surface</span>
+        </div>
+
+    </div>
+
+
+    <div class="escape-logic">
+
+        <div class="logic-card">
+
+            <span>🛰️</span>
+
+            <h3>Orbital velocity</h3>
+
+            <p>
+                Enough sideways speed for a circular orbit at a chosen radius.
+            </p>
+
+        </div>
+
+
+        <div class="logic-card">
+
+            <span>🌌</span>
+
+            <h3>Escape velocity</h3>
+
+            <p>
+                The ideal minimum speed needed to escape the gravitational
+                field when starting from that distance, ignoring atmosphere
+                and other losses.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FUN FACTS
+========================================================= -->
+
+<section class="chapter-section fun-section">
+
+    <div class="section-heading">
+
+        <span class="section-kicker">SPACE FACTS</span>
+
+        <h2>🚀 Mission Control: Did You Know?</h2>
+
+    </div>
+
+
+    <div class="fun-fact-machine">
+
+        <div class="fact-orbit"></div>
+
+        <div class="fact-core">
+            🌌
+        </div>
+
+        <div id="fun-fact">
+            A satellite in orbit is continuously falling toward Earth,
+            but its sideways velocity makes its path curve around Earth.
+        </div>
+
+        <button id="new-fact">
+            ✨ New Space Fact
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     MISCONCEPTIONS
+========================================================= -->
+
+<section class="chapter-section">
+
+    <div class="section-heading">
+
+        <span class="section-kicker">DON'T GET FOOLED</span>
+
+        <h2>Common Misconceptions</h2>
+
+    </div>
+
+
+    <div class="misconception-grid">
+
+        <article>
+            <span>❌</span>
+            <h3>"A satellite has no gravity."</h3>
+            <p>
+                Gravity is still acting strongly on satellites in low orbit.
+            </p>
+        </article>
+
+
+        <article>
+            <span>❌</span>
+            <h3>"A rocket needs air to push against."</h3>
+            <p>
+                Rocket propulsion works through momentum exchange with
+                expelled propellant.
+            </p>
+        </article>
+
+
+        <article>
+            <span>❌</span>
+            <h3>"Zero gravity means no gravity."</h3>
+            <p>
+                Apparent weightlessness in orbit is mainly due to continuous
+                free-fall, not the complete absence of gravity.
+            </p>
+        </article>
+
+
+        <article>
+            <span>❌</span>
+            <h3>"Higher orbit means faster satellite."</h3>
+            <p>
+                For circular Earth orbits, orbital speed decreases as orbital
+                radius increases.
+            </p>
+        </article>
+
+
+        <article>
+            <span>❌</span>
+            <h3>"Escape velocity means escaping instantly."</h3>
+            <p>
+                It is an ideal minimum speed under simplified conditions,
+                not a promise that the object instantly leaves the universe.
+            </p>
+        </article>
+
+
+        <article>
+            <span>❌</span>
+            <h3>"Centripetal force is a new force."</h3>
+            <p>
+                Centripetal force describes the net inward force responsible
+                for circular motion. Gravity, tension or another force can
+                provide it.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CHALLENGES
+========================================================= -->
+
+<section class="chapter-section challenge-section">
+
+    <div class="section-heading">
+
+        <span class="section-kicker">MISSION CHALLENGE</span>
+
+        <h2>Can You Solve It?</h2>
+
+    </div>
+
+
+    <div class="challenge-card">
+
+        <div class="challenge-number">
+            01
+        </div>
+
+        <h3>
+            A satellite moves in a circular orbit.
+            What happens to its orbital speed if its orbital radius increases?
+        </h3>
+
+
+        <div class="challenge-options">
+
+            <button data-answer="wrong">
+                A. It increases
+            </button>
+
+            <button data-answer="correct">
+                B. It decreases
+            </button>
+
+            <button data-answer="wrong">
+                C. It always becomes zero
+            </button>
+
+            <button data-answer="wrong">
+                D. It remains exactly the same
+            </button>
+
+        </div>
+
+
+        <div id="challenge-result" class="challenge-result"></div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     SUMMARY
+========================================================= -->
+
+<section class="chapter-section summary-section">
+
+    <div class="section-heading">
+
+        <span class="section-kicker">MISSION COMPLETE</span>
+
+        <h2>Chapter Summary</h2>
+
+    </div>
+
+
+    <div class="summary-grid">
+
+        <div>
+            <strong>Satellite</strong>
+            <span>An object orbiting another body.</span>
+        </div>
+
+        <div>
+            <strong>Orbital Motion</strong>
+            <span>Motion continuously curved by gravity.</span>
+        </div>
+
+        <div>
+            <strong>Orbital Speed</strong>
+            <span>v = √(GM/r)</span>
+        </div>
+
+        <div>
+            <strong>Escape Speed</strong>
+            <span>vₑ = √(2GM/R)</span>
+        </div>
+
+        <div>
+            <strong>Rocket</strong>
+            <span>Accelerates by ejecting propellant.</span>
+        </div>
+
+        <div>
+            <strong>Newton III</strong>
+            <span>Interactions produce equal and opposite forces.</span>
+        </div>
+
+    </div>
+
+
+    <div class="final-mission">
+
+        <div class="final-rocket">
+            🚀
+        </div>
+
+        <h3>
+            Physics doesn't stop at Earth.
+        </h3>
+
+        <p>
+            The same ideas of force, motion, energy and gravity allow us
+            to understand machines travelling thousands of kilometres above us.
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer class="chapter-footer">
+
+    <div>
+        <strong>PHYSICS LAB</strong>
+        <span>Learn physics by seeing it move.</span>
+    </div>
+
+    <div class="footer-space">
+        🌍 → 🛰️ → 🚀 → 🌌
+    </div>
+
+</footer>
+<!--home-->
+<div><a href="../../chapters/class10.html">🏠 HOME</a></div>
+
+<script src="../../js/core/animation.js"></script>
+<script src="../../js/core/canvas.js"></script>
+<script src="../../js/core/equation.js"></script>
+<script src="../../js/core/graph.js"></script>
+<script src="../../js/core/simulation.js"></script>
+
+<script src="../../js/physics/ch1js/rockets-satellites.js"></script>
+
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

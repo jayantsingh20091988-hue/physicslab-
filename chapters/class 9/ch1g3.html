@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kinematics — Projectile, Circular Motion & Oscillation | Physics Lab</title>
+
+    <meta
+        name="description"
+        content="Interactive Kinematics laboratory covering projectile motion, circular motion, pendulum, SHM and advanced challenges."
+    >
+
+    <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="stylesheet" href="../../../css/simulation.css">
+    <link rel="stylesheet" href="../../css/chapters/ch1c9css/ch1g3.css">
+</head>
+
+<body>
+
+<header class="chapter-header">
+
+    <div class="header-inner">
+
+        <a href="../../../index.html" class="lab-logo">
+            Physics Lab
+        </a>
+
+        <div class="chapter-label">
+            Class 10 • Kinematics
+        </div>
+
+    </div>
+
+</header>
+   
+
+<main class="kinematics-page">
+
+<!-- ========================================================= -->
+<!-- HERO -->
+<!-- ========================================================= -->
+
+<section class="hero-section">
+
+    <div class="hero-content">
+
+        <span class="eyebrow">KINEMATICS • GROUP 3</span>
+
+        <h1>
+            From a thrown ball to a planet in orbit.
+        </h1>
+
+        <p>
+            Motion becomes much more interesting when one direction is not enough.
+            In this laboratory we will understand projectile motion, circular motion,
+            pendulums and oscillations by connecting mathematics with what actually
+            happens in the physical world.
+        </p>
+
+        <div class="hero-tags">
+            <span>Projectile Motion</span>
+            <span>Circular Motion</span>
+            <span>Pendulum</span>
+            <span>SHM</span>
+            <span>Challenge Lab</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 01 PROJECTILE MOTION -->
+<!-- ========================================================= -->
+
+<section class="topic-section" id="projectile">
+
+    <div class="section-heading">
+
+        <span class="section-number">01</span>
+
+        <div>
+            <p class="section-kicker">TWO-DIMENSIONAL MOTION</p>
+
+            <h2>Projectile Motion</h2>
+        </div>
+
+    </div>
+
+
+    <div class="concept-card">
+
+        <h3>What is a projectile?</h3>
+
+        <p>
+            When an object is projected into the air and after projection the
+            main force acting on it is gravity, its motion is called projectile
+            motion.
+        </p>
+
+        <p>
+            A cricket ball hit into the air, a basketball thrown toward a hoop,
+            water coming out of a fountain and a stone thrown from a cliff are
+            everyday examples.
+        </p>
+
+    </div>
+
+
+    <div class="logic-grid">
+
+        <article class="logic-card">
+            <span>WHY?</span>
+
+            <h3>Why does the path become curved?</h3>
+
+            <p>
+                Because the object simultaneously moves horizontally while
+                gravity continuously changes its vertical velocity.
+            </p>
+        </article>
+
+
+        <article class="logic-card">
+            <span>KEY IDEA</span>
+
+            <h3>Separate the motion</h3>
+
+            <p>
+                Horizontal and vertical motions can be analysed independently.
+            </p>
+        </article>
+
+
+        <article class="logic-card">
+            <span>REAL WORLD</span>
+
+            <h3>Sports</h3>
+
+            <p>
+                The same mathematics helps explain the path of a football,
+                cricket ball or basketball.
+            </p>
+        </article>
+
+    </div>
+
+
+    <div class="equation-card">
+
+        <h3>Resolve the initial velocity</h3>
+
+        <div class="equation">
+            u<sub>x</sub> = u cos θ
+        </div>
+
+        <div class="equation">
+            u<sub>y</sub> = u sin θ
+        </div>
+
+        <p>
+            Why?
+            Because the initial velocity vector can be resolved into two
+            perpendicular components.
+        </p>
+
+    </div>
+
+
+    <div class="derivation-card">
+
+        <h3>Deriving the projectile equations</h3>
+
+        <div class="derivation-step">
+            <strong>Horizontal direction</strong>
+
+            <p>
+                There is no horizontal acceleration when air resistance is
+                neglected.
+            </p>
+
+            <div class="equation">
+                a<sub>x</sub> = 0
+            </div>
+
+            <div class="equation">
+                x = u cosθ × t
+            </div>
+        </div>
+
+
+        <div class="derivation-step">
+
+            <strong>Vertical direction</strong>
+
+            <p>
+                Gravity acts downward.
+            </p>
+
+            <div class="equation">
+                a<sub>y</sub> = −g
+            </div>
+
+            <div class="equation">
+                y = u sinθ × t − ½gt²
+            </div>
+
+        </div>
+
+
+        <div class="derivation-step">
+
+            <strong>Velocity after time t</strong>
+
+            <div class="equation">
+                v<sub>x</sub> = u cosθ
+            </div>
+
+            <div class="equation">
+                v<sub>y</sub> = u sinθ − gt
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="formula-grid">
+
+        <div>
+            <span>Time of flight</span>
+            <strong>T = 2u sinθ / g</strong>
+        </div>
+
+        <div>
+            <span>Maximum height</span>
+            <strong>H = u²sin²θ / 2g</strong>
+        </div>
+
+        <div>
+            <span>Horizontal range</span>
+            <strong>R = u²sin2θ / g</strong>
+        </div>
+
+    </div>
+
+
+    <!-- Projectile Simulator -->
+
+    <div class="simulation-card">
+
+        <div class="simulation-header">
+
+            <div>
+                <span class="simulation-label">LIVE EXPERIMENT</span>
+
+                <h3>Projectile Simulator</h3>
+
+                <p>
+                    Change the launch speed and angle. Watch the trajectory
+                    change in real time.
+                </p>
+            </div>
+
+            <button id="projectile-start" class="primary-btn">
+                Launch
+            </button>
+
+        </div>
+
+
+        <div class="controls-grid">
+
+            <label>
+                Initial speed
+                <strong>
+                    <span id="projectile-speed-value">20</span> m/s
+                </strong>
+
+                <input
+                    type="range"
+                    id="projectile-speed"
+                    min="5"
+                    max="50"
+                    value="20"
+                >
+            </label>
+
+
+            <label>
+                Launch angle
+                <strong>
+                    <span id="projectile-angle-value">45</span>°
+                </strong>
+
+                <input
+                    type="range"
+                    id="projectile-angle"
+                    min="5"
+                    max="85"
+                    value="45"
+                >
+            </label>
+
+
+            <label>
+                Gravity
+                <strong>
+                    <span id="projectile-g-value">9.8</span> m/s²
+                </strong>
+
+                <input
+                    type="range"
+                    id="projectile-g"
+                    min="1"
+                    max="20"
+                    step="0.1"
+                    value="9.8"
+                >
+            </label>
+
+        </div>
+
+
+        <div class="simulation-layout">
+
+            <canvas id="projectile-canvas"></canvas>
+
+            <div class="live-data">
+
+                <div>
+                    <span>Time of flight</span>
+                    <strong id="projectile-time">—</strong>
+                </div>
+
+                <div>
+                    <span>Maximum height</span>
+                    <strong id="projectile-height">—</strong>
+                </div>
+
+                <div>
+                    <span>Range</span>
+                    <strong id="projectile-range">—</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 02 CIRCULAR MOTION -->
+<!-- ========================================================= -->
+
+<section class="topic-section" id="circular-motion">
+
+    <div class="section-heading">
+
+        <span class="section-number">02</span>
+
+        <div>
+            <p class="section-kicker">MOTION ALONG A CURVE</p>
+
+            <h2>Uniform Circular Motion</h2>
+        </div>
+
+    </div>
+
+
+    <div class="concept-card">
+
+        <h3>Constant speed does NOT mean constant velocity</h3>
+
+        <p>
+            In uniform circular motion, the magnitude of velocity remains
+            constant, but its direction continuously changes.
+        </p>
+
+        <p>
+            Since velocity is a vector quantity, changing its direction means
+            that velocity is changing.
+        </p>
+
+    </div>
+
+
+    <div class="real-world-grid">
+
+        <article>
+            <h3>🎡 Ferris wheel</h3>
+            <p>
+                A passenger continuously changes direction while moving around
+                the circle.
+            </p>
+        </article>
+
+        <article>
+            <h3>🛰️ Satellite</h3>
+            <p>
+                Orbital motion requires continuous change in velocity direction.
+            </p>
+        </article>
+
+        <article>
+            <h3>🚗 Turning car</h3>
+            <p>
+                A car turning around a bend accelerates even if its speedometer
+                shows the same speed.
+            </p>
+        </article>
+
+    </div>
+
+
+    <div class="equation-card">
+
+        <h3>Centripetal acceleration</h3>
+
+        <div class="equation">
+            a<sub>c</sub> = v²/r
+        </div>
+
+        <p>
+            The acceleration points toward the centre of the circle.
+        </p>
+
+    </div>
+
+
+    <div class="derivation-card">
+
+        <h3>Why does v²/r appear?</h3>
+
+        <p>
+            Consider two nearby positions on a circular path.
+            The velocity vectors have equal magnitude but slightly different
+            directions.
+        </p>
+
+        <p>
+            The change in velocity depends on the angle through which the
+            velocity vector turns.
+        </p>
+
+        <p>
+            For a small angular displacement:
+        </p>
+
+        <div class="equation">
+            Δv / v ≈ Δs / r
+        </div>
+
+        <p>
+            Since:
+        </p>
+
+        <div class="equation">
+            Δs = vΔt
+        </div>
+
+        <p>
+            therefore:
+        </p>
+
+        <div class="equation">
+            Δv / Δt = v²/r
+        </div>
+
+        <p>
+            Hence:
+        </p>
+
+        <div class="equation">
+            a<sub>c</sub> = v²/r
+        </div>
+
+    </div>
+
+
+    <div class="simulation-card">
+
+        <div class="simulation-header">
+
+            <div>
+                <span class="simulation-label">LIVE EXPERIMENT</span>
+                <h3>Circular Motion Lab</h3>
+            </div>
+
+            <button id="circle-start" class="primary-btn">
+                Start
+            </button>
+
+        </div>
+
+
+        <div class="controls-grid">
+
+            <label>
+                Radius
+                <strong>
+                    <span id="circle-radius-value">100</span> m
+                </strong>
+
+                <input
+                    type="range"
+                    id="circle-radius"
+                    min="20"
+                    max="200"
+                    value="100"
+                >
+            </label>
+
+
+            <label>
+                Speed
+                <strong>
+                    <span id="circle-speed-value">20</span> m/s
+                </strong>
+
+                <input
+                    type="range"
+                    id="circle-speed"
+                    min="5"
+                    max="50"
+                    value="20"
+                >
+            </label>
+
+        </div>
+
+
+        <div class="simulation-layout">
+
+            <canvas id="circle-canvas"></canvas>
+
+            <div class="live-data">
+
+                <div>
+                    <span>Speed</span>
+                    <strong id="circle-speed-output">20 m/s</strong>
+                </div>
+
+                <div>
+                    <span>Centripetal acceleration</span>
+                    <strong id="circle-acceleration">4 m/s²</strong>
+                </div>
+
+                <div>
+                    <span>Direction of acceleration</span>
+                    <strong>Towards centre</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 03 PENDULUM -->
+<!-- ========================================================= -->
+
+<section class="topic-section" id="pendulum">
+
+    <div class="section-heading">
+
+        <span class="section-number">03</span>
+
+        <div>
+            <p class="section-kicker">OSCILLATORY MOTION</p>
+
+            <h2>Simple Pendulum</h2>
+        </div>
+
+    </div>
+
+
+    <div class="concept-card">
+
+        <h3>Why does a pendulum return?</h3>
+
+        <p>
+            When the bob is displaced from its equilibrium position, gravity
+            has a component that acts toward the equilibrium position.
+        </p>
+
+        <p>
+            This restoring tendency causes oscillation.
+        </p>
+
+    </div>
+
+
+    <div class="logic-grid">
+
+        <article class="logic-card">
+            <span>EXTREME POSITION</span>
+
+            <h3>Velocity = 0</h3>
+
+            <p>
+                At the extreme position the bob momentarily stops before moving
+                back.
+            </p>
+        </article>
+
+
+        <article class="logic-card">
+            <span>MEAN POSITION</span>
+
+            <h3>Speed is maximum</h3>
+
+            <p>
+                Gravitational potential energy has converted into kinetic
+                energy.
+            </p>
+        </article>
+
+
+        <article class="logic-card">
+            <span>ENERGY</span>
+
+            <h3>KE ↔ PE</h3>
+
+            <p>
+                Energy continuously transfers between kinetic and potential
+                forms.
+            </p>
+        </article>
+
+    </div>
+
+
+    <div class="equation-card">
+
+        <h3>Time period</h3>
+
+        <div class="equation">
+            T = 2π√(L/g)
+        </div>
+
+        <p>
+            This relation is valid for small angular oscillations.
+        </p>
+
+    </div>
+
+
+    <div class="derivation-card">
+
+        <h3>Why does length matter?</h3>
+
+        <p>
+            A longer pendulum needs more time to complete one oscillation.
+            The restoring acceleration and the geometry of the circular arc
+            lead to a characteristic time scale proportional to √L.
+        </p>
+
+        <p>
+            Gravity provides the restoring influence, so stronger gravity makes
+            the oscillation faster.
+        </p>
+
+        <div class="equation">
+            T ∝ √L
+        </div>
+
+        <div class="equation">
+            T ∝ 1/√g
+        </div>
+
+        <p>
+            Combining these dependencies:
+        </p>
+
+        <div class="equation">
+            T ∝ √(L/g)
+        </div>
+
+        <p>
+            The full mathematical derivation gives:
+        </p>
+
+        <div class="equation">
+            T = 2π√(L/g)
+        </div>
+
+    </div>
+
+
+    <div class="simulation-card">
+
+        <div class="simulation-header">
+
+            <div>
+                <span class="simulation-label">LIVE EXPERIMENT</span>
+                <h3>Pendulum Lab</h3>
+            </div>
+
+            <button id="pendulum-start" class="primary-btn">
+                Start
+            </button>
+
+        </div>
+
+
+        <div class="controls-grid">
+
+            <label>
+                Length
+                <strong>
+                    <span id="pendulum-length-value">1</span> m
+                </strong>
+
+                <input
+                    type="range"
+                    id="pendulum-length"
+                    min="0.2"
+                    max="3"
+                    step="0.1"
+                    value="1"
+                >
+            </label>
+
+
+            <label>
+                Gravity
+                <strong>
+                    <span id="pendulum-g-value">9.8</span> m/s²
+                </strong>
+
+                <input
+                    type="range"
+                    id="pendulum-g"
+                    min="1"
+                    max="20"
+                    step="0.1"
+                    value="9.8"
+                >
+            </label>
+
+
+            <label>
+                Initial angle
+                <strong>
+                    <span id="pendulum-angle-value">20</span>°
+                </strong>
+
+                <input
+                    type="range"
+                    id="pendulum-angle"
+                    min="5"
+                    max="35"
+                    value="20"
+                >
+            </label>
+
+        </div>
+
+
+        <div class="simulation-layout">
+
+            <canvas id="pendulum-canvas"></canvas>
+
+            <div class="live-data">
+
+                <div>
+                    <span>Time period</span>
+                    <strong id="pendulum-period">—</strong>
+                </div>
+
+                <div>
+                    <span>Length</span>
+                    <strong id="pendulum-length-output">1 m</strong>
+                </div>
+
+                <div>
+                    <span>Gravity</span>
+                    <strong id="pendulum-g-output">9.8 m/s²</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 04 SHM -->
+<!-- ========================================================= -->
+
+<section class="topic-section" id="shm">
+
+    <div class="section-heading">
+
+        <span class="section-number">04</span>
+
+        <div>
+            <p class="section-kicker">DEEPER CONNECTION</p>
+
+            <h2>From Pendulum to Simple Harmonic Motion</h2>
+        </div>
+
+    </div>
+
+
+    <div class="concept-card">
+
+        <h3>What makes a motion oscillatory?</h3>
+
+        <p>
+            An object oscillates when it repeatedly moves around an equilibrium
+            position.
+        </p>
+
+        <p>
+            In ideal simple harmonic motion, the restoring acceleration is
+            proportional to displacement and directed toward equilibrium.
+        </p>
+
+        <div class="equation">
+            a ∝ −x
+        </div>
+
+    </div>
+
+
+    <div class="logic-grid">
+
+        <article class="logic-card">
+            <span>DISPLACEMENT</span>
+
+            <h3>Farther from centre → stronger restoring tendency</h3>
+
+            <p>
+                The negative sign indicates that acceleration acts opposite to
+                displacement.
+            </p>
+        </article>
+
+
+        <article class="logic-card">
+            <span>ENERGY</span>
+
+            <h3>KE ↔ PE</h3>
+
+            <p>
+                At the centre, kinetic energy is maximum. At maximum
+                displacement, potential energy is maximum.
+            </p>
+        </article>
+
+
+        <article class="logic-card">
+            <span>EXAMPLES</span>
+
+            <h3>Mass-spring systems</h3>
+
+            <p>
+                A spring-mass system is a classic approximation of SHM.
+            </p>
+        </article>
+
+    </div>
+
+
+    <div class="equation-card">
+
+        <h3>Ideal SHM equation</h3>
+
+        <div class="equation">
+            x = A cos(ωt + φ)
+        </div>
+
+        <div class="equation">
+            v = −Aω sin(ωt + φ)
+        </div>
+
+        <div class="equation">
+            a = −Aω² cos(ωt + φ)
+        </div>
+
+        <p>
+            Since x = A cos(ωt + φ):
+        </p>
+
+        <div class="equation">
+            a = −ω²x
+        </div>
+
+    </div>
+
+
+    <div class="derivation-card">
+
+        <h3>Why is the acceleration negative?</h3>
+
+        <p>
+            Suppose the particle is displaced to the right.
+            The restoring force must act toward the centre, therefore towards
+            the left.
+        </p>
+
+        <p>
+            If displacement is positive, acceleration becomes negative.
+            If displacement is negative, acceleration becomes positive.
+        </p>
+
+        <div class="equation">
+            a = −ω²x
+        </div>
+
+        <p>
+            The minus sign therefore carries physical information about the
+            direction of the restoring acceleration.
+        </p>
+
+    </div>
+
+
+    <div class="simulation-card">
+
+        <div class="simulation-header">
+
+            <div>
+                <span class="simulation-label">LIVE EXPERIMENT</span>
+                <h3>SHM Energy Lab</h3>
+            </div>
+
+            <button id="shm-start" class="primary-btn">
+                Start
+            </button>
+
+        </div>
+
+
+        <div class="controls-grid">
+
+            <label>
+                Amplitude
+                <strong>
+                    <span id="shm-amplitude-value">2</span> m
+                </strong>
+
+                <input
+                    type="range"
+                    id="shm-amplitude"
+                    min="0.5"
+                    max="5"
+                    step="0.1"
+                    value="2"
+                >
+            </label>
+
+
+            <label>
+                Angular frequency
+                <strong>
+                    <span id="shm-frequency-value">2</span> rad/s
+                </strong>
+
+                <input
+                    type="range"
+                    id="shm-frequency"
+                    min="0.5"
+                    max="8"
+                    step="0.1"
+                    value="2"
+                >
+            </label>
+
+        </div>
+
+
+        <div class="simulation-layout">
+
+            <canvas id="shm-canvas"></canvas>
+
+            <div class="energy-bars">
+
+                <div class="energy-item">
+
+                    <span>Potential Energy</span>
+
+                    <div class="energy-track">
+                        <div
+                            id="shm-pe-bar"
+                            class="energy-fill"
+                        ></div>
+                    </div>
+
+                </div>
+
+
+                <div class="energy-item">
+
+                    <span>Kinetic Energy</span>
+
+                    <div class="energy-track">
+                        <div
+                            id="shm-ke-bar"
+                            class="energy-fill"
+                        ></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- 05 CHALLENGE LAB -->
+<!-- ========================================================= -->
+
+<section class="topic-section challenge-section" id="challenge">
+
+    <div class="section-heading">
+
+        <span class="section-number">05</span>
+
+        <div>
+            <p class="section-kicker">THINK LIKE A PHYSICIST</p>
+
+            <h2>Challenge Lab</h2>
+        </div>
+
+    </div>
+
+
+    <div class="challenge-intro">
+
+        <h3>No memorisation. Build the answer.</h3>
+
+        <p>
+            These problems combine concepts from the entire Kinematics
+            chapter. Select an option. If it is correct, the question is
+            completed. If it is wrong, the Physics Lab will explain the
+            reasoning behind the correct answer.
+        </p>
+
+    </div>
+
+
+    <div id="challenge-container"></div>
+
+</section>
+
+
+<!-- ========================================================= -->
+<!-- CHAPTER SUMMARY -->
+<!-- ========================================================= -->
+
+<section class="summary-section">
+
+    <span class="eyebrow">GROUP 3 SUMMARY</span>
+
+    <h2>One idea connects all of this.</h2>
+
+    <p>
+        Motion is not just about position changing with time.
+        The deeper question is:
+        <strong>why does the velocity change?</strong>
+    </p>
+
+    <div class="summary-chain">
+
+        <span>Projectile</span>
+        <b>→</b>
+
+        <span>Gravity</span>
+        <b>→</b>
+
+        <span>Velocity changes</span>
+        <b>→</b>
+
+        <span>Acceleration</span>
+
+    </div>
+
+    <div class="summary-chain">
+
+        <span>Circular Motion</span>
+        <b>→</b>
+
+        <span>Direction changes</span>
+        <b>→</b>
+
+        <span>Acceleration</span>
+
+    </div>
+
+    <div class="summary-chain">
+
+        <span>Oscillation</span>
+        <b>→</b>
+
+        <span>Restoring tendency</span>
+        <b>→</b>
+
+        <span>Repeated motion</span>
+
+    </div>
+
+</section>
+
+</main>
+<div><a href="../class 9/ch1g4.html"><h2><span class="section-number">next--></span></h2></a></div>
+
+<script src="../../../js/core/animation.js"></script>
+<script src="../../../js/core/canvas.js"></script>
+<script src="../../../js/core/equation.js"></script>
+<script src="../../../js/core/graph.js"></script>
+<script src="../../../js/core/simulation.js"></script>
+
+<script src="../../js/physics/ch1c9js/ch1g3.js"></script>
+
+<script src="../../../js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Physics Lab - Kinematics Group 01: Motion, Reference Frame, Distance, Displacement, Speed, Velocity and Instantaneous Velocity.">
+
+    <title>Kinematics 01 | Motion, Distance, Speed & Velocity — Physics Lab</title>
+
+    <!-- Main Physics Lab CSS -->
+    <link rel="stylesheet" href="../../css/main.css">
+
+    <!-- Kinematics Group 01 CSS -->
+    <link rel="stylesheet" href="../../css/chapters/ch1c9css/ch1g1.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+
+<div class="physics-background">
+
+    <div class="bg-grid"></div>
+
+    <div class="orb orb-one"></div>
+    <div class="orb orb-two"></div>
+    <div class="orb orb-three"></div>
+
+    <div class="star-field">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<header class="lab-header">
+
+    <div class="nav-inner">
+
+        <a href="../../index.html" class="brand">
+            <span class="brand-mark">P</span>
+
+            <span>
+                <strong>PHYSICS</strong>
+                <small>LAB</small>
+            </span>
+        </a>
+
+        <div class="chapter-label">
+            KINEMATICS <span>/</span> GROUP 01
+        </div>
+
+        <div class="progress-mini">
+            <span id="progressText">01 / 05</span>
+
+            <div class="progress-line">
+                <span id="progressFill"></span>
+            </div>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<main>
+
+<section class="hero-section">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            CLASS 10 • KINEMATICS • GROUP 01
+        </div>
+
+        <h1>
+            The Physics of
+            <span>Motion</span>
+        </h1>
+
+        <p class="hero-description">
+            Before understanding equations of motion, first understand
+            what motion actually means — how we observe it, measure it,
+            describe it and finally express it mathematically.
+        </p>
+
+        <div class="hero-pills">
+
+            <span>20+ Hard Questions</span>
+            <span>Interactive Experiments</span>
+            <span>Graphs</span>
+            <span>Real-World Physics</span>
+
+        </div>
+
+    </div>
+
+
+    <div class="hero-visual">
+
+        <div class="motion-orbit">
+
+            <div class="orbit orbit-a"></div>
+            <div class="orbit orbit-b"></div>
+
+            <div class="central-object">
+                <span></span>
+            </div>
+
+            <div class="orbit-particle"></div>
+
+        </div>
+
+        <div class="hero-data">
+
+            <div>
+                <small>POSITION</small>
+                <strong id="heroPosition">0.0 m</strong>
+            </div>
+
+            <div>
+                <small>TIME</small>
+                <strong id="heroTime">0.0 s</strong>
+            </div>
+
+            <div>
+                <small>STATE</small>
+                <strong id="heroState">REST</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CHAPTER MAP
+========================================================= -->
+
+<section class="chapter-map section-shell">
+
+    <div class="section-heading">
+
+        <div>
+            <span class="section-kicker">LEARNING MAP</span>
+
+            <h2>Build the language of motion</h2>
+        </div>
+
+        <p>
+            Each concept prepares the foundation for the next one.
+        </p>
+
+    </div>
+
+
+    <div class="topic-map">
+
+        <button class="topic-node active" data-topic="1">
+            <span>01</span>
+            <strong>Motion</strong>
+            <small>Reference Frame</small>
+        </button>
+
+        <div class="map-line"></div>
+
+        <button class="topic-node" data-topic="2">
+            <span>02</span>
+            <strong>Distance</strong>
+            <small>Displacement</small>
+        </button>
+
+        <div class="map-line"></div>
+
+        <button class="topic-node" data-topic="3">
+            <span>03</span>
+            <strong>Speed</strong>
+            <small>Average Speed</small>
+        </button>
+
+        <div class="map-line"></div>
+
+        <button class="topic-node" data-topic="4">
+            <span>04</span>
+            <strong>Velocity</strong>
+            <small>Average Velocity</small>
+        </button>
+
+        <div class="map-line"></div>
+
+        <button class="topic-node" data-topic="5">
+            <span>05</span>
+            <strong>Instantaneous</strong>
+            <small>Velocity</small>
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 01
+========================================================= -->
+
+<section class="topic-section section-shell" id="topic-1">
+
+    <div class="topic-header">
+
+        <div class="topic-number">01</div>
+
+        <div>
+            <span class="section-kicker">FOUNDATION</span>
+
+            <h2>Motion & Reference Frame</h2>
+
+            <p>
+                Motion is not an absolute idea. It depends on
+                <strong>what you choose as your reference.</strong>
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="concept-grid">
+
+        <article class="glass-card concept-card">
+
+            <span class="card-label">CORE IDEA</span>
+
+            <h3>What is motion?</h3>
+
+            <p>
+                An object is said to be in motion when its position
+                changes with time relative to a chosen reference point
+                or reference frame.
+            </p>
+
+            <div class="logic-box">
+
+                <span>LOGIC</span>
+
+                <p>
+                    No position + time comparison
+                    = no meaningful statement about motion.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="glass-card concept-card">
+
+            <span class="card-label">WHY?</span>
+
+            <h3>Why is motion relative?</h3>
+
+            <p>
+                Imagine sitting inside a smoothly moving train.
+                The passenger beside you appears stationary,
+                while a person standing on the platform appears
+                to move backward.
+            </p>
+
+            <div class="formula-display">
+                Motion → depends on reference frame
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- Reference frame experiment -->
+
+    <div class="experiment-card glass-card">
+
+        <div class="experiment-heading">
+
+            <div>
+                <span class="card-label">INTERACTIVE EXPERIMENT</span>
+                <h3>Who is actually moving?</h3>
+            </div>
+
+            <span class="live-badge">
+                ● LIVE
+            </span>
+
+        </div>
+
+
+        <div class="experiment-layout">
+
+            <div class="reference-scene" id="referenceScene">
+
+                <div class="road"></div>
+
+                <div class="platform">
+                    REFERENCE
+                </div>
+
+                <div class="person platform-person">
+                    ●
+                </div>
+
+                <div class="train" id="referenceTrain">
+
+                    <div class="train-window"></div>
+                    <div class="train-window"></div>
+
+                    <div class="train-wheel wheel-one"></div>
+                    <div class="train-wheel wheel-two"></div>
+
+                    <span>TRAIN</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="control-panel">
+
+                <label>
+                    Train velocity
+
+                    <output id="trainVelocityValue">
+                        20 km/h
+                    </output>
+                </label>
+
+                <input
+                    type="range"
+                    id="trainVelocity"
+                    min="0"
+                    max="100"
+                    value="20"
+                >
+
+                <button class="primary-button" id="referenceToggle">
+                    Start Motion
+                </button>
+
+
+                <div class="observation-panel">
+
+                    <div>
+                        <small>PLATFORM OBSERVER</small>
+                        <strong id="platformObservation">
+                            TRAIN MOVES
+                        </strong>
+                    </div>
+
+                    <div>
+                        <small>PASSENGER FRAME</small>
+                        <strong>
+                            PERSON AT REST
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Questions Topic 1 -->
+
+    <div class="question-block">
+
+        <div class="question-heading">
+            <span>CHALLENGE 01</span>
+            <h3>Test your understanding</h3>
+        </div>
+
+
+        <!-- Q1 -->
+
+        <article class="question-card"
+                 data-answer="B">
+
+            <span class="difficulty">CONCEPTUAL</span>
+
+            <h4>
+                Q1. A passenger sitting inside a train observes
+                another passenger sitting beside him as stationary.
+                A person standing on the platform observes both
+                passengers moving. Which statement is correct?
+            </h4>
+
+            <div class="options">
+
+                <button data-option="A">
+                    A. Only the passenger's observation is correct.
+                </button>
+
+                <button data-option="B">
+                    B. Both observations can be correct because
+                    motion depends on the reference frame.
+                </button>
+
+                <button data-option="C">
+                    C. The platform observer is always correct.
+                </button>
+
+                <button data-option="D">
+                    D. An object can never be at rest and in motion
+                    simultaneously.
+                </button>
+
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <!-- Q2 -->
+
+        <article class="question-card"
+                 data-answer="C">
+
+            <span class="difficulty hard">HARD</span>
+
+            <h4>
+                Q2. Earth rotates about its axis and revolves around
+                the Sun. Yet you are considered at rest while sitting
+                on your chair. What explains this apparent contradiction?
+            </h4>
+
+            <div class="options">
+
+                <button data-option="A">
+                    A. Earth does not really move.
+                </button>
+
+                <button data-option="B">
+                    B. Rotation of Earth stops near the chair.
+                </button>
+
+                <button data-option="C">
+                    C. Your state of motion is being described relative
+                    to a chosen reference frame.
+                </button>
+
+                <button data-option="D">
+                    D. Objects on Earth are excluded from mechanics.
+                </button>
+
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <!-- Q3 -->
+
+        <article class="question-card"
+                 data-answer="D">
+
+            <span class="difficulty expert">VERY HARD</span>
+
+            <h4>
+                Q3. A train moves east at 60 km/h. A passenger walks
+                west inside it at 5 km/h relative to the train.
+                Relative to the ground, what is the passenger's velocity?
+            </h4>
+
+            <div class="options">
+
+                <button data-option="A">A. 65 km/h east</button>
+                <button data-option="B">B. 65 km/h west</button>
+                <button data-option="C">C. 5 km/h west</button>
+                <button data-option="D">D. 55 km/h east</button>
+
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <!-- Q4 -->
+
+        <article class="question-card"
+                 data-answer="A">
+
+            <span class="difficulty expert">LOGIC TRAP</span>
+
+            <h4>
+                Q4. Can an object be at rest relative to one observer
+                and moving relative to another observer at the same
+                instant?
+            </h4>
+
+            <div class="options">
+
+                <button data-option="A">
+                    A. Yes, if the observers use different reference frames.
+                </button>
+
+                <button data-option="B">
+                    B. No, because motion is absolute.
+                </button>
+
+                <button data-option="C">
+                    C. Only for light.
+                </button>
+
+                <button data-option="D">
+                    D. Only if the object changes mass.
+                </button>
+
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 02
+========================================================= -->
+
+<section class="topic-section section-shell" id="topic-2">
+
+    <div class="topic-header">
+
+        <div class="topic-number">02</div>
+
+        <div>
+            <span class="section-kicker">GEOMETRY OF MOTION</span>
+
+            <h2>Distance & Displacement</h2>
+
+            <p>
+                One tells you <strong>how much path was travelled</strong>.
+                The other tells you <strong>how far the final position
+                is from the initial position, with direction.</strong>
+            </p>
+        </div>
+
+    </div>
+
+
+    <div class="formula-grid">
+
+        <article class="formula-card glass-card">
+
+            <span>DISTANCE</span>
+
+            <div class="big-formula">
+                d = total path length
+            </div>
+
+            <p>
+                Distance is a scalar quantity. Direction is not required.
+            </p>
+
+        </article>
+
+
+        <article class="formula-card glass-card">
+
+            <span>DISPLACEMENT</span>
+
+            <div class="big-formula">
+                Δx = x₂ − x₁
+            </div>
+
+            <p>
+                Displacement is a vector quantity. Direction matters.
+            </p>
+
+        </article>
+
+    </div>
+
+
+    <div class="logic-grid">
+
+        <article class="glass-card">
+
+            <span class="card-label">WHY DIFFERENT?</span>
+
+            <h3>Path vs final position</h3>
+
+            <p>
+                Suppose you walk 100 m east and then 100 m west.
+            </p>
+
+            <div class="path-visual">
+
+                <span class="path-arrow east">100 m →</span>
+                <span class="path-arrow west">← 100 m</span>
+
+            </div>
+
+            <div class="result-row">
+
+                <div>
+                    <small>DISTANCE</small>
+                    <strong>200 m</strong>
+                </div>
+
+                <div>
+                    <small>DISPLACEMENT</small>
+                    <strong>0 m</strong>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <article class="glass-card">
+
+            <span class="card-label">IMPORTANT</span>
+
+            <h3>Can displacement be greater than distance?</h3>
+
+            <p>
+                No.
+            </p>
+
+            <div class="inequality">
+                |Displacement| ≤ Distance
+            </div>
+
+            <p>
+                Equality occurs only when the object moves along a
+                straight path without reversing direction.
+            </p>
+
+        </article>
+
+    </div>
+
+
+    <!-- Interactive path -->
+
+    <div class="experiment-card glass-card">
+
+        <div class="experiment-heading">
+
+            <div>
+                <span class="card-label">INTERACTIVE PATH LAB</span>
+                <h3>Watch distance and displacement separate</h3>
+            </div>
+
+            <span class="live-badge">● LIVE</span>
+
+        </div>
+
+
+        <div class="path-lab">
+
+            <canvas id="distanceCanvas"></canvas>
+
+            <div class="path-controls">
+
+                <button class="control-button" data-move="right">
+                    Move Right
+                </button>
+
+                <button class="control-button" data-move="left">
+                    Move Left
+                </button>
+
+                <button class="control-button reset-button"
+                        data-move="reset">
+                    Reset
+                </button>
+
+                <div class="live-values">
+
+                    <div>
+                        <small>POSITION</small>
+                        <strong id="pathPosition">0 m</strong>
+                    </div>
+
+                    <div>
+                        <small>DISTANCE</small>
+                        <strong id="pathDistance">0 m</strong>
+                    </div>
+
+                    <div>
+                        <small>DISPLACEMENT</small>
+                        <strong id="pathDisplacement">0 m</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Questions Topic 2 -->
+
+    <div class="question-block">
+
+        <div class="question-heading">
+            <span>CHALLENGE 02</span>
+            <h3>Distance vs displacement</h3>
+        </div>
+
+
+        <article class="question-card"
+                 data-answer="C">
+
+            <span class="difficulty">CONCEPTUAL</span>
+
+            <h4>
+                Q5. A student walks 3 m east and then 4 m north.
+                What are the distance and magnitude of displacement?
+            </h4>
+
+            <div class="options">
+
+                <button data-option="A">A. 5 m, 7 m</button>
+                <button data-option="B">B. 7 m, 7 m</button>
+                <button data-option="C">C. 7 m, 5 m</button>
+                <button data-option="D">D. 5 m, 3 m</button>
+
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <article class="question-card"
+                 data-answer="A">
+
+            <span class="difficulty hard">HARD</span>
+
+            <h4>
+                Q6. A runner completes one full circular lap and
+                returns exactly to the starting point. Which statement
+                is necessarily true?
+            </h4>
+
+            <div class="options">
+
+                <button data-option="A">
+                    A. Displacement is zero but distance is non-zero.
+                </button>
+
+                <button data-option="B">
+                    B. Both distance and displacement are zero.
+                </button>
+
+                <button data-option="C">
+                    C. Distance is zero but displacement is non-zero.
+                </button>
+
+                <button data-option="D">
+                    D. Distance equals displacement.
+                </button>
+
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <article class="question-card"
+                 data-answer="B">
+
+            <span class="difficulty expert">VERY HARD</span>
+
+            <h4>
+                Q7. An object moves from x = −8 m to x = +3 m,
+                then returns to x = −2 m. Find total distance and
+                final displacement.
+            </h4>
+
+            <div class="options">
+
+                <button data-option="A">A. 11 m, +6 m</button>
+                <button data-option="B">B. 16 m, +6 m</button>
+                <button data-option="C">C. 16 m, −2 m</button>
+                <button data-option="D">D. 6 m, +16 m</button>
+
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <article class="question-card"
+                 data-answer="D">
+
+            <span class="difficulty expert">LOGIC TRAP</span>
+
+            <h4>
+                Q8. Which condition guarantees that the magnitude
+                of displacement equals distance?
+            </h4>
+
+            <div class="options">
+
+                <button data-option="A">
+                    A. The object moves very fast.
+                </button>
+
+                <button data-option="B">
+                    B. The object moves for a long time.
+                </button>
+
+                <button data-option="C">
+                    C. The object changes direction frequently.
+                </button>
+
+                <button data-option="D">
+                    D. The object moves along a straight path without
+                    reversing direction.
+                </button>
+
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 03
+========================================================= -->
+
+<section class="topic-section section-shell" id="topic-3">
+
+    <div class="topic-header">
+
+        <div class="topic-number">03</div>
+
+        <div>
+            <span class="section-kicker">RATE OF TRAVEL</span>
+
+            <h2>Speed & Average Speed</h2>
+
+            <p>
+                Speed tells us how quickly distance is being covered.
+                But average speed must be calculated from
+                <strong>total distance and total time.</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="formula-highlight glass-card">
+
+        <div>
+
+            <span class="card-label">CORE FORMULA</span>
+
+            <div class="hero-formula">
+                Speed = Distance / Time
+            </div>
+
+        </div>
+
+        <div>
+
+            <span class="card-label">AVERAGE</span>
+
+            <div class="hero-formula">
+                v<sub>avg speed</sub> =
+                Total distance / Total time
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="why-card glass-card">
+
+        <span class="card-label">WHY NOT JUST AVERAGE THE SPEEDS?</span>
+
+        <h3>
+            Because time spent at each speed may be different.
+        </h3>
+
+        <p>
+            Suppose a car travels one part of a journey at 20 km/h
+            and another part at 80 km/h.
+            The average speed is not automatically 50 km/h.
+        </p>
+
+        <div class="logic-equation">
+            Average speed =
+            <strong>Total distance ÷ Total time</strong>
+        </div>
+
+    </div>
+
+
+    <!-- Speed simulator -->
+
+    <div class="experiment-card glass-card">
+
+        <div class="experiment-heading">
+
+            <div>
+                <span class="card-label">LIVE SPEED LAB</span>
+                <h3>Change speed and observe motion</h3>
+            </div>
+
+            <span class="live-badge">● LIVE</span>
+
+        </div>
+
+
+        <div class="speed-lab">
+
+            <div class="speed-track">
+
+                <div class="distance-markers">
+                    <span>0 m</span>
+                    <span>25 m</span>
+                    <span>50 m</span>
+                    <span>75 m</span>
+                    <span>100 m</span>
+                </div>
+
+                <div class="speed-road"></div>
+
+                <div class="speed-car" id="speedCar">
+                    🚗
+                </div>
+
+            </div>
+
+
+            <div class="speed-controls">
+
+                <label>
+                    Speed
+
+                    <output id="speedValue">
+                        10 m/s
+                    </output>
+                </label>
+
+                <input
+                    type="range"
+                    id="speedSlider"
+                    min="0"
+                    max="50"
+                    value="10"
+                >
+
+                <button class="primary-button"
+                        id="speedToggle">
+                    Start
+                </button>
+
+                <div class="live-values">
+
+                    <div>
+                        <small>SPEED</small>
+                        <strong id="liveSpeed">10 m/s</strong>
+                    </div>
+
+                    <div>
+                        <small>DISTANCE</small>
+                        <strong id="liveSpeedDistance">0 m</strong>
+                    </div>
+
+                    <div>
+                        <small>TIME</small>
+                        <strong id="liveSpeedTime">0 s</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Average speed example -->
+
+    <div class="example-card glass-card">
+
+        <span class="card-label">REAL-WORLD LOGIC</span>
+
+        <h3>Why traffic makes average speed tricky</h3>
+
+        <p>
+            A car may travel at 60 km/h on an empty road and only
+            20 km/h in traffic. Its journey average depends on
+            how long it actually spends in each situation.
+        </p>
+
+        <div class="example-equation">
+
+            <span>
+                Total distance
+            </span>
+
+            <strong>÷</strong>
+
+            <span>
+                Total journey time
+            </span>
+
+            <strong>=</strong>
+
+            <span>
+                Average speed
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Questions Topic 3 -->
+
+    <div class="question-block">
+
+        <div class="question-heading">
+            <span>CHALLENGE 03</span>
+            <h3>Speed problems</h3>
+        </div>
+
+
+        <article class="question-card"
+                 data-answer="C">
+
+            <span class="difficulty">APPLICATION</span>
+
+            <h4>
+                Q9. A car covers 120 km in 3 hours. What is its
+                average speed?
+            </h4>
+
+            <div class="options">
+                <button data-option="A">A. 30 km/h</button>
+                <button data-option="B">B. 36 km/h</button>
+                <button data-option="C">C. 40 km/h</button>
+                <button data-option="D">D. 60 km/h</button>
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <article class="question-card"
+                 data-answer="D">
+
+            <span class="difficulty hard">HARD</span>
+
+            <h4>
+                Q10. A vehicle travels for equal time intervals at
+                20 km/h and 60 km/h. What is its average speed?
+            </h4>
+
+            <div class="options">
+                <button data-option="A">A. 20 km/h</button>
+                <button data-option="B">B. 30 km/h</button>
+                <button data-option="C">C. 35 km/h</button>
+                <button data-option="D">D. 40 km/h</button>
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <article class="question-card"
+                 data-answer="B">
+
+            <span class="difficulty expert">VERY HARD</span>
+
+            <h4>
+                Q11. A car covers the first half of a journey at
+                30 km/h and the second half at 60 km/h.
+                What is its average speed?
+            </h4>
+
+            <div class="options">
+                <button data-option="A">A. 45 km/h</button>
+                <button data-option="B">B. 40 km/h</button>
+                <button data-option="C">C. 30 km/h</button>
+                <button data-option="D">D. 60 km/h</button>
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <article class="question-card"
+                 data-answer="A">
+
+            <span class="difficulty expert">TRAP</span>
+
+            <h4>
+                Q12. A vehicle moves at 10 m/s for 10 s and then
+                at 20 m/s for 5 s. Which quantity must be calculated
+                using total distance divided by total time?
+            </h4>
+
+            <div class="options">
+                <button data-option="A">A. Average speed</button>
+                <button data-option="B">B. Instantaneous speed</button>
+                <button data-option="C">C. Maximum speed</button>
+                <button data-option="D">D. Final speed</button>
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 04
+========================================================= -->
+
+<section class="topic-section section-shell" id="topic-4">
+
+    <div class="topic-header">
+
+        <div class="topic-number">04</div>
+
+        <div>
+
+            <span class="section-kicker">VECTOR DESCRIPTION</span>
+
+            <h2>Velocity & Average Velocity</h2>
+
+            <p>
+                Velocity is not merely “speed with a different name”.
+                It tells us the rate at which
+                <strong>position changes.</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="velocity-core">
+
+        <article class="glass-card">
+
+            <span class="card-label">AVERAGE VELOCITY</span>
+
+            <div class="big-formula">
+                v<sub>avg</sub> =
+                Δx / Δt
+            </div>
+
+            <p>
+                It depends on displacement, not total distance.
+            </p>
+
+        </article>
+
+
+        <article class="glass-card">
+
+            <span class="card-label">KEY DIFFERENCE</span>
+
+            <div class="comparison-table">
+
+                <div>
+                    <span>Speed</span>
+                    <strong>Scalar</strong>
+                </div>
+
+                <div>
+                    <span>Velocity</span>
+                    <strong>Vector</strong>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <div class="vector-experiment glass-card">
+
+        <div class="experiment-heading">
+
+            <div>
+                <span class="card-label">VECTOR LAB</span>
+                <h3>Direction changes everything</h3>
+            </div>
+
+            <span class="live-badge">● LIVE</span>
+
+        </div>
+
+
+        <canvas id="velocityCanvas"></canvas>
+
+        <div class="vector-readings">
+
+            <div>
+                <small>POSITION</small>
+                <strong id="velocityPosition">0 m</strong>
+            </div>
+
+            <div>
+                <small>DISPLACEMENT</small>
+                <strong id="velocityDisplacement">0 m</strong>
+            </div>
+
+            <div>
+                <small>AVERAGE VELOCITY</small>
+                <strong id="averageVelocity">0 m/s</strong>
+            </div>
+
+        </div>
+
+
+        <div class="vector-controls">
+
+            <button class="control-button"
+                    data-velocity-action="forward">
+                Move Forward
+            </button>
+
+            <button class="control-button"
+                    data-velocity-action="backward">
+                Move Backward
+            </button>
+
+            <button class="control-button reset-button"
+                    data-velocity-action="reset">
+                Reset
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="logic-card glass-card">
+
+        <span class="card-label">DEEP LOGIC</span>
+
+        <h3>
+            Can speed be non-zero while average velocity is zero?
+        </h3>
+
+        <p>
+            Yes.
+        </p>
+
+        <p>
+            If an object moves and returns to its starting point,
+            the total distance is non-zero but its displacement is zero.
+            Therefore its average velocity is zero.
+        </p>
+
+        <div class="logic-equation">
+            Return to start
+            → Δx = 0
+            → v<sub>avg</sub> = 0
+        </div>
+
+    </div>
+
+
+    <!-- Questions Topic 4 -->
+
+    <div class="question-block">
+
+        <div class="question-heading">
+            <span>CHALLENGE 04</span>
+            <h3>Velocity thinking</h3>
+        </div>
+
+
+        <article class="question-card"
+                 data-answer="A">
+
+            <span class="difficulty">CONCEPTUAL</span>
+
+            <h4>
+                Q13. Which quantity requires direction to be completely
+                specified?
+            </h4>
+
+            <div class="options">
+                <button data-option="A">A. Velocity</button>
+                <button data-option="B">B. Distance</button>
+                <button data-option="C">C. Speed</button>
+                <button data-option="D">D. Time</button>
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <article class="question-card"
+                 data-answer="C">
+
+            <span class="difficulty hard">HARD</span>
+
+            <h4>
+                Q14. A person walks 50 m east and then 50 m west.
+                The total time is 20 s. What is the average velocity?
+            </h4>
+
+            <div class="options">
+                <button data-option="A">A. 5 m/s east</button>
+                <button data-option="B">B. 5 m/s west</button>
+                <button data-option="C">C. 0 m/s</button>
+                <button data-option="D">D. 2.5 m/s east</button>
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <article class="question-card"
+                 data-answer="D">
+
+            <span class="difficulty expert">VERY HARD</span>
+
+            <h4>
+                Q15. An object moves from x = 2 m to x = 12 m in
+                2 seconds and then returns to x = 7 m in the next
+                3 seconds. What is its average velocity for the
+                complete motion?
+            </h4>
+
+            <div class="options">
+                <button data-option="A">A. 2 m/s</button>
+                <button data-option="B">B. 1 m/s</button>
+                <button data-option="C">C. 5 m/s</button>
+                <button data-option="D">D. 1 m/s in the positive direction</button>
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <article class="question-card"
+                 data-answer="B">
+
+            <span class="difficulty expert">LOGIC TRAP</span>
+
+            <h4>
+                Q16. Which statement can be true?
+            </h4>
+
+            <div class="options">
+                <button data-option="A">
+                    A. Average velocity is always equal to average speed.
+                </button>
+
+                <button data-option="B">
+                    B. Average velocity can be zero while average speed
+                    is non-zero.
+                </button>
+
+                <button data-option="C">
+                    C. Average speed can be negative.
+                </button>
+
+                <button data-option="D">
+                    D. Distance can be negative.
+                </button>
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TOPIC 05
+========================================================= -->
+
+<section class="topic-section section-shell" id="topic-5">
+
+    <div class="topic-header">
+
+        <div class="topic-number">05</div>
+
+        <div>
+
+            <span class="section-kicker">LIMITING IDEA</span>
+
+            <h2>Instantaneous Velocity</h2>
+
+            <p>
+                Average velocity tells us what happened over an interval.
+                Instantaneous velocity asks:
+                <strong>“What is happening right now?”</strong>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="instantaneous-intro glass-card">
+
+        <div class="big-question">
+            What is the velocity at one exact instant?
+        </div>
+
+        <p>
+            We cannot simply divide displacement by zero.
+            Instead, we take an extremely small time interval and
+            see what the average velocity approaches.
+        </p>
+
+        <div class="limit-equation">
+            v =
+            <span>lim</span>
+            <sub>Δt → 0</sub>
+            <span>Δx / Δt</span>
+        </div>
+
+    </div>
+
+
+    <div class="tangent-lab glass-card">
+
+        <div class="experiment-heading">
+
+            <div>
+                <span class="card-label">LIVE GRAPH LAB</span>
+                <h3>Average velocity → instantaneous velocity</h3>
+            </div>
+
+            <span class="live-badge">● LIVE</span>
+
+        </div>
+
+
+        <canvas id="instantaneousCanvas"></canvas>
+
+
+        <div class="instantaneous-controls">
+
+            <label>
+                Time interval Δt
+
+                <output id="deltaTimeValue">
+                    1.00 s
+                </output>
+            </label>
+
+            <input
+                type="range"
+                id="deltaTimeSlider"
+                min="0.05"
+                max="3"
+                value="1"
+                step="0.05"
+            >
+
+            <div class="live-values">
+
+                <div>
+                    <small>AVERAGE VELOCITY</small>
+                    <strong id="instantAverage">
+                        0 m/s
+                    </strong>
+                </div>
+
+                <div>
+                    <small>INSTANTANEOUS VELOCITY</small>
+                    <strong id="instantVelocity">
+                        0 m/s
+                    </strong>
+                </div>
+
+                <div>
+                    <small>ERROR</small>
+                    <strong id="instantError">
+                        0%
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="derivation-card glass-card">
+
+        <span class="card-label">WHY DOES THE DERIVATIVE APPEAR?</span>
+
+        <h3>From average velocity to instantaneous velocity</h3>
+
+        <div class="derivation-steps">
+
+            <div>
+                <span>01</span>
+                <p>
+                    Start with average velocity:
+                </p>
+
+                <strong>
+                    v<sub>avg</sub> = Δx / Δt
+                </strong>
+            </div>
+
+
+            <div>
+                <span>02</span>
+
+                <p>
+                    Make the time interval smaller.
+                </p>
+
+                <strong>
+                    Δt → smaller
+                </strong>
+            </div>
+
+
+            <div>
+                <span>03</span>
+
+                <p>
+                    The secant line on an x-t graph approaches
+                    the tangent line.
+                </p>
+
+                <strong>
+                    Secant → Tangent
+                </strong>
+            </div>
+
+
+            <div>
+                <span>04</span>
+
+                <p>
+                    The limiting slope becomes instantaneous velocity.
+                </p>
+
+                <strong>
+                    v = dx/dt
+                </strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Questions Topic 5 -->
+
+    <div class="question-block">
+
+        <div class="question-heading">
+            <span>CHALLENGE 05</span>
+            <h3>Instantaneous velocity</h3>
+        </div>
+
+
+        <article class="question-card"
+                 data-answer="C">
+
+            <span class="difficulty">CONCEPTUAL</span>
+
+            <h4>
+                Q17. Instantaneous velocity tells us approximately
+                what quantity at a particular instant?
+            </h4>
+
+            <div class="options">
+                <button data-option="A">
+                    A. Total distance travelled during the entire journey
+                </button>
+
+                <button data-option="B">
+                    B. Total displacement from beginning to end
+                </button>
+
+                <button data-option="C">
+                    C. Rate of change of position at that instant
+                </button>
+
+                <button data-option="D">
+                    D. Total time taken
+                </button>
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <article class="question-card"
+                 data-answer="A">
+
+            <span class="difficulty hard">HARD</span>
+
+            <h4>
+                Q18. Why can we not directly calculate instantaneous
+                velocity using Δx/Δt with Δt = 0?
+            </h4>
+
+            <div class="options">
+                <button data-option="A">
+                    A. Because division by zero is undefined; instead
+                    we use a limiting process.
+                </button>
+
+                <button data-option="B">
+                    B. Because velocity does not exist.
+                </button>
+
+                <button data-option="C">
+                    C. Because displacement is always zero.
+                </button>
+
+                <button data-option="D">
+                    D. Because time cannot be measured.
+                </button>
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <article class="question-card"
+                 data-answer="D">
+
+            <span class="difficulty expert">VERY HARD</span>
+
+            <h4>
+                Q19. On a position-time graph, what physical quantity
+                is represented by the slope of the tangent at a point?
+            </h4>
+
+            <div class="options">
+                <button data-option="A">A. Distance</button>
+                <button data-option="B">B. Acceleration</button>
+                <button data-option="C">C. Average speed</button>
+                <button data-option="D">D. Instantaneous velocity</button>
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+
+        <article class="question-card"
+                 data-answer="B">
+
+            <span class="difficulty expert">JEE-STYLE THINKING</span>
+
+            <h4>
+                Q20. A particle's position changes according to
+                x = t² (SI units). What happens to its instantaneous
+                velocity as time increases?
+            </h4>
+
+            <div class="options">
+
+                <button data-option="A">
+                    A. It remains constant.
+                </button>
+
+                <button data-option="B">
+                    B. It increases linearly with time.
+                </button>
+
+                <button data-option="C">
+                    C. It decreases linearly with time.
+                </button>
+
+                <button data-option="D">
+                    D. It always remains zero.
+                </button>
+
+            </div>
+
+            <div class="question-feedback"></div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     GROUP SUMMARY
+========================================================= -->
+
+<section class="summary-section section-shell">
+
+    <div class="summary-card glass-card">
+
+        <span class="section-kicker">GROUP 01 COMPLETE</span>
+
+        <h2>
+            From “moving” to mathematical motion
+        </h2>
+
+        <p>
+            You have now built the language required to understand
+            acceleration, graphs and equations of motion.
+        </p>
+
+
+        <div class="summary-chain">
+
+            <span>Reference Frame</span>
+            <b>→</b>
+
+            <span>Position</span>
+            <b>→</b>
+
+            <span>Distance</span>
+            <b>→</b>
+
+            <span>Displacement</span>
+            <b>→</b>
+
+            <span>Speed</span>
+            <b>→</b>
+
+            <span>Velocity</span>
+            <b>→</b>
+
+            <span>Instantaneous Velocity</span>
+
+        </div>
+
+
+        <div class="next-chapter">
+
+            <span>NEXT GROUP</span>
+
+            <strong>
+                Acceleration & Motion Graphs
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+<a href="../class 9/ch1g2.html"><span class="brand">NEXT-></span></a>
+
+
+<footer class="lab-footer">
+
+    <div>
+        <strong>PHYSICS LAB</strong>
+        <span>Interactive Physics Learning</span>
+    </div>
+
+    <div>
+        KINEMATICS • GROUP 01
+    </div>
+
+</footer>
+
+
+<script src="../../js/physics/ch1c9js/ch1g1.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Circular Motion | Physics Lab</title>
+
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/simulation.css">
+    <link rel="stylesheet" href="../../css/chapters/ch1css/circular-motion.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     BACKGROUND
+========================================================= -->
+<canvas id="spark-background"></canvas>
+
+<div class="page-glow glow-one"></div>
+<div class="page-glow glow-two"></div>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+<header class="chapter-hero">
+
+    <div class="hero-orbit">
+        <span class="orbit-dot"></span>
+    </div>
+
+    <div class="hero-content">
+
+        <span class="chapter-number">TOPIC 04</span>
+
+        <h1>
+            Circular
+            <span>Motion</span>
+        </h1>
+
+        <p class="hero-subtitle">
+            Why does an object keep changing its direction while moving
+            around a circle?
+        </p>
+
+        <div class="hero-formula">
+            F<sub>c</sub> =
+            <span>mv²</span> / r
+        </div>
+
+        <p class="hero-note">
+            Don't just memorize the formula.
+            Understand <strong>why the force is needed.</strong>
+        </p>
+
+    </div>
+</header>
+
+
+<main class="chapter-container">
+
+
+<!-- =========================================================
+     LEARNING MAP
+========================================================= -->
+<section class="learning-map glass-card">
+
+    <div class="section-heading">
+        <span class="section-tag">LEARNING MAP</span>
+        <h2>From motion → to the force that keeps it turning</h2>
+    </div>
+
+    <div class="learning-flow">
+
+        <div class="flow-item">
+            <span>01</span>
+            <strong>Circle</strong>
+            <small>What is circular motion?</small>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-item">
+            <span>02</span>
+            <strong>Direction</strong>
+            <small>Why does velocity change?</small>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-item">
+            <span>03</span>
+            <strong>Acceleration</strong>
+            <small>Why is it inward?</small>
+        </div>
+
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-item">
+            <span>04</span>
+            <strong>Force</strong>
+            <small>What keeps it turning?</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     1. WHAT IS CIRCULAR MOTION?
+========================================================= -->
+<section class="concept-section">
+
+    <div class="section-heading">
+        <span class="section-tag">01 · CONCEPT</span>
+        <h2>What is Circular Motion?</h2>
+    </div>
+
+    <div class="two-column">
+
+        <article class="info-card">
+
+            <h3>🌀 Simple idea</h3>
+
+            <p>
+                When an object moves along a circular path around a fixed
+                centre, its motion is called <strong>circular motion</strong>.
+            </p>
+
+            <div class="example-box">
+                <strong>Examples</strong>
+
+                <ul>
+                    <li>Fan blades rotating</li>
+                    <li>A stone tied to a string</li>
+                    <li>A car turning around a bend</li>
+                    <li>A satellite orbiting Earth</li>
+                    <li>Washing machine drum</li>
+                </ul>
+            </div>
+
+        </article>
+
+
+        <article class="why-card">
+
+            <div class="why-badge">WHY?</div>
+
+            <h3>Why can't the object simply continue straight?</h3>
+
+            <p>
+                An object naturally tends to continue in the direction in
+                which it is already moving.
+            </p>
+
+            <p>
+                To make its path curve, something must continuously change
+                the direction of its velocity.
+            </p>
+
+            <p class="highlight-text">
+                That continuous change of direction is the key to
+                understanding circular motion.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     2. CIRCLE ANATOMY
+========================================================= -->
+<section class="concept-section">
+
+    <div class="section-heading">
+        <span class="section-tag">02 · GEOMETRY</span>
+        <h2>Understanding the Circle</h2>
+    </div>
+
+    <div class="circle-anatomy glass-card">
+
+        <div class="anatomy-visual">
+
+            <div class="circle-diagram">
+
+                <div class="diagram-center">C</div>
+
+                <div class="diagram-object">
+                    ●
+                </div>
+
+                <div class="radius-line"></div>
+
+                <div class="radius-label">r</div>
+
+            </div>
+
+        </div>
+
+        <div class="anatomy-info">
+
+            <div class="definition-row">
+                <strong>Centre</strong>
+                <span>The fixed point around which the object moves.</span>
+            </div>
+
+            <div class="definition-row">
+                <strong>Radius (r)</strong>
+                <span>Distance between the centre and the object.</span>
+            </div>
+
+            <div class="definition-row">
+                <strong>Circumference</strong>
+                <span>Total distance around the circle.</span>
+            </div>
+
+            <div class="formula-box">
+                Circumference = 2πr
+            </div>
+
+            <p>
+                The radius becomes extremely important because both
+                acceleration and centripetal force depend on it.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     3. ANGULAR MOTION
+========================================================= -->
+<section class="concept-section">
+
+    <div class="section-heading">
+        <span class="section-tag">03 · ANGULAR MOTION</span>
+        <h2>Angular Displacement & Angular Speed</h2>
+    </div>
+
+    <div class="formula-grid">
+
+        <article class="formula-card">
+
+            <span class="formula-number">01</span>
+
+            <h3>Angular displacement</h3>
+
+            <div class="big-formula">
+                θ = Δs / r
+            </div>
+
+            <p>
+                Instead of describing how far the object travelled along
+                the path, we can describe how much it rotated around
+                the centre.
+            </p>
+
+        </article>
+
+
+        <article class="formula-card">
+
+            <span class="formula-number">02</span>
+
+            <h3>Angular speed</h3>
+
+            <div class="big-formula">
+                ω = Δθ / Δt
+            </div>
+
+            <p>
+                Angular speed tells us how quickly the object is rotating.
+            </p>
+
+            <div class="why-mini">
+                <strong>WHY?</strong>
+                More angle covered in less time means faster rotation.
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     4. PERIOD & FREQUENCY
+========================================================= -->
+<section class="concept-section">
+
+    <div class="section-heading">
+        <span class="section-tag">04 · TIME</span>
+        <h2>Period & Frequency</h2>
+    </div>
+
+    <div class="three-column">
+
+        <article class="stat-card">
+            <span>TIME FOR ONE ROUND</span>
+            <strong>T</strong>
+            <p>Time period</p>
+        </article>
+
+        <article class="stat-card">
+            <span>ROUNDS PER SECOND</span>
+            <strong>f</strong>
+            <p>Frequency</p>
+        </article>
+
+        <article class="stat-card">
+            <span>RELATIONSHIP</span>
+            <strong>T = 1/f</strong>
+            <p>More frequency → less time per round</p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     5. TANGENTIAL SPEED
+========================================================= -->
+<section class="concept-section">
+
+    <div class="section-heading">
+        <span class="section-tag">05 · SPEED</span>
+        <h2>Tangential Speed</h2>
+    </div>
+
+    <div class="explanation-card glass-card">
+
+        <div class="formula-side">
+
+            <span class="formula-label">IMPORTANT RELATION</span>
+
+            <div class="giant-formula">
+                v = rω
+            </div>
+
+        </div>
+
+        <div class="explanation-side">
+
+            <h3>Why does radius affect speed?</h3>
+
+            <p>
+                Imagine two objects rotating with exactly the same angular
+                speed.
+            </p>
+
+            <p>
+                The object farther from the centre travels a larger distance
+                during the same rotation.
+            </p>
+
+            <p class="highlight-text">
+                Therefore, for the same angular speed, a larger radius
+                produces a larger tangential speed.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     6. WHY VELOCITY CHANGES
+========================================================= -->
+<section class="concept-section">
+
+    <div class="section-heading">
+        <span class="section-tag">06 · THE BIG IDEA</span>
+        <h2>Constant Speed ≠ Constant Velocity</h2>
+    </div>
+
+    <div class="why-grid">
+
+        <article class="why-card large">
+
+            <div class="why-badge">WHY?</div>
+
+            <h3>
+                The object can have constant speed,
+                but its velocity still changes.
+            </h3>
+
+            <p>
+                Speed tells us only <strong>how fast</strong> the object is
+                moving.
+            </p>
+
+            <p>
+                Velocity tells us both:
+            </p>
+
+            <ul class="bright-list">
+                <li>how fast it moves</li>
+                <li>which direction it moves</li>
+            </ul>
+
+            <p>
+                During circular motion, the direction of motion changes
+                continuously.
+            </p>
+
+            <div class="logic-chain">
+
+                <span>Direction changes</span>
+                <b>→</b>
+                <span>Velocity changes</span>
+                <b>→</b>
+                <span>Acceleration exists</span>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     7. CENTRIPETAL ACCELERATION
+========================================================= -->
+<section class="concept-section">
+
+    <div class="section-heading">
+        <span class="section-tag">07 · ACCELERATION</span>
+        <h2>Centripetal Acceleration</h2>
+    </div>
+
+    <div class="formula-highlight">
+
+        <div>
+            <span>MAIN FORMULA</span>
+
+            <div class="giant-formula">
+                a<sub>c</sub> =
+                <span>v²</span> / r
+            </div>
+        </div>
+
+        <div class="alternate-formula">
+            a<sub>c</sub> = rω²
+        </div>
+
+    </div>
+
+    <div class="two-column">
+
+        <article class="info-card">
+
+            <h3>What does it mean?</h3>
+
+            <p>
+                Centripetal acceleration is the acceleration directed
+                continuously toward the centre of the circular path.
+            </p>
+
+            <div class="mini-equation">
+                Centre ← acceleration
+            </div>
+
+        </article>
+
+        <article class="why-card">
+
+            <div class="why-badge">WHY?</div>
+
+            <h3>Why toward the centre?</h3>
+
+            <p>
+                If the velocity needs to continuously turn toward the new
+                direction of the circular path, the change in velocity
+                points inward.
+            </p>
+
+            <p class="highlight-text">
+                Therefore the acceleration responsible for this change
+                points toward the centre.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     8. CENTRIPETAL FORCE
+========================================================= -->
+<section class="concept-section">
+
+    <div class="section-heading">
+        <span class="section-tag">08 · FORCE</span>
+        <h2>Centripetal Force</h2>
+    </div>
+
+    <div class="force-intro glass-card">
+
+        <div class="force-equation">
+            F<sub>c</sub> =
+            <span>mv²</span> / r
+        </div>
+
+        <div>
+
+            <h3>Here's the logic</h3>
+
+            <div class="logic-chain vertical">
+
+                <span>Circular path</span>
+                <b>↓</b>
+
+                <span>Velocity direction changes</span>
+                <b>↓</b>
+
+                <span>Acceleration points inward</span>
+                <b>↓</b>
+
+                <span>Net force must point inward</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="important-note">
+
+        <strong>⚠️ Important:</strong>
+
+        Centripetal force is not a new separate type of force.
+
+        <p>
+            It is simply the <strong>net inward force</strong> required
+            for circular motion.
+        </p>
+
+        <div class="force-sources">
+
+            <span>🪢 Tension</span>
+            <span>🛞 Friction</span>
+            <span>🌍 Gravity</span>
+            <span>⬆️ Normal force</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     9. INTERACTIVE SIMULATOR
+========================================================= -->
+<section class="simulation-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">09 · INTERACTIVE LAB</span>
+
+        <h2>Rotating Object Simulator</h2>
+
+        <p>
+            Change the variables and watch the physics change in real time.
+        </p>
+
+    </div>
+
+
+    <div class="simulator-layout">
+
+
+        <!-- CONTROLS -->
+        <aside class="control-panel glass-card">
+
+            <h3>⚙️ Experiment Controls</h3>
+
+
+            <label>
+                Radius
+                <strong>
+                    <span id="radius-value">3.0</span> m
+                </strong>
+            </label>
+
+            <input
+                type="range"
+                id="radius-slider"
+                min="1"
+                max="6"
+                step="0.1"
+                value="3"
+            >
+
+
+            <label>
+                Mass
+                <strong>
+                    <span id="mass-value">2.0</span> kg
+                </strong>
+            </label>
+
+            <input
+                type="range"
+                id="mass-slider"
+                min="0.5"
+                max="10"
+                step="0.5"
+                value="2"
+            >
+
+
+            <label>
+                Tangential Speed
+                <strong>
+                    <span id="speed-value">6.0</span> m/s
+                </strong>
+            </label>
+
+            <input
+                type="range"
+                id="speed-slider"
+                min="1"
+                max="15"
+                step="0.5"
+                value="6"
+            >
+
+
+            <button id="pause-simulation" class="sim-button">
+                Pause
+            </button>
+
+            <button id="reset-simulation" class="sim-button secondary">
+                Reset
+            </button>
+
+        </aside>
+
+
+        <!-- CANVAS -->
+        <div class="simulation-stage glass-card">
+
+            <canvas id="circular-canvas"></canvas>
+
+            <div class="simulation-label velocity-label">
+                VELOCITY →
+            </div>
+
+            <div class="simulation-label force-label">
+                ← CENTRE
+            </div>
+
+        </div>
+
+
+        <!-- LIVE DATA -->
+        <aside class="live-data glass-card">
+
+            <h3>📊 Live Physics</h3>
+
+            <div class="data-item">
+                <span>Angular speed</span>
+                <strong id="omega-output">0.00 rad/s</strong>
+            </div>
+
+            <div class="data-item">
+                <span>Period</span>
+                <strong id="period-output">0.00 s</strong>
+            </div>
+
+            <div class="data-item">
+                <span>Frequency</span>
+                <strong id="frequency-output">0.00 Hz</strong>
+            </div>
+
+            <div class="data-item">
+                <span>Tangential speed</span>
+                <strong id="velocity-output">0.00 m/s</strong>
+            </div>
+
+            <div class="data-item">
+                <span>Centripetal acceleration</span>
+                <strong id="acceleration-output">0.00 m/s²</strong>
+            </div>
+
+            <div class="data-item">
+                <span>Centripetal force</span>
+                <strong id="force-output">0.00 N</strong>
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <div id="simulation-why" class="simulation-why">
+        Change a variable to see why the result changes.
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     10. SPEED EXPERIMENT
+========================================================= -->
+<section class="experiment-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">10 · EXPERIMENT</span>
+
+        <h2>What Happens When Speed Increases?</h2>
+
+    </div>
+
+    <div class="experiment-card glass-card">
+
+        <div class="experiment-controls">
+
+            <label>
+                Speed:
+                <strong id="experiment-speed-value">5</strong> m/s
+            </label>
+
+            <input
+                id="experiment-speed"
+                type="range"
+                min="1"
+                max="15"
+                value="5"
+                step="1"
+            >
+
+            <div class="experiment-fixed">
+                Mass = 2 kg<br>
+                Radius = 3 m
+            </div>
+
+        </div>
+
+        <div class="experiment-results">
+
+            <div>
+                <span>Speed</span>
+                <strong id="exp-speed">5 m/s</strong>
+            </div>
+
+            <div>
+                <span>v²</span>
+                <strong id="exp-speed-square">25</strong>
+            </div>
+
+            <div>
+                <span>Force</span>
+                <strong id="exp-force">16.67 N</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="experiment-why why-card">
+
+        <div class="why-badge">WHY?</div>
+
+        <p id="speed-why">
+            Because centripetal force depends on v², increasing speed
+            increases the required force much faster than speed itself.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     11. RADIUS EXPERIMENT
+========================================================= -->
+<section class="experiment-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">11 · EXPERIMENT</span>
+
+        <h2>What Happens When Radius Changes?</h2>
+
+    </div>
+
+    <div class="experiment-card glass-card">
+
+        <div class="experiment-controls">
+
+            <label>
+                Radius:
+                <strong id="experiment-radius-value">2</strong> m
+            </label>
+
+            <input
+                id="experiment-radius"
+                type="range"
+                min="1"
+                max="8"
+                value="2"
+                step="1"
+            >
+
+            <div class="experiment-fixed">
+                Mass = 2 kg<br>
+                Speed = 6 m/s
+            </div>
+
+        </div>
+
+        <div class="experiment-results">
+
+            <div>
+                <span>Radius</span>
+                <strong id="exp-radius">2 m</strong>
+            </div>
+
+            <div>
+                <span>Acceleration</span>
+                <strong id="exp-radius-acc">18 m/s²</strong>
+            </div>
+
+            <div>
+                <span>Force</span>
+                <strong id="exp-radius-force">36 N</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="experiment-why why-card">
+
+        <div class="why-badge">WHY?</div>
+
+        <p id="radius-why">
+            At constant speed, increasing the radius gives the object more
+            distance to turn, so the required inward acceleration decreases.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     12. REAL WORLD
+========================================================= -->
+<section class="concept-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">12 · REAL WORLD</span>
+
+        <h2>Circular Motion Around Us</h2>
+
+    </div>
+
+    <div class="application-grid">
+
+        <article class="application-card">
+
+            <div class="application-icon">🚗</div>
+
+            <h3>Car Turning</h3>
+
+            <p>
+                Friction between tyres and road can provide the inward
+                force required to turn the car.
+            </p>
+
+            <div class="application-why">
+                <strong>WHY?</strong>
+                Without enough inward force, the car tends to continue
+                along its previous direction.
+            </div>
+
+        </article>
+
+
+        <article class="application-card">
+
+            <div class="application-icon">🪢</div>
+
+            <h3>Stone + String</h3>
+
+            <p>
+                Tension in the string pulls the stone toward the centre.
+            </p>
+
+            <div class="application-why">
+                <strong>WHY?</strong>
+                Remove the string's inward pull and the stone no longer
+                has the required centripetal force.
+            </div>
+
+        </article>
+
+
+        <article class="application-card">
+
+            <div class="application-icon">🌀</div>
+
+            <h3>Washing Machine</h3>
+
+            <p>
+                The drum rotates and continuously changes the direction
+                of objects inside it.
+            </p>
+
+            <div class="application-why">
+                <strong>WHY?</strong>
+                The rotating drum provides the forces that change the
+                motion of the clothes.
+            </div>
+
+        </article>
+
+
+        <article class="application-card">
+
+            <div class="application-icon">🌍</div>
+
+            <h3>Satellites</h3>
+
+            <p>
+                Gravity can provide the inward force needed for orbital
+                motion.
+            </p>
+
+            <div class="application-why">
+                <strong>WHY?</strong>
+                Gravity continuously changes the direction of the satellite's
+                velocity.
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     13. IMPORTANT CONDITION TABLE
+========================================================= -->
+<section class="concept-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">13 · THINK CAREFULLY</span>
+
+        <h2>What Happens When One Variable Changes?</h2>
+
+    </div>
+
+    <div class="relationship-table glass-card">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>What stays constant?</th>
+                    <th>Variable increased</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>Mass & radius</td>
+                    <td>Speed ↑</td>
+                    <td>Force ↑ as v²</td>
+                </tr>
+
+                <tr>
+                    <td>Mass & speed</td>
+                    <td>Radius ↑</td>
+                    <td>Force ↓</td>
+                </tr>
+
+                <tr>
+                    <td>Radius & speed</td>
+                    <td>Mass ↑</td>
+                    <td>Force ↑</td>
+                </tr>
+
+                <tr>
+                    <td>Radius & angular speed</td>
+                    <td>Radius ↑</td>
+                    <td>v ↑ and a<sub>c</sub> ↑</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     14. MISCONCEPTIONS
+========================================================= -->
+<section class="concept-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">14 · MISCONCEPTIONS</span>
+
+        <h2>Things You Should NOT Memorize Wrong</h2>
+
+    </div>
+
+    <div class="misconception-grid">
+
+        <article class="misconception-card">
+
+            <span class="wrong">✕</span>
+
+            <h3>
+                "Centripetal force is a new type of force."
+            </h3>
+
+            <p>
+                No. It is the name we give to the net inward force required
+                for circular motion.
+            </p>
+
+        </article>
+
+
+        <article class="misconception-card">
+
+            <span class="wrong">✕</span>
+
+            <h3>
+                "Constant speed means no acceleration."
+            </h3>
+
+            <p>
+                Not in circular motion. Velocity changes because direction
+                changes.
+            </p>
+
+        </article>
+
+
+        <article class="misconception-card">
+
+            <span class="wrong">✕</span>
+
+            <h3>
+                "Larger radius always means larger force."
+            </h3>
+
+            <p>
+                It depends on what remains constant. For fixed speed,
+                increasing radius reduces the required force.
+            </p>
+
+        </article>
+
+
+        <article class="misconception-card">
+
+            <span class="wrong">✕</span>
+
+            <h3>
+                "The outward force keeps the object in the circle."
+            </h3>
+
+            <p>
+                In an ordinary inertial-frame analysis, the required
+                centripetal net force is inward.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     15. CHALLENGE
+========================================================= -->
+<section class="challenge-section">
+
+    <div class="section-heading">
+
+        <span class="section-tag">15 · CHALLENGE</span>
+
+        <h2>Can You Predict the Physics?</h2>
+
+    </div>
+
+
+    <div class="challenge-card glass-card">
+
+        <p class="challenge-question">
+            An object moves in a circle with mass 2 kg and radius 4 m.
+            Its speed changes from 4 m/s to 8 m/s.
+            How many times does the required centripetal force change?
+        </p>
+
+
+        <div class="challenge-options">
+
+            <button data-answer="2">2×</button>
+            <button data-answer="4">4×</button>
+            <button data-answer="8">8×</button>
+            <button data-answer="16">16×</button>
+
+        </div>
+
+
+        <div id="challenge-feedback" class="challenge-feedback">
+            Choose an answer.
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     16. SUMMARY
+========================================================= -->
+<section class="summary-section glass-card">
+
+    <div class="section-heading">
+
+        <span class="section-tag">CHAPTER SUMMARY</span>
+
+        <h2>Circular Motion in One Picture</h2>
+
+    </div>
+
+    <div class="summary-chain">
+
+        <div>
+            <strong>Circle</strong>
+            <span>Object follows curved path</span>
+        </div>
+
+        <b>→</b>
+
+        <div>
+            <strong>Direction changes</strong>
+            <span>Velocity changes</span>
+        </div>
+
+        <b>→</b>
+
+        <div>
+            <strong>Acceleration</strong>
+            <span>Points inward</span>
+        </div>
+
+        <b>→</b>
+
+        <div>
+            <strong>Net force</strong>
+            <span>Must point inward</span>
+        </div>
+
+    </div>
+
+    <div class="summary-formulas">
+
+        <span>v = rω</span>
+
+        <span>a<sub>c</sub> = v²/r</span>
+
+        <span>F<sub>c</sub> = mv²/r</span>
+
+        <span>T = 1/f</span>
+
+    </div>
+
+</section>
+
+
+</main>
+<!--ENTER NEXT TOPIC-->
+<div><a href="../class 10/planetary-motion.html">⚡ENTER NEXT TOPIC</a></div>
+
+<!-- =========================================================
+     SCRIPTS
+========================================================= -->
+
+<script src="../../js/core/animation.js"></script>
+<script src="../../js/core/canvas.js"></script>
+<script src="../../js/core/equation.js"></script>
+<script src="../../js/core/graph.js"></script>
+<script src="../../js/core/simulation.js"></script>
+
+<script src="../../js/physics/ch1js/circular-motion.js"></script>
+
+<script src="../../js/main.js"></script>
+
+</body>
+</html>

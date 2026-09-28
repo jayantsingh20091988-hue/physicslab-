@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Physics Lab Mechanics Unit — explore work, energy, forces, machines, circular motion, planetary motion, gravitation, rockets, satellites and space exploration through interactive simulations.">
+
+    <meta name="theme-color" content="#07111f">
+
+    <title>Mechanics | Physics Lab</title>
+
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/simulation.css">
+    <link rel="stylesheet" href="../../css/chapters/ch1css/mechanics.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         BACKGROUND
+    ====================================================== -->
+
+    <canvas id="mechanics-background"></canvas>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+    <div class="background-glow glow-three"></div>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <header class="mechanics-nav">
+
+        <div class="nav-inner">
+
+            <a href="../../index.html" class="brand">
+                <span class="brand-orbit">
+                    <span></span>
+                </span>
+
+                <span class="brand-text">
+                    Physics <strong>Lab</strong>
+                </span>
+            </a>
+
+            <nav class="nav-links">
+
+                <a href="../../index.html">
+                    Home
+                </a>
+
+                <a href="#chapters">
+                    Chapters
+                </a>
+
+                <a href="#journey">
+                    Journey
+                </a>
+
+                <a href="#experiments">
+                    Experiments
+                </a>
+
+            </nav>
+
+            <a href="#chapters" class="nav-button">
+                Explore Mechanics
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <main>
+
+        <section class="mechanics-hero">
+
+            <div class="hero-orbit orbit-one"></div>
+            <div class="hero-orbit orbit-two"></div>
+            <div class="hero-orbit orbit-three"></div>
+
+            <div class="hero-content reveal">
+
+                <div class="unit-badge">
+                    <span class="pulse-dot"></span>
+                    PHYSICS LAB • MECHANICS
+                </div>
+
+                <p class="hero-kicker">
+                    UNDERSTAND MOTION. EXPLAIN FORCES. CONTROL ENERGY.
+                </p>
+
+                <h1>
+                    <span>Mechanics</span>
+                    <strong>From Motion to Space</strong>
+                </h1>
+
+                <p class="hero-description">
+                    Mechanics is where we begin understanding how the physical
+                    world moves, interacts and changes.
+                    From a simple object falling on Earth to planets orbiting
+                    the Sun and rockets travelling into space —
+                    the same fundamental ideas connect them all.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a href="#chapters" class="primary-action">
+                        Start Exploring
+                        <span>↗</span>
+                    </a>
+
+                    <a href="#why-mechanics" class="secondary-action">
+                        Why Mechanics?
+                    </a>
+
+                </div>
+
+
+                <div class="hero-mini-stats">
+
+                    <div>
+                        <strong class="counter" data-target="8">0</strong>
+                        <span>TOPICS</span>
+                    </div>
+
+                    <div>
+                        <strong class="counter" data-target="40">0</strong>
+                        <span>+ Concepts</span>
+                    </div>
+
+                    <div>
+                        <strong class="counter" data-target="20">0</strong>
+                        <span>+ Experiments</span>
+                    </div>
+
+                    <div>
+                        <strong class="counter" data-target="∞">∞</strong>
+                        <span>Questions</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO PHYSICS VISUAL -->
+
+            <div class="hero-visual reveal">
+
+                <div class="physics-system">
+
+                    <div class="sun-core">
+                        <span></span>
+                    </div>
+
+                    <div class="planet-orbit orbit-a">
+                        <div class="planet planet-a"></div>
+                    </div>
+
+                    <div class="planet-orbit orbit-b">
+                        <div class="planet planet-b"></div>
+                    </div>
+
+                    <div class="planet-orbit orbit-c">
+                        <div class="planet planet-c"></div>
+                    </div>
+
+                    <div class="physics-label label-force">
+                        FORCE
+                    </div>
+
+                    <div class="physics-label label-energy">
+                        ENERGY
+                    </div>
+
+                    <div class="physics-label label-motion">
+                        MOTION
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             WHAT IS MECHANICS
+        ====================================================== -->
+
+        <section class="section mechanics-intro" id="why-mechanics">
+
+            <div class="section-heading reveal">
+
+                <span class="section-number">
+                    01
+                </span>
+
+                <div>
+                    <p class="eyebrow">
+                        THE BIG IDEA
+                    </p>
+
+                    <h2>
+                        What exactly is Mechanics?
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div class="intro-grid">
+
+                <article class="intro-main glass-card reveal">
+
+                    <div class="card-icon">
+                        ⚙
+                    </div>
+
+                    <h3>
+                        The physics of motion and interaction
+                    </h3>
+
+                    <p>
+                        Mechanics is the part of physics that helps us
+                        understand how objects move, why their motion changes,
+                        how forces interact, how energy moves from one form
+                        to another, and how objects remain in stable motion.
+                    </p>
+
+                    <p>
+                        Instead of simply memorising formulas, Physics Lab
+                        treats mechanics as a connected story:
+                    </p>
+
+                    <div class="concept-chain">
+
+                        <span>Motion</span>
+                        <i>→</i>
+
+                        <span>Force</span>
+                        <i>→</i>
+
+                        <span>Energy</span>
+                        <i>→</i>
+
+                        <span>Gravity</span>
+                        <i>→</i>
+
+                        <span>Orbits</span>
+                        <i>→</i>
+
+                        <span>Space</span>
+
+                    </div>
+
+                </article>
+
+
+                <div class="intro-side">
+
+                    <article class="mini-card reveal">
+
+                        <span>01</span>
+
+                        <h3>
+                            Why does an object move?
+                        </h3>
+
+                        <p>
+                            We investigate motion and the forces responsible
+                            for changing it.
+                        </p>
+
+                    </article>
+
+
+                    <article class="mini-card reveal">
+
+                        <span>02</span>
+
+                        <h3>
+                            Where does the energy go?
+                        </h3>
+
+                        <p>
+                            We follow energy as it transfers between kinetic,
+                            potential and other forms.
+                        </p>
+
+                    </article>
+
+
+                    <article class="mini-card reveal">
+
+                        <span>03</span>
+
+                        <h3>
+                            Why doesn't Earth fly away?
+                        </h3>
+
+                        <p>
+                            Gravity, orbital motion and inertia connect the
+                            physics of Earth with the physics of space.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             WHY THIS UNIT MATTERS
+        ====================================================== -->
+
+        <section class="section importance-section">
+
+            <div class="importance-layout">
+
+                <div class="importance-copy reveal">
+
+                    <p class="eyebrow">
+                        WHY THIS UNIT MATTERS
+                    </p>
+
+                    <h2>
+                        Mechanics is not just another physics unit.
+                    </h2>
+
+                    <p>
+                        It gives you a language for describing a huge part of
+                        the physical world.
+                    </p>
+
+                    <p>
+                        When you understand mechanics, everyday events stop
+                        looking random. A moving bicycle, a swinging object,
+                        a satellite, a roller coaster, a falling stone and a
+                        rocket launch can all be analysed using connected
+                        physical ideas.
+                    </p>
+
+                </div>
+
+
+                <div class="importance-cards">
+
+                    <article class="importance-card reveal">
+                        <span class="importance-icon">🚲</span>
+
+                        <h3>
+                            Everyday Motion
+                        </h3>
+
+                        <p>
+                            Understand acceleration, forces, friction,
+                            circular motion and energy in things you see daily.
+                        </p>
+                    </article>
+
+
+                    <article class="importance-card reveal">
+                        <span class="importance-icon">🏗️</span>
+
+                        <h3>
+                            Machines
+                        </h3>
+
+                        <p>
+                            Discover how levers, pulleys and inclined planes
+                            make useful tasks easier.
+                        </p>
+                    </article>
+
+
+                    <article class="importance-card reveal">
+                        <span class="importance-icon">🌍</span>
+
+                        <h3>
+                            Earth & Gravity
+                        </h3>
+
+                        <p>
+                            Understand falling objects, weight, gravitational
+                            force and why things remain near Earth.
+                        </p>
+                    </article>
+
+
+                    <article class="importance-card reveal">
+                        <span class="importance-icon">🚀</span>
+
+                        <h3>
+                            Space
+                        </h3>
+
+                        <p>
+                            Follow the same mechanics from Earth to satellites,
+                            rockets, planets and space exploration.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             LEARNING JOURNEY
+        ====================================================== -->
+
+        <section class="section journey-section" id="journey">
+
+            <div class="section-heading reveal">
+
+                <span class="section-number">
+                    02
+                </span>
+
+                <div>
+
+                    <p class="eyebrow">
+                        THE LEARNING JOURNEY
+                    </p>
+
+                    <h2>
+                        One idea leads to another.
+                    </h2>
+
+                    <p class="section-subtitle">
+                        We don't study chapters as isolated boxes.
+                        We connect them.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="journey-track">
+
+                <div class="journey-line"></div>
+
+
+                <article class="journey-node reveal">
+
+                    <div class="node-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Motion
+                    </h3>
+
+                    <p>
+                        Describe what an object is doing.
+                    </p>
+
+                </article>
+
+
+                <article class="journey-node reveal">
+
+                    <div class="node-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Force
+                    </h3>
+
+                    <p>
+                        Ask what changes the motion.
+                    </p>
+
+                </article>
+
+
+                <article class="journey-node reveal">
+
+                    <div class="node-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Work & Energy
+                    </h3>
+
+                    <p>
+                        Track how physical changes transfer energy.
+                    </p>
+
+                </article>
+
+
+                <article class="journey-node reveal">
+
+                    <div class="node-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Gravity
+                    </h3>
+
+                    <p>
+                        Understand one of nature's fundamental interactions.
+                    </p>
+
+                </article>
+
+
+                <article class="journey-node reveal">
+
+                    <div class="node-number">
+                        05
+                    </div>
+
+                    <h3>
+                        Orbits
+                    </h3>
+
+                    <p>
+                        Apply mechanics to planets and satellites.
+                    </p>
+
+                </article>
+
+
+                <article class="journey-node reveal">
+
+                    <div class="node-number">
+                        06
+                    </div>
+
+                    <h3>
+                        Space
+                    </h3>
+
+                    <p>
+                        Use mechanics to understand rockets and exploration.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CHAPTERS
+        ====================================================== -->
+
+        <section class="section chapters-section" id="chapters">
+
+            <div class="chapters-heading reveal">
+
+                <div>
+
+                    <p class="eyebrow">
+                        EXPLORE THE UNIT
+                    </p>
+
+                    <h2>
+                        TOPICS of chapter work energy and power.
+                    </h2>
+
+                    <p>
+                        Choose a chapter and enter the laboratory.
+                        Every chapter combines concepts, WHY explanations,
+                        mathematics, simulations and real-world applications.
+                    </p>
+
+                </div>
+
+
+                <div class="chapter-search">
+
+                    <span>⌕</span>
+
+                    <input
+                        type="text"
+                        id="chapter-search"
+                        placeholder="Search a chapter..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="chapter-grid" id="chapter-grid">
+
+
+                <!-- =================================================
+                     CHAPTER 1
+                ================================================== -->
+
+                <article
+                    class="chapter-card chapter-one reveal"
+                    data-search="work energy power kinetic potential mechanical energy power conservation"
+                >
+
+                    <div class="chapter-top">
+
+                        <span class="chapter-number">
+                            01
+                        </span>
+
+                        <span class="chapter-status">
+                            CORE
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-visual work-visual">
+
+                        <div class="energy-ball"></div>
+
+                        <div class="energy-track"></div>
+
+                        <span class="visual-label">
+                            ENERGY
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-content">
+
+                        <p class="chapter-kicker">
+                            START HERE
+                        </p>
+
+                        <h3>
+                            Work, Energy & Power
+                        </h3>
+
+                        <p>
+                            Discover how force and displacement create work,
+                            how moving and raised objects store energy, and
+                            how power tells us how quickly work is done.
+                        </p>
+
+
+                        <div class="topic-list">
+
+                            <a href="work-energy.html">
+                                Work
+                            </a>
+
+                            <a href="work-energy.html">
+                                Positive / Negative / Zero Work
+                            </a>
+
+                            <a href="work-energy.html">
+                                Kinetic Energy
+                            </a>
+
+                            <a href="work-energy.html">
+                                Potential Energy
+                            </a>
+
+                            <a href="work-energy.html">
+                                Work–Energy Theorem
+                            </a>
+
+                            <a href="work-energy.html">
+                                Conservation of Energy
+                            </a>
+
+                            <a href="work-energy.html">
+                                Mechanical Energy
+                            </a>
+
+                            <a href="work-energy.html">
+                                Power
+                            </a>
+
+                        </div>
+
+
+                        <a href="work-energy.html" class="chapter-button">
+                            Enter Topic
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CHAPTER 2
+                ================================================== -->
+
+                <article
+                    class="chapter-card chapter-two reveal"
+                    data-search="forces equilibrium newton force friction tension normal acceleration"
+                >
+
+                    <div class="chapter-top">
+
+                        <span class="chapter-number">
+                            02
+                        </span>
+
+                        <span class="chapter-status">
+                            CORE
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-visual force-visual">
+
+                        <div class="force-object"></div>
+
+                        <span class="force-arrow arrow-left">
+                            ←
+                        </span>
+
+                        <span class="force-arrow arrow-right">
+                            →
+                        </span>
+
+                        <span class="visual-label">
+                            FORCE
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-content">
+
+                        <p class="chapter-kicker">
+                            WHY MOTION CHANGES
+                        </p>
+
+                        <h3>
+                            Forces & Equilibrium
+                        </h3>
+
+                        <p>
+                            Explore Newton's laws, net force, acceleration,
+                            friction, tension, normal force and the idea of
+                            equilibrium.
+                        </p>
+
+
+                        <div class="topic-list">
+
+                            <a href="forces-equilibrium.html">
+                                What is Force?
+                            </a>
+
+                            <a href="forces-equilibrium.html">
+                                Newton's First Law
+                            </a>
+
+                            <a href="forces-equilibrium.html">
+                                Newton's Second Law
+                            </a>
+
+                            <a href="forces-equilibrium.html">
+                                Newton's Third Law
+                            </a>
+
+                            <a href="forces-equilibrium.html">
+                                Types of Forces
+                            </a>
+
+                            <a href="forces-equilibrium.html">
+                                Free Body Diagram
+                            </a>
+
+                            <a href="forces-equilibrium.html">
+                                Equilibrium
+                            </a>
+
+                        </div>
+
+
+                        <a href="forces-equilibrium.html" class="chapter-button">
+                            Enter Topic
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CHAPTER 3
+                ================================================== -->
+
+                <article
+                    class="chapter-card chapter-three reveal"
+                    data-search="simple machines lever pulley mechanical advantage velocity ratio efficiency inclined plane wheel axle screw wedge"
+                >
+
+                    <div class="chapter-top">
+
+                        <span class="chapter-number">
+                            03
+                        </span>
+
+                        <span class="chapter-status">
+                            PRACTICAL
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-visual machine-visual">
+
+                        <div class="lever-bar"></div>
+
+                        <div class="fulcrum"></div>
+
+                        <div class="machine-load"></div>
+
+                        <span class="visual-label">
+                            MACHINES
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-content">
+
+                        <p class="chapter-kicker">
+                            PHYSICS IN MACHINES
+                        </p>
+
+                        <h3>
+                            Simple Machines
+                        </h3>
+
+                        <p>
+                            Learn how machines change the size or direction
+                            of force and why machines make tasks easier without
+                            creating energy.
+                        </p>
+
+
+                        <div class="topic-list">
+
+                            <a href="simple-machines.html">
+                                Load & Effort
+                            </a>
+
+                            <a href="simple-machines.html">
+                                Mechanical Advantage
+                            </a>
+
+                            <a href="simple-machines.html">
+                                Velocity Ratio
+                            </a>
+
+                            <a href="simple-machines.html">
+                                Efficiency
+                            </a>
+
+                            <a href="simple-machines.html">
+                                Lever
+                            </a>
+
+                            <a href="simple-machines.html">
+                                Pulley
+                            </a>
+
+                            <a href="simple-machines.html">
+                                Inclined Plane
+                            </a>
+
+                            <a href="simple-machines.html">
+                                Wheel, Axle, Screw & Wedge
+                            </a>
+
+                        </div>
+
+
+                        <a href="simple-machines.html" class="chapter-button">
+                            Enter Topic
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CHAPTER 4
+                ================================================== -->
+
+                <article
+                    class="chapter-card chapter-four reveal"
+                    data-search="circular motion angular speed velocity centripetal acceleration force period frequency tangential"
+                >
+
+                    <div class="chapter-top">
+
+                        <span class="chapter-number">
+                            04
+                        </span>
+
+                        <span class="chapter-status">
+                            MOTION
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-visual circular-visual">
+
+                        <div class="circular-path">
+
+                            <div class="orbit-object"></div>
+
+                        </div>
+
+                        <span class="visual-label">
+                            ORBIT
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-content">
+
+                        <p class="chapter-kicker">
+                            MOTION AROUND A CENTRE
+                        </p>
+
+                        <h3>
+                            Circular Motion
+                        </h3>
+
+                        <p>
+                            Discover why an object moving around a circle is
+                            continuously changing its velocity and why an
+                            inward force is required.
+                        </p>
+
+
+                        <div class="topic-list">
+
+                            <a href="circular-motion.html">
+                                Circular Motion
+                            </a>
+
+                            <a href="circular-motion.html">
+                                Angular Displacement
+                            </a>
+
+                            <a href="circular-motion.html">
+                                Angular Speed
+                            </a>
+
+                            <a href="circular-motion.html">
+                                Period & Frequency
+                            </a>
+
+                            <a href="circular-motion.html">
+                                Tangential Speed
+                            </a>
+
+                            <a href="circular-motion.html">
+                                Centripetal Acceleration
+                            </a>
+
+                            <a href="circular-motion.html">
+                                Centripetal Force
+                            </a>
+
+                        </div>
+
+
+                        <a href="circular-motion.html" class="chapter-button">
+                            Enter Topic
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CHAPTER 5
+                ================================================== -->
+
+                <article
+                    class="chapter-card chapter-five reveal"
+                    data-search="planetary motion planets kepler laws orbit sun earth moon orbital speed period"
+                >
+
+                    <div class="chapter-top">
+
+                        <span class="chapter-number">
+                            05
+                        </span>
+
+                        <span class="chapter-status">
+                            SPACE
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-visual planet-visual">
+
+                        <div class="planet-sun"></div>
+
+                        <div class="planet-path path-one">
+                            <div class="orbiting-planet"></div>
+                        </div>
+
+                        <div class="planet-path path-two"></div>
+
+                        <span class="visual-label">
+                            KEPLER
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-content">
+
+                        <p class="chapter-kicker">
+                            FROM EARTH TO PLANETS
+                        </p>
+
+                        <h3>
+                            Planetary Motion
+                        </h3>
+
+                        <p>
+                            Explore how planets travel around the Sun,
+                            why their speed can change, and how Kepler's laws
+                            describe planetary orbits.
+                        </p>
+
+
+                        <div class="topic-list">
+
+                            <a href="planetary-motion.html">
+                                Why Planets Orbit
+                            </a>
+
+                            <a href="planetary-motion.html">
+                                Orbit
+                            </a>
+
+                            <a href="planetary-motion.html">
+                                Kepler's First Law
+                            </a>
+
+                            <a href="planetary-motion.html">
+                                Kepler's Second Law
+                            </a>
+
+                            <a href="planetary-motion.html">
+                                Kepler's Third Law
+                            </a>
+
+                            <a href="planetary-motion.html">
+                                Orbital Speed
+                            </a>
+
+                            <a href="planetary-motion.html">
+                                Earth–Sun System
+                            </a>
+
+                            <a href="planetary-motion.html">
+                                Moon–Earth Connection
+                            </a>
+
+                        </div>
+
+
+                        <a href="planetary-motion.html" class="chapter-button">
+                            Enter Topic
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CHAPTER 6
+                ================================================== -->
+
+                <article
+                    class="chapter-card chapter-six reveal"
+                    data-search="gravitation gravity universal law mass weight free fall altitude depth earth moon"
+                >
+
+                    <div class="chapter-top">
+
+                        <span class="chapter-number">
+                            06
+                        </span>
+
+                        <span class="chapter-status">
+                            FUNDAMENTAL
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-visual gravity-visual">
+
+                        <div class="gravity-earth"></div>
+
+                        <div class="gravity-object"></div>
+
+                        <span class="gravity-arrow">
+                            ↓
+                        </span>
+
+                        <span class="visual-label">
+                            GRAVITY
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-content">
+
+                        <p class="chapter-kicker">
+                            THE FORCE THAT CONNECTS WORLDS
+                        </p>
+
+                        <h3>
+                            Gravitation
+                        </h3>
+
+                        <p>
+                            Investigate universal gravitation, free fall,
+                            mass and weight, changing gravity and the connection
+                            between gravity and orbital motion.
+                        </p>
+
+
+                        <div class="topic-list">
+
+                            <a href="gravitation.html">
+                                Universal Gravitation
+                            </a>
+
+                            <a href="gravitation.html">
+                                Gravitational Force
+                            </a>
+
+                            <a href="gravitation.html">
+                                Acceleration due to Gravity
+                            </a>
+
+                            <a href="gravitation.html">
+                                Free Fall
+                            </a>
+
+                            <a href="gravitation.html">
+                                Mass vs Weight
+                            </a>
+
+                            <a href="gravitation.html">
+                                Gravity at Altitude
+                            </a>
+
+                            <a href="gravitation.html">
+                                Gravity with Depth
+                            </a>
+
+                            <a href="gravitation.html">
+                                Gravity & Orbits
+                            </a>
+
+                        </div>
+
+
+                        <a href="gravitation.html" class="chapter-button">
+                            Enter Topic
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CHAPTER 7
+                ================================================== -->
+
+                <article
+                    class="chapter-card chapter-seven reveal"
+                    data-search="rockets satellites orbital velocity escape velocity leo meo geostationary polar communication weather navigation propulsion"
+                >
+
+                    <div class="chapter-top">
+
+                        <span class="chapter-number">
+                            07
+                        </span>
+
+                        <span class="chapter-status">
+                            SPACE TECH
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-visual rocket-visual">
+
+                        <div class="rocket-body">
+
+                            <div class="rocket-window"></div>
+
+                        </div>
+
+                        <div class="rocket-flame"></div>
+
+                        <span class="visual-label">
+                            ROCKET
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-content">
+
+                        <p class="chapter-kicker">
+                            ESCAPE EARTH
+                        </p>
+
+                        <h3>
+                            Rockets & Satellites
+                        </h3>
+
+                        <p>
+                            Connect mechanics with real space technology:
+                            orbital velocity, satellite orbits, rocket
+                            propulsion, staging and escape velocity.
+                        </p>
+
+
+                        <div class="topic-list">
+
+                            <a href="rockets-satellites.html">
+                                What is a Satellite?
+                            </a>
+
+                            <a href="rockets-satellites.html">
+                                Why Satellites Don't Fall
+                            </a>
+
+                            <a href="rockets-satellites.html">
+                                Orbital Velocity
+                            </a>
+
+                            <a href="rockets-satellites.html">
+                                LEO / MEO / GEO
+                            </a>
+
+                            <a href="rockets-satellites.html">
+                                Polar Satellites
+                            </a>
+
+                            <a href="rockets-satellites.html">
+                                Rocket Propulsion
+                            </a>
+
+                            <a href="rockets-satellites.html">
+                                Multiple Stages
+                            </a>
+
+                            <a href="rockets-satellites.html">
+                                Escape Velocity
+                            </a>
+
+                        </div>
+
+
+                        <a href="rockets-satellites.html" class="chapter-button">
+                            Enter Topic
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CHAPTER 8
+                ================================================== -->
+
+                <article
+                    class="chapter-card chapter-eight reveal"
+                    data-search="isro space exploration india missions spacecraft launch vehicles satellites moon mars space technology"
+                >
+
+                    <div class="chapter-top">
+
+                        <span class="chapter-number">
+                            08
+                        </span>
+
+                        <span class="chapter-status">
+                            FINAL
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-visual isro-visual">
+
+                        <div class="space-earth"></div>
+
+                        <div class="space-satellite">
+
+                            <span></span>
+
+                        </div>
+
+                        <div class="space-signal">
+                            ))))
+                        </div>
+
+                        <span class="visual-label">
+                            SPACE
+                        </span>
+
+                    </div>
+
+
+                    <div class="chapter-content">
+
+                        <p class="chapter-kicker">
+                            MECHANICS MEETS EXPLORATION
+                        </p>
+
+                        <h3>
+                            ISRO & Space Exploration
+                        </h3>
+
+                        <p>
+                            Bring everything together and see how mechanics,
+                            rockets, satellites and orbital physics become
+                            real space missions.
+                        </p>
+
+
+                        <div class="topic-list">
+
+                            <a href="isro-space-exploration.html">
+                                Why We Explore Space
+                            </a>
+
+                            <a href="isro-space-exploration.html">
+                                Launch Vehicles
+                            </a>
+
+                            <a href="isro-space-exploration.html">
+                                Satellites
+                            </a>
+
+                            <a href="isro-space-exploration.html">
+                                Moon Missions
+                            </a>
+
+                            <a href="isro-space-exploration.html">
+                                Mars Exploration
+                            </a>
+
+                            <a href="isro-space-exploration.html">
+                                Space Technology
+                            </a>
+
+                            <a href="isro-space-exploration.html">
+                                Mechanics in Space Missions
+                            </a>
+
+                        </div>
+
+
+                        <a href="isro-space-exploration.html" class="chapter-button">
+                            Enter Topic
+                            <span>→</span>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+            <div id="no-results" class="no-results">
+
+                <span>🔭</span>
+
+                <h3>
+                    No chapter found
+                </h3>
+
+                <p>
+                    Try searching for something like
+                    <strong>gravity</strong>,
+                    <strong>energy</strong>,
+                    <strong>force</strong> or
+                    <strong>space</strong>.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             WHAT WE DO IN EACH CHAPTER
+        ====================================================== -->
+
+        <section class="section laboratory-section" id="experiments">
+
+            <div class="section-heading reveal">
+
+                <span class="section-number">
+                    03
+                </span>
+
+                <div>
+
+                    <p class="eyebrow">
+                        INSIDE PHYSICS LAB
+                    </p>
+
+                    <h2>
+                        We don't just read physics.
+                    </h2>
+
+                    <p class="section-subtitle">
+                        We make the physics move.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="lab-grid">
+
+
+                <article class="lab-card reveal">
+
+                    <div class="lab-number">
+                        01
+                    </div>
+
+                    <div class="lab-icon">
+                        💡
+                    </div>
+
+                    <h3>
+                        What?
+                    </h3>
+
+                    <p>
+                        First understand what the physical idea actually means.
+                    </p>
+
+                </article>
+
+
+                <article class="lab-card reveal">
+
+                    <div class="lab-number">
+                        02
+                    </div>
+
+                    <div class="lab-icon">
+                        ❓
+                    </div>
+
+                    <h3>
+                        WHY?
+                    </h3>
+
+                    <p>
+                        We ask why the phenomenon happens instead of memorising
+                        the result.
+                    </p>
+
+                </article>
+
+
+                <article class="lab-card reveal">
+
+                    <div class="lab-number">
+                        03
+                    </div>
+
+                    <div class="lab-icon">
+                        🧠
+                    </div>
+
+                    <h3>
+                        HOW?
+                    </h3>
+
+                    <p>
+                        Understand the physical reasoning behind the behaviour.
+                    </p>
+
+                </article>
+
+
+                <article class="lab-card reveal">
+
+                    <div class="lab-number">
+                        04
+                    </div>
+
+                    <div class="lab-icon">
+                        📐
+                    </div>
+
+                    <h3>
+                        Mathematics
+                    </h3>
+
+                    <p>
+                        See where equations come from and what each quantity
+                        actually represents.
+                    </p>
+
+                </article>
+
+
+                <article class="lab-card reveal">
+
+                    <div class="lab-number">
+                        05
+                    </div>
+
+                    <div class="lab-icon">
+                        🧪
+                    </div>
+
+                    <h3>
+                        Experiment
+                    </h3>
+
+                    <p>
+                        Change variables yourself and observe what happens.
+                    </p>
+
+                </article>
+
+
+                <article class="lab-card reveal">
+
+                    <div class="lab-number">
+                        06
+                    </div>
+
+                    <div class="lab-icon">
+                        📊
+                    </div>
+
+                    <h3>
+                        Graphs
+                    </h3>
+
+                    <p>
+                        Turn changing physical quantities into visual patterns.
+                    </p>
+
+                </article>
+
+
+                <article class="lab-card reveal">
+
+                    <div class="lab-number">
+                        07
+                    </div>
+
+                    <div class="lab-icon">
+                        🌍
+                    </div>
+
+                    <h3>
+                        Real World
+                    </h3>
+
+                    <p>
+                        Connect equations with machines, Earth, vehicles and
+                        space.
+                    </p>
+
+                </article>
+
+
+                <article class="lab-card reveal">
+
+                    <div class="lab-number">
+                        08
+                    </div>
+
+                    <div class="lab-icon">
+                        🧩
+                    </div>
+
+                    <h3>
+                        Challenge
+                    </h3>
+
+                    <p>
+                        Finally use the concept yourself instead of only
+                        watching it.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FUN PHYSICS QUESTIONS
+        ====================================================== -->
+
+        <section class="section questions-section">
+
+            <div class="question-card reveal">
+
+                <div class="question-orbit">
+                    <span></span>
+                </div>
+
+                <div class="question-content">
+
+                    <p class="eyebrow">
+                        BEFORE YOU START
+                    </p>
+
+                    <h2>
+                        Can you explain these?
+                    </h2>
+
+                    <div class="question-list">
+
+                        <div>
+                            <span>01</span>
+                            <p>
+                                Why does a moving object have kinetic energy?
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>02</span>
+                            <p>
+                                Why does raising an object increase its
+                                gravitational potential energy?
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>03</span>
+                            <p>
+                                Why does an object moving in a circle
+                                accelerate even if its speed stays constant?
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>04</span>
+                            <p>
+                                Why doesn't a satellite simply fall straight
+                                back to Earth?
+                            </p>
+                        </div>
+
+                        <div>
+                            <span>05</span>
+                            <p>
+                                Why can a rocket work in space even though
+                                there is no air around it?
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             FINAL CTA
+        ====================================================== -->
+
+        <section class="final-cta reveal">
+
+            <div class="cta-stars"></div>
+
+            <p class="eyebrow">
+                YOUR MECHANICS JOURNEY STARTS HERE
+            </p>
+
+            <h2>
+                From a falling ball...
+                <span>to a spacecraft.</span>
+            </h2>
+
+            <p>
+                Start with Work, Energy & Power and follow the chain of ideas
+                until mechanics takes you all the way into space.
+            </p>
+
+            <a href="work-energy.html" class="cta-button">
+                Begin with Work, Energy & Power
+                <span>🚀</span>
+            </a>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="mechanics-footer">
+
+        <div class="footer-inner">
+
+            <div>
+
+                <div class="footer-brand">
+                    Physics <strong>Lab</strong>
+                </div>
+
+                <p>
+                    Learn physics by understanding it,
+                    visualising it and experimenting with it.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="../../index.html">
+                    Physics Lab Home
+                </a>
+
+                <a href="#chapters">
+                    Mechanics Chapters
+                </a>
+
+                <a href="work-energy.html">
+                    Start Chapter 01
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                Physics Lab • Mechanics
+            </span>
+
+            <span>
+                Learn → Experiment → Understand
+            </span>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="../../js/core/animation.js"></script>
+    <script src="../../js/core/canvas.js"></script>
+    <script src="../../js/core/equation.js"></script>
+    <script src="../../js/core/graph.js"></script>
+    <script src="../../js/core/simulation.js"></script>
+
+    <script src="../../js/physics/ch1js/mechanics.js"></script>
+
+    <script src="../../js/main.js"></script>
+
+</body>
+</html>
