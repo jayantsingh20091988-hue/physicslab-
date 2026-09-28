@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 event.preventDefault();
 
                 window.location.href =
-                    "work-energy.html";
+                    "class10/work-energy.html";
 
             }
 
